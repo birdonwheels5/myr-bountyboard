@@ -88,7 +88,7 @@ echo "<br>";
 echo $myrAddress;
 echo "<br>";
 echo $description;
-echo "<br>"
+echo "<br>";
 echo $userName;
 ?>
 
