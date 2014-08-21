@@ -23,15 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
 		$bountyTitle = cleanInput($_POST["bountyTitle"]);
     }
-     
-    if (empty($_POST["myrAddress"])) 
-	{
-		$myrAddress = "A Myriadcoin address is required";
-    } 
-	else 
-	{
-      $myrAddress = cleanInput($_POST["myrAddress"]);
-    }
 
     if (empty($_POST["description"])) 
 	{
@@ -40,6 +31,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	else 
 	{
       $description = cleanInput($_POST["description"]);
+    }
+    
+	if (empty($_POST["myrAddress"])) 
+	{
+		$myrAddress = "A Myriadcoin address is required";
+    	} 
+	else 
+	{
+      $myrAddress = cleanInput($_POST["myrAddress"]);
     }
    
     if (empty($_POST["userName"])) 
@@ -54,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 function cleanInput($data) {
     $data = trim($data);
+    $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
@@ -65,12 +66,12 @@ function cleanInput($data) {
 			Bounty Title: <input type="text" name="bountyTitle" value="<?php echo $bountyTitle;?>">
 			<span class="error">* <?php echo $bountyTitleErr;?></span>
 			<br><br>
+			Bounty Description: <textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
+			<br><br>
 			Myriadcoin Address: <input type="text" name="myrAddress" value="<?php echo $myrAddress;?>">
 			<span class="error"><?php echo $myrAddressErr;?></span>
 			<br><br>
-			Bounty Description: <textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
-			<br><br>
-			userName: <input type="text" name="userName" value="<?php echo $userName;?>">
+			Username: <input type="text" name="userName" value="<?php echo $userName;?>">
 			<span class="error">* <?php echo $userNameErr;?></span>
 			<br><br>
 			<input type="submit" name="submit" value="Submit"> 
