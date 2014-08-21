@@ -73,11 +73,6 @@ function cleanInput($data) {
 			<br><br>
 			description: <textarea userName="description" rows="5" cols="40"><?php echo $description;?></textarea>
 			<br><br>
-			Gender:
-			<input type="radio" userName="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?>  value="female">Female
-			<input type="radio" userName="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?>  value="male">Male
-			<span class="error">* <?php echo $genderErr;?></span>
-			<br><br>
 			<input type="submit" userName="submit" value="Submit"> 
 	</form>
 
