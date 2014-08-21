@@ -72,9 +72,8 @@ function cleanInput($data)
 				<br><br>
 				Bounty Description:<br>
 				<textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
-				<br><br>
-				
 				<span class="error">* <?php echo $descriptionErr;?></span>
+
 				<br><br>
 				
 				Myriadcoin Address: <br>
