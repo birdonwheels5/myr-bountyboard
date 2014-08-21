@@ -10,7 +10,7 @@
 
 <?php
 // define variables and set to empty values
-$bountyTitleErr = $myrAddressErr = $userNameErr = "";
+$bountyTitleErr = $description $myrAddressErr = $userNameErr = "";
 $bountyTitle = $description = $myrAddress = $userName = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
@@ -62,29 +62,29 @@ function cleanInput($data) {
 		<h2>PHP Form Validation Example</h2>
 		<p><span class="error">* required field.</span></p>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-			userName: <input type="text" userName="userName" value="<?php echo $userName;?>">
-			<span class="error">* <?php echo $userNameErr;?></span>
-			<br><br>
-			E-mail: <input type="text" userName="bountyTitle" value="<?php echo $bountyTitle;?>">
+			Bounty Title: <input type="text" userName="bountyTitle" value="<?php echo $bountyTitle;?>">
 			<span class="error">* <?php echo $bountyTitleErr;?></span>
 			<br><br>
-			myrAddress: <input type="text" userName="myrAddress" value="<?php echo $myrAddress;?>">
+			Myriadcoin Address: <input type="text" userName="myrAddress" value="<?php echo $myrAddress;?>">
 			<span class="error"><?php echo $myrAddressErr;?></span>
 			<br><br>
-			description: <textarea userName="description" rows="5" cols="40"><?php echo $description;?></textarea>
+			Bounty Description: <textarea userName="description" rows="5" cols="40"><?php echo $description;?></textarea>
+			<br><br>
+			userName: <input type="text" userName="userName" value="<?php echo $userName;?>">
+			<span class="error">* <?php echo $userNameErr;?></span>
 			<br><br>
 			<input type="submit" userName="submit" value="Submit"> 
 	</form>
 
 <?php
 echo "<h2>Your Input:</h2>";
-echo $userName;
-echo "<br>";
 echo $bountyTitle;
 echo "<br>";
 echo $myrAddress;
 echo "<br>";
 echo $description;
+echo "<br>"
+echo $userName;
 ?>
 
 	</body>
