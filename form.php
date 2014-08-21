@@ -59,21 +59,21 @@ function cleanInput($data) {
 }
 ?> 
 
-		<h2>PHP Form Validation Example</h2>
+		<h2>Submit a New Bounty</h2>
 		<p><span class="error">* required field.</span></p>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-			Bounty Title: <input type="text" userName="bountyTitle" value="<?php echo $bountyTitle;?>">
+			Bounty Title: <input type="text" title="bountyTitle" value="<?php echo $bountyTitle;?>">
 			<span class="error">* <?php echo $bountyTitleErr;?></span>
 			<br><br>
-			Myriadcoin Address: <input type="text" userName="myrAddress" value="<?php echo $myrAddress;?>">
+			Myriadcoin Address: <input type="text" title="myrAddress" value="<?php echo $myrAddress;?>">
 			<span class="error"><?php echo $myrAddressErr;?></span>
 			<br><br>
-			Bounty Description: <textarea userName="description" rows="5" cols="40"><?php echo $description;?></textarea>
+			Bounty Description: <textarea title="description" rows="5" cols="40"><?php echo $description;?></textarea>
 			<br><br>
-			userName: <input type="text" userName="userName" value="<?php echo $userName;?>">
+			userName: <input type="text" title="userName" value="<?php echo $userName;?>">
 			<span class="error">* <?php echo $userNameErr;?></span>
 			<br><br>
-			<input type="submit" userName="submit" value="Submit"> 
+			<input type="submit" title="submit" value="Submit"> 
 	</form>
 
 <?php
