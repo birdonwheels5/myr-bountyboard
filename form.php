@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     
 	if (empty($_POST["myrAddress"])) 
 	{
-		$myrAddress = "A Myriadcoin address is required";
+		$myrAddressErr = "A Myriadcoin address is required";
     	} 
 	else 
 	{
@@ -52,7 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     }
 }
 
-function cleanInput($data) {
+function cleanInput($data) 
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
