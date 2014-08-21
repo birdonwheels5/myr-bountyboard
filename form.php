@@ -68,7 +68,8 @@ function cleanInput($data)
 				Bounty Title: <input type="text" name="bountyTitle" value="<?php echo $bountyTitle;?>">
 				<span class="error">* <?php echo $bountyTitleErr;?></span>
 				<br><br>
-				Bounty Description: <textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
+				Bounty Description:<br>
+				<textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
 				<br><br>
 				<span class="error">* <?php echo $descriptionErr;?></span>
 				<br><br>
