@@ -9,10 +9,19 @@
 
 <?php
 // define variables and set to empty values
-$emailErr = $genderErr = $websiteErr = $userNameErr = "";
-$email = $gender = $comment = $website = $userName = "";
+$nameErr = $emailErr = $genderErr = $websiteErr = "";
+$name = $email = $gender = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   if (empty($_POST["name"])) {
+     $nameErr = "Name is required";
+   } else {
+     $name = test_input($_POST["name"]);
+     // check if name only contains letters and whitespace
+     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+       $nameErr = "Only letters and white space allowed"; 
+     }
+   }
    
    if (empty($_POST["email"])) {
      $emailErr = "Email is required";
@@ -45,16 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    } else {
      $gender = test_input($_POST["gender"]);
    }
-   
-   if (empty($_POST["userName"])) {
-     $userNameErr = "userName is required";
-   } else {
-     $userName = test_input($_POST["userName"]);
-     // check if userName only contains letters and whitespace
-     if (!preg_match("/^[a-zA-Z ]*$/",$userName)) {
-       $userNameErr = "Only letters and white space allowed"; 
-     }
-   }
 }
 
 function test_input($data) {
@@ -68,28 +67,28 @@ function test_input($data) {
 <h2>PHP Form Validation Example</h2>
 <p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-   userName: <input type="text" userName="userName" value="<?php echo $userName;?>">
-   <span class="error">* <?php echo $userNameErr;?></span>
+   Name: <input type="text" name="name" value="<?php echo $name;?>">
+   <span class="error">* <?php echo $nameErr;?></span>
    <br><br>
-   E-mail: <input type="text" userName="email" value="<?php echo $email;?>">
+   E-mail: <input type="text" name="email" value="<?php echo $email;?>">
    <span class="error">* <?php echo $emailErr;?></span>
    <br><br>
-   Website: <input type="text" userName="website" value="<?php echo $website;?>">
+   Website: <input type="text" name="website" value="<?php echo $website;?>">
    <span class="error"><?php echo $websiteErr;?></span>
    <br><br>
-   Comment: <textarea userName="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+   Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
    <br><br>
    Gender:
-   <input type="radio" userName="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?>  value="female">Female
-   <input type="radio" userName="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?>  value="male">Male
+   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?>  value="female">Female
+   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?>  value="male">Male
    <span class="error">* <?php echo $genderErr;?></span>
    <br><br>
-   <input type="submit" userName="submit" value="Submit"> 
+   <input type="submit" name="submit" value="Submit"> 
 </form>
 
 <?php
 echo "<h2>Your Input:</h2>";
-echo $userName;
+echo $name;
 echo "<br>";
 echo $email;
 echo "<br>";
