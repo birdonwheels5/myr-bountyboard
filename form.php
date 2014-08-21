@@ -65,20 +65,28 @@ function cleanInput($data)
 		<p><span class="error">* required field.</span></p>
 		
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-				Bounty Title: <input type="text" name="bountyTitle" value="<?php echo $bountyTitle;?>">
+				Bounty Title:<br>
+				<input type="text" name="bountyTitle" value="<?php echo $bountyTitle;?>">
 				<span class="error">* <?php echo $bountyTitleErr;?></span>
+				
 				<br><br>
 				Bounty Description:<br>
 				<textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
 				<br><br>
+				
 				<span class="error">* <?php echo $descriptionErr;?></span>
 				<br><br>
-				Myriadcoin Address: <input type="text" name="myrAddress" value="<?php echo $myrAddress;?>">
+				
+				Myriadcoin Address: <br>
+				<input type="text" name="myrAddress" value="<?php echo $myrAddress;?>">
 				<span class="error"><?php echo $myrAddressErr;?></span>
 				<br><br>
-				Username: <input type="text" name="userName" value="<?php echo $userName;?>">
+				
+				Username:<br>
+				<input type="text" name="userName" value="<?php echo $userName;?>">
 				<span class="error">* <?php echo $userNameErr;?></span>
 				<br><br>
+				
 				<input type="submit" name="submit" value="Submit"> 
 			</form>
 
