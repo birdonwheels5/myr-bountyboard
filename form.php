@@ -10,7 +10,7 @@
 
 <?php
 // define variables and set to empty values
-$bountyTitleErr = $description $myrAddressErr = $userNameErr = "";
+$bountyTitleErr = $descriptionErr $myrAddressErr = $userNameErr = "";
 $bountyTitle = $description = $myrAddress = $userName = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 }
 
 function cleanInput($data) {
-	$data = trim($data);
+    $data = trim($data);
     $data = htmlspecialchars($data);
     return $data;
 }
