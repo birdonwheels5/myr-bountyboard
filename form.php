@@ -78,7 +78,7 @@ function cleanInput($data)
 				
 				Myriadcoin Address: <br>
 				<input type="text" name="myrAddress" value="<?php echo $myrAddress;?>">
-				<span class="error"><?php echo $myrAddressErr;?></span>
+				<span class="error">* <?php echo $myrAddressErr;?></span>
 				<br><br>
 				
 				Username:<br>
