@@ -18,20 +18,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	if (empty($_POST["bountyTitle"])) 
 	{
 		$bountyTitleErr = "A title is required";
-    } 
-    else 
-    {
+	} 
+    	else 
+    	{
 		$bountyTitle = cleanInput($_POST["bountyTitle"]);
-    }
+    	}
 
-    if (empty($_POST["description"])) 
+    	if (empty($_POST["description"])) 
 	{
-      $descriptionErr = "A description of your bounty is required";
-    } 
+      		$descriptionErr = "A description of your bounty is required";
+    	} 
 	else 
 	{
-      $description = cleanInput($_POST["description"]);
-    }
+      		$description = cleanInput($_POST["description"]);
+    	}
     
 	if (empty($_POST["myrAddress"])) 
 	{
@@ -39,17 +39,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     	} 
 	else 
 	{
-      $myrAddress = cleanInput($_POST["myrAddress"]);
-    }
+      		$myrAddress = cleanInput($_POST["myrAddress"]);
+    	}
    
-    if (empty($_POST["userName"])) 
+    	if (empty($_POST["userName"])) 
 	{
-      $userNameErr = "Your username is required";
-    } 
+      		$userNameErr = "Your username is required";
+    	} 
 	else 
 	{
-      $userName = cleanInput($_POST["userName"]);
-    }
+      		$userName = cleanInput($_POST["userName"]);
+    	}
 }
 
 function cleanInput($data) 
@@ -69,6 +69,8 @@ function cleanInput($data)
 				<span class="error">* <?php echo $bountyTitleErr;?></span>
 				<br><br>
 				Bounty Description: <textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
+				<br><br>
+				<span class="error">* <?php echo $descriptionErr;?></span>
 				<br><br>
 				Myriadcoin Address: <input type="text" name="myrAddress" value="<?php echo $myrAddress;?>">
 				<span class="error"><?php echo $myrAddressErr;?></span>
