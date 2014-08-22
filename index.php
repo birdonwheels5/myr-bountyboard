@@ -26,19 +26,11 @@
 			str_ireplace("title: ", "", $line);
 			$title = $line;
 		}
-		else
-		{
-			
-		}
 		
 		if (strpbrk($line,"desc: ") == "desc: ")
 		{
 			str_ireplace("desc: ", "", $line);
 			$description = $line;
-		}
-		else
-		{
-			
 		}
 	
 		if (strpbrk($line,"addr: ") == "addr: ")
@@ -46,30 +38,20 @@
 			str_ireplace("addr: ", "", $line);
 			$myrAddress = $line;
 		}
-		else
-		{
-			
-		}
 	
 		if (strpbrk($line,"user: ") == "user: ")
 		{
 			str_ireplace("user: ", "", $line);
 			$userName = $line;
 		}
-		else
-		{
-			
-		}
+
 		// Check the current line for "-" which separates bounties
-		if (strcmp(strpbrk($line, "-"),"-") == 0)
+		if (strcmp(stristr($line, "-"), $line) == 0)
 		{
 			// bounty.create($title, $description, $myrAddress, $userName)
 			$index++;
 		}
-		else
-		{
-			
-		}
+		print $index;
 	}
     	
     	echo $title;
