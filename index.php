@@ -43,6 +43,8 @@
 				str_replace("user: ", "", $userName);
 			}
 			
+			//echo $title;
+			
 			// bounty.create($title, $description, $myrAddress, $userName)
 			
 			$index++;
@@ -70,7 +72,7 @@
 				<td>MYR</td>
 			</tr>
 		<table>
-		<?php echo $title?>
+		<?php echo $title;?>
 		</article>
 	</div
 	
