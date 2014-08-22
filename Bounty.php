@@ -1,12 +1,12 @@
 <?php
 
-class bounty
+class Bounty
 {
-  var $title = "";
-  var $description = "";
-  var $myrAddress = "";
-  var $userName = "";
-  var $active = "";
+  private $title = "";
+  private $description = "";
+  private $myrAddress = "";
+  private $userName = "";
+  private $active = "";
   
   
   
@@ -18,6 +18,7 @@ class bounty
     $this->userName = $par1UserName;
     $this->active = $par1Active;
     
+
     /*setTitle($par1Title);
     setDescription($par1Description);
     setMyrAddress($par1MyrAddress);
@@ -81,5 +82,6 @@ class bounty
   
   
 }
+
 
 ?>
