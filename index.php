@@ -27,19 +27,19 @@
 			$title = $line;
 		}
 		
-		if (strpbrk($line,"desc: ") == "desc: ")
+		if (strcmp(stristr($line,"desc: "), $line) == 0)
 		{
 			str_ireplace("desc: ", "", $line);
 			$description = $line;
 		}
 	
-		if (strpbrk($line,"addr: ") == "addr: ")
+		if (strcmp(stristr($line,"addr: "), $line) == 0)
 		{
 			str_ireplace("addr: ", "", $line);
 			$myrAddress = $line;
 		}
 	
-		if (strpbrk($line,"user: ") == "user: ")
+		if (strcmp(stristr($line,"user: "), $line) == 0)
 		{
 			str_ireplace("user: ", "", $line);
 			$userName = $line;
@@ -51,7 +51,6 @@
 			// bounty.create($title, $description, $myrAddress, $userName)
 			$index++;
 		}
-		print $index;
 	}
     	
     	echo $title;
