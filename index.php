@@ -79,6 +79,7 @@
 			echo "<br>";
 			echo $active;
 			echo "<br>";
+			echo $index;
 			echo "---------";
 			echo "<br>";
 			//$array[index] = new bounty($title, $description, $myrAddress, $userName, $active);
