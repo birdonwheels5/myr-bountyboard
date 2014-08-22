@@ -63,6 +63,8 @@ else
 {
 	file_put_contents($fileName, "title: " . $title . "\n" . "desc: " . $description . "\n" . "addr: " . $myrAddress . "\n" . "user: " . $userName . "\n" . $separator . "\n", FILE_APPEND);
 	print "Bounty successfully submitted!";
+	header("Location: https://birdonwheels5.no-ip.org/myr-bountyboard/");
+	exit;
 }
 }
 
