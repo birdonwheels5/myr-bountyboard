@@ -20,7 +20,7 @@
 		$index = 0;
 		if (strcasecmp(strpbrk($line, "-"),"-") > 0)
 		{
-			return;
+			//return;
 		}
 		else // Fetch bounty information line-by-line, cunstruct the bounty, then add 1 to bounty count
 		{
