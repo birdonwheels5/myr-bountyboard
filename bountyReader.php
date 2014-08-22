@@ -3,9 +3,6 @@
 error_reporting(E_ALL);
 
 include ("classBounty.php");
-
-class bountyReader
-{
 	
 function __construct()
 {
@@ -94,5 +91,5 @@ function readBounties($fileName)
 	fclose($file);
 	return;
 }
-}
+
 ?>
