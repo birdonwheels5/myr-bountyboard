@@ -23,26 +23,22 @@
 		// Fetch bounty information line-by-line, construct the bounty, then add 1 to bounty count
 		if (strcmp(stristr($line,"title: "), $line) == 0)
 		{
-			$line = str_ireplace("title: ", "", $line);
-			$title = $line;
+			$title = str_ireplace("title: ", "", $line);
 		}
 		
 		if (strcmp(stristr($line,"desc: "), $line) == 0)
 		{
-			str_ireplace("desc: ", "", $line);
-			$description = $line;
+			$description = str_ireplace("desc: ", "", $line);
 		}
 	
 		if (strcmp(stristr($line,"addr: "), $line) == 0)
 		{
-			str_ireplace("addr: ", "", $line);
-			$myrAddress = $line;
+			$myrAddress = str_ireplace("addr: ", "", $line);
 		}
 	
 		if (strcmp(stristr($line,"user: "), $line) == 0)
 		{
-			str_ireplace("user: ", "", $line);
-			$userName = $line;
+			$userName = str_ireplace("user: ", "", $line);
 		}
 
 		// Check the current line for "-" which separates bounties
