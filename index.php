@@ -44,19 +44,21 @@
 		// Check the current line for "-" which separates bounties
 		if (strcmp(stristr($line, "-"), $line) == 0)
 		{
+			echo $title;
+    			echo "<br>";
+			echo $description;
+			echo "<br>";
+			echo $myrAddress;
+			echo "<br>";
+			echo $userName;
+			echo "<br>";
+			echo "---------";
+			echo "<br>";
 			// bounty.create($title, $description, $myrAddress, $userName)
 			$index++;
 		}
 	}
     	
-    	echo $title;
-    	echo "<br>";
-	echo $description;
-	echo "<br>";
-	echo $myrAddress;
-	echo "<br>";
-	echo $userName;
-	echo "<br>";
 	fclose($file);
 	
 	// class bounty
