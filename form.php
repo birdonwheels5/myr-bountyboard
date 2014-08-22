@@ -90,14 +90,10 @@ function cleanInput($data)
 			</form>
 
 <?php
-echo "<h2>Your Input:</h2>";
-echo $bountyTitle;
-echo "<br>";
-echo $myrAddress;
-echo "<br>";
-echo $description;
-echo "<br>";
-echo $userName;
+$fileName = "bounties.dat";
+$separator = "-";
+
+file_put_contents($fileName, $title . "\n" . $description . "\n" . $myrAddress . "\n" . $userName . "\n" . $separator . "n\", FILE_APPEND);
 ?>
 
 	</body>
