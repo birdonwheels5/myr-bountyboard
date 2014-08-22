@@ -30,10 +30,26 @@
 		
 		if (strcmp(stristr($line,"desc: "), $line) == 0)
 		{
-			$line = str_ireplace("desc: ", "", $line);
-			
-			// Check for Enter keystrokes and concatenate new lines to the Description.
-			while ((strcmp(stristr($line,"addr: "), $line) != 0))
+			$description = str_ireplace("desc: ", "", $line);
+		}
+	
+		if (strcmp(stristr($line,"addr: "), $line) == 0)
+		{
+			$myrAddress = str_ireplace("addr: ", "", $line);
+		}
+	
+		if (strcmp(stristr($line,"user: "), $line) == 0)
+		{
+			$userName = str_ireplace("user: ", "", $line);
+		}
+		
+		if (strcmp(stristr($line,"active: "), $line) == 0)
+		{
+			$active = str_ireplace("active: ", "", $line);
+		}
+		
+		// Check for Enter keystrokes and concatenate new lines to the Description.
+			if ((strcmp(stristr($line,"addr: "), $line) != 0))
 			{
 				print "hi mom";
 				if (strcmp(stristr($line,$description), $line) != 0)
@@ -52,22 +68,6 @@
 				}*/
 				
 			}
-		}
-	
-		if (strcmp(stristr($line,"addr: "), $line) == 0)
-		{
-			$myrAddress = str_ireplace("addr: ", "", $line);
-		}
-	
-		if (strcmp(stristr($line,"user: "), $line) == 0)
-		{
-			$userName = str_ireplace("user: ", "", $line);
-		}
-		
-		if (strcmp(stristr($line,"active: "), $line) == 0)
-		{
-			$active = str_ireplace("active: ", "", $line);
-		}
 
 		// Check the current line for "-" which separates bounties, and create bounties
 		if (strcmp(stristr($line, "-"), $line) == 0)
