@@ -13,6 +13,7 @@
 	$description = "";
 	$myrAddress = "";
 	$userName = "";
+	$active = "";
 	
 	$fileName = "bounties.dat";
 	$handle = fopen($fileName, "r") or print ("Error loading bounties!");
@@ -28,7 +29,18 @@
 		
 		if (strcmp(stristr($line,"desc: "), $line) == 0)
 		{
-			$description = str_ireplace("desc: ", "", $line);
+			$line = str_ireplace("desc: ", "", $line);
+			
+			// Check for Enter keystrokes and concatenate new lines to the Description.
+			while ((strcmp(stristr($line,"^M"), $line) == 0) and (strcmp(stristr($line,"addr: "), $line) != 0))
+			{
+				if (strcmp(stristr($line,$description), $line) != 0)
+				{
+					$line = str_ireplace("^M", "", $line);
+					$description = $description . "\n" . "<br>" . "\n" . $line;
+					print "added";
+				}
+			}
 		}
 	
 		if (strcmp(stristr($line,"addr: "), $line) == 0)
@@ -41,7 +53,7 @@
 			$userName = str_ireplace("user: ", "", $line);
 		}
 
-		// Check the current line for "-" which separates bounties
+		// Check the current line for "-" which separates bounties, and create bounties
 		if (strcmp(stristr($line, "-"), $line) == 0)
 		{
 			echo $title;
@@ -52,9 +64,12 @@
 			echo "<br>";
 			echo $userName;
 			echo "<br>";
+			echo $active;
+			echo "<br>";
+			echo index;
 			echo "---------";
 			echo "<br>";
-			// bounty.create($title, $description, $myrAddress, $userName)
+			//$array[index] = new bounty($title, $description, $myrAddress, $userName, $active);
 			$index++;
 		}
 	}
