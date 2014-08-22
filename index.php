@@ -16,14 +16,14 @@
 	
 	$fileName = "bounties.dat";
 	$handle = fopen($fileName, "r") or die("Error loading bounties!");
-    		while (($line = fgets($handle)) !== false) 
-    		{
-			$index = 0;
-			if (strcasecmp(strpbrk($line, "-"),"-") > 0)
-			{
-			}
-			else // Fetch bounty information line-by-line, cunstruct the bounty, then add 1 to bounty count
-			{
+    	while (($line = fgets($handle)) !== false) 
+    	{
+		$index = 0;
+		if (strcasecmp(strpbrk($line, "-"),"-") > 0)
+		{
+		}
+		else // Fetch bounty information line-by-line, cunstruct the bounty, then add 1 to bounty count
+		{
 			if (strpbrk($line,"title: ") == "title: ")
 			{
 				str_replace("title: ", "", $title);
@@ -53,6 +53,7 @@
 		
 			$index++;
 		}
+    	}
 	fclose($file);
 	
 	// class bounty
