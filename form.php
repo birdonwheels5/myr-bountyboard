@@ -117,6 +117,7 @@ else if ($bountySubmitted == SUCCESS)
 {
 	print("Bounty submission successful!" . "\n" . 
 	      "Redirecting to bounty page in 3 seconds...");
+	print "foobar";
 }
 ?>
 
