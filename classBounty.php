@@ -22,58 +22,57 @@ class bounty
   
   function setTitle($newTitle)
   {
-    $this->title = $newTitle;
+    $this->$title = $newTitle;
   }
   
   function setDescription($newDescription)
   {
-    $this->description = $newDescription;
+    $this->$description = $newDescription;
   }
   
   function setMyrAddress($newMyrAddress)
   {
-    $this->myrAddress = $newMyrAddress;
+    $this->$myrAddress = $newMyrAddress;
   }
   
   function setUserName($newUserName)
   {
-    $this->userName = $newUserName;
+    $this->$userName = $newUserName;
   }
   
   function setActive($newActive)
   {
-    $this->active = $newActive;
+    $this->$active = $newActive;
   }
   
   
   
   function getTitle()
   {
-    return $this->title;
+    return $this->$title;
   }
   
   function getDescription()
   {
-    return $this->description;
+    return $this->$description;
   }
   
   function getMyrAddress()
   {
-    return $this->myrAddress;
+    return $this->$myrAddress;
   }
   
   function getUserName()
   {
-    return $this->userName;
+    return $this->$userName;
   }
   
   function getActive()
   {
-    return $this->active;
+    return $this->$active;
   }
   
   
 }
-
 
 ?>
