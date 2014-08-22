@@ -51,9 +51,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       		$userName = cleanInput($_POST["userName"]);
     	}
     	
-    	$fileName = "bounties.dat";
+$fileName = "bounties.dat";
 $separator = "-";
-if((strcmp($title, $titleErr) == 0) or (strcmp($description, $descriptionErr) == 0) or (strcmp($myrAddress, $myrAddressErr) == 0) or (strcmp($userName, $userNameErr) == 0))
+$empty = "";
+
+if((strcmp($title, $empty) == 0) or (strcmp($description, $empty) == 0) or (strcmp($myrAddress, $empty) == 0) or (strcmp($userName, $empty) == 0))
 {
 	print "Bounty submission failed!";
 }
