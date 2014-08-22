@@ -116,7 +116,7 @@ class Bounty
   
   
   
-  global function __construct($par1Title, $par1Description, $par1MyrAddress, $par1UserName, $par1Active)
+  function __construct($par1Title, $par1Description, $par1MyrAddress, $par1UserName, $par1Active)
   {
     $this->title = $par1Title;
     $this->description = $par1Description;
