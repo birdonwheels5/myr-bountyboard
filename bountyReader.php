@@ -112,7 +112,7 @@ class bounty
   
   
   
-  function __construct($par1Title, $par1Description, $par1MyrAddress, $par1UserName, $par1Active)
+  /*function __construct($par1Title, $par1Description, $par1MyrAddress, $par1UserName, $par1Active)
   {
     $this->title = $par1Title;
     $this->description = $par1Description;
@@ -126,7 +126,7 @@ class bounty
     setMyrAddress($par1MyrAddress);
     setUserName($par1UserName);
     setActive($par1Active);2*/
-  }
+  }*/
   
   
   
