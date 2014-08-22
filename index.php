@@ -21,7 +21,7 @@
 		$index = 0;
 		
 		// Fetch bounty information line-by-line, construct the bounty, then add 1 to bounty count
-		if (strcmp(stristr($line,"title: "), "title: ") == 0)
+		if (strcmp(stristr($line,"title: "), $line) == 0)
 		{
 			strpbrk($line,"title: ");
 			$title = $line;
