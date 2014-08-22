@@ -2,9 +2,11 @@ title: New Electrum Wallet
 desc: First dev to create Electrum wallet gets 2,000,000 MYR
 addr: MTEST
 user: NeuroMode
+active: true
 -
 title: Make Bird Rich
 desc: Pump MYR to 500 satoshi. Only requires one decent-size whale!
 addr: MSJ8nCKxxWicU8DMyqusdFF8v5L6DDvcrx
 user: birdonwheels5
+active: false
 -
