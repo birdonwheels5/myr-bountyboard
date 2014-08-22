@@ -13,6 +13,12 @@
 $titleErr = $descriptionErr = $myrAddressErr = $userNameErr = "";
 $title = $description = $myrAddress = $userName = "";
 
+$WAITING = -1;
+$FAILURE = 1;
+$SUCCESS = 0;
+
+$bountySubmitted = WAITING;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
 	if (empty($_POST["title"])) 
@@ -57,14 +63,12 @@ $empty = "";
 
 if((strcmp($title, $empty) == 0) or (strcmp($description, $empty) == 0) or (strcmp($myrAddress, $empty) == 0) or (strcmp($userName, $empty) == 0))
 {
-	print "Bounty submission failed!";
+	$bountySubmitted = FAILURE;
 }
 else
 {
+	$bountySubmitted = SUCCESS;
 	file_put_contents($fileName, "title: " . $title . "\n" . "desc: " . $description . "\n" . "addr: " . $myrAddress . "\n" . "user: " . $userName . "\n" . $separator . "\n", FILE_APPEND);
-	print "Bounty successfully submitted!";
-	header("Location: https://birdonwheels5.no-ip.org/myr-bountyboard/");
-	exit;
 }
 }
 
@@ -85,7 +89,7 @@ function cleanInput($data)
 				<span class="error">* <?php echo $titleErr;?></span>
 				
 				<br><br>
-				Bounty Description: (Anything after a return keystroke will <b>not</b> appear in the bounty)<br>
+				Bounty Description:<br>
 				<textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
 				<span class="error">* <?php echo $descriptionErr;?></span>
 
@@ -104,6 +108,20 @@ function cleanInput($data)
 				<input type="submit" name="submit" value="Submit"> 
 			</form>
 
+<?php
+if ($bountySubmitted == FAILURE)
+{
+	print "Bounty submission failed!";
+}
+else if ($bountySubmitted == SUCCESS)
+{
+	print "Bounty submission successful!";
+	print "Redirecting to bounty page in 5 seconds...";
+	sleep(5);
+	header("Location: https://birdonwheels5.no-ip.org/myr-bountyboard/");
+	exit;
+}
+?>
 
 	</body>
 </html>
