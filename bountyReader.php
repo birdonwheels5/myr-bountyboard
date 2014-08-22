@@ -2,6 +2,7 @@
 
 function readBounties($fileName)
 {
+	$debugMode = true;
 	$separator = "&-$";
 
 	$title = "";
@@ -63,18 +64,23 @@ function readBounties($fileName)
 		// Check the current line for "-" which separates bounties, and create bounties
 		if (strcmp(stristr($line, $separator), $line) == 0)
 		{
-			echo $title;
-    			echo "<br>";
-			echo $description;
-			echo "<br>";
-			echo $myrAddress;
-			echo "<br>";
-			echo $userName;
-			echo "<br>";
-			echo $active;
-			echo "<br>";
-			echo "---------";
-			echo "<br>";
+			// Debug info
+			if ($debugMode == true)
+			{
+				echo $title;
+    				echo "<br>";
+				echo $description;
+				echo "<br>";
+				echo $myrAddress;
+				echo "<br>";
+				echo $userName;
+				echo "<br>";
+				echo $active;
+				echo "<br>";
+				echo "---------";
+				echo "<br>";	
+			}
+			
 			//$array[index] = new bounty($title, $description, $myrAddress, $userName, $active);
 		}
 	}
