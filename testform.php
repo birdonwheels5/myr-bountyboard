@@ -76,6 +76,7 @@ else
 function cleanInput($data) 
 {
     $data = trim($data);
+    $data = ltrim($data,"^M");
     $data = htmlspecialchars($data);
     return $data;
 }
