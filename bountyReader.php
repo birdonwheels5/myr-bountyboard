@@ -1,3 +1,7 @@
+<?php
+
+include ("classBounty.php");
+
 function readBounties($fileName)
 {
   // $bounties = array();
@@ -79,3 +83,5 @@ function readBounties($fileName)
 	}
 	fclose($file);
 }
+
+?>
