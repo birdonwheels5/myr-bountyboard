@@ -7,7 +7,7 @@
 	<body>
 	
 	<?php
-	$bounties = array();
+	// $bounties = array();
 	
 	$title = "";
 	$description = "";
