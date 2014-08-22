@@ -52,6 +52,11 @@
 		{
 			$userName = str_ireplace("user: ", "", $line);
 		}
+		
+		if (strcmp(stristr($line,"active: "), $line) == 0)
+		{
+			$active = str_ireplace("active: ", "", $line);
+		}
 
 		// Check the current line for "-" which separates bounties, and create bounties
 		if (strcmp(stristr($line, "-"), $line) == 0)
@@ -65,8 +70,6 @@
 			echo $userName;
 			echo "<br>";
 			echo $active;
-			echo "<br>";
-			echo $index;
 			echo "<br>";
 			echo "---------";
 			echo "<br>";
