@@ -1,10 +1,9 @@
 <?php
 
-//include "classBounty.php";
+$separator = "&-$";
 
 function readBounties($fileName)
 {
-  // $bounties = array();
 	
 	$title = "";
 	$description = "";
@@ -31,7 +30,7 @@ function readBounties($fileName)
 			   (strcmp(stristr($line,"addr: "), $line) != 0) and 
 			   (strcmp(stristr($line,"user: "), $line) != 0) and 
 			   (strcmp(stristr($line,"active: "), $line) != 0) and 
-			   (strcmp(stristr($line,"-"), $line) != 0))
+			   (strcmp(stristr($line, $separator), $line) != 0))
 			{
 				$description = $description . "\n" . "<br>" . "\n" . $line;
 			}
@@ -63,7 +62,7 @@ function readBounties($fileName)
 		}
 
 		// Check the current line for "-" which separates bounties, and create bounties
-		if (strcmp(stristr($line, "-"), $line) == 0)
+		if (strcmp(stristr($line, $separator), $line) == 0)
 		{
 			echo $title;
     			echo "<br>";
@@ -82,7 +81,25 @@ function readBounties($fileName)
 		}
 	}
 	fclose($file);
-	return;
+	return index;
 }
+
+function countBounties($fileName)
+{
+  $index = 0;
+	
+  $handle = fopen($fileName, "r") or print ("Error loading bounties!");
+    	while (($line = fgets($handle)) !== false) 
+    	{
+		// Count the number of $separator's in the bounties file, as that determines where the bounty ends
+		if (strcmp(stristr($line, $separator), $line) == 0)
+		{
+			$index++;
+		}
+	}
+	fclose($file);
+	return index;
+}
+
 
 ?>
