@@ -48,7 +48,7 @@
 			
 			index++;
 		}
-	)
+	}
 	fclose($file);
 	
 	// class bounty
