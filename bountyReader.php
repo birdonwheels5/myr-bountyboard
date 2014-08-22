@@ -92,6 +92,7 @@ function readBounties($fileName)
 		}
 	}
 	fclose($file);
+	return;
 }
 }
 ?>
