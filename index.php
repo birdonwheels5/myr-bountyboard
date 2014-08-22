@@ -11,7 +11,7 @@
 	<?php
 	
 	
-	$fileName = "bounties.dat";
+	$fileName = "bountie4s.dat";
 	
 	readBounties($fileName);
 	
