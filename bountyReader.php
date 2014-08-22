@@ -4,6 +4,7 @@ $separator = "&-$";
 
 function readBounties($fileName)
 {
+	global $seperator;
 	
 	$title = "";
 	$description = "";
@@ -85,6 +86,7 @@ function readBounties($fileName)
 
 function countBounties($fileName)
 {
+  global $seperator;
   $index = 0;
 	
   $handle = fopen($fileName, "r") or print ("Error loading bounties!");
