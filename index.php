@@ -20,7 +20,6 @@
 		$index = 0;
 		if (strcasecmp(strpbrk($line, "-"),"-") > 0)
 		{
-			//return;
 		}
 		else // Fetch bounty information line-by-line, cunstruct the bounty, then add 1 to bounty count
 		{
@@ -71,6 +70,7 @@
 				<td>MYR</td>
 			</tr>
 		<table>
+		<?php echo $title?>
 		</article>
 	</div
 	
