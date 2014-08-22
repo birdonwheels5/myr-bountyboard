@@ -10,15 +10,7 @@
 	<body>
 	
 	<?php
-	// $bounties = array();
 	
-	$title = "";
-	$description = "";
-	$myrAddress = "";
-	$userName = "";
-	$active = "";
-	
-	$index = 0;
 	
 	$fileName = "bounties.dat";
 	
