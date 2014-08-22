@@ -15,9 +15,7 @@
 	
 	$fileName = "bounties.dat";
 	
-	$reader = new bountyReader();
-	
-	$reader->readBounties($fileName);
+	readBounties($fileName);
 	
 	?>
 	
