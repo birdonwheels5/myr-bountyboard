@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		$title = cleanInput($_POST["title"]);
     	}
     	
-//TODO 
+//TODO Implement title search and throw error if title already exists
 	if (strcmp($title))
 	{
 		
