@@ -16,7 +16,7 @@
 	
 	$reader = new bountyReader();
 	
-	$reader->readBounties($fileName);
+	bountyReader::readBounties($fileName);
 	
 	?>
 	
