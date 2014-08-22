@@ -1,10 +1,8 @@
 <?php
 
-$separator = "&-$";
-
 function readBounties($fileName)
 {
-	global $seperator;
+	$separator = "&-$";
 	print $separator;
 	
 	$title = "";
@@ -88,7 +86,7 @@ function readBounties($fileName)
 
 function countBounties($fileName)
 {
-  global $seperator;
+  $separator = "&-$";
   $index = 0;
 	
   $handle = fopen($fileName, "r") or print ("Error loading bounties!");
@@ -106,9 +104,9 @@ function countBounties($fileName)
 ?>
 
 // ---------------------------
-/*<?php
+<?php
 
-class Bounty
+/*class Bounty
 {
   private $title = "";
   private $description = "";
@@ -189,7 +187,7 @@ class Bounty
   }
   
   
-}
+}*/
 
 
-?>*/
+?>
