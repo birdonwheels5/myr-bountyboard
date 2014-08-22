@@ -87,9 +87,6 @@
 	}
     	
 	fclose($file);
-	
-	$file = file_get_contents($fileName);
-	print $file;
 	?>
 	
 	
