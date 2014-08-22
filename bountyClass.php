@@ -1,28 +1,76 @@
 <?php
 class bounty
 {
-  $title = "";
-  $description = "";
-  $myrAddress = "";
-  $userName = "";
-  $active = "";
+  var $title = "";
+  var $description = "";
+  var $myrAddress = "";
+  var $userName = "";
+  var $active = "";
   
   
   
   function __construct($par1Title, $par1Description, $par1MyrAddress, $par1UserName, $par1Active)
   {
-    $title = $par1Title;
-    $description = $par1Description;
-    $myrAddress = $par1MyrAddress;
-    $userName = $par1UserName;
-    $active = par1Active;
+    setTitle($par1Title);
+    setDescription($par1Description);
+    setMyrAddress($par1MyrAddress);
+    setUserName($par1UserName);
+    setActive($par1Active);
   }
   
-  //function setTitle()
+  
+  
+  function setTitle($newTitle)
+  {
+    $this->title = $newTitle;
+  }
+  
+  function setDescription($newDescription)
+  {
+    $this->description = $newDescription;
+  }
+  
+  function setMyrAddress($newMyrAddress)
+  {
+    $this->myrAddress = $newMyrAddress;
+  }
+  
+  function setUserName($newUserName)
+  {
+    $this->userName = $newUserName;
+  }
+  
+  function setActive($newActive)
+  {
+    $this->active = $newActive;
+  }
   
   
   
-  //function getTitle()
+  function getTitle()
+  {
+    return $this->title;
+  }
+  
+  function getDescription()
+  {
+    return $this->description;
+  }
+  
+  function getMyrAddress()
+  {
+    return $this->myrAddress;
+  }
+  
+  function getUserName()
+  {
+    return $this->userName;
+  }
+  
+  function getActive()
+  {
+    return $this->active;
+  }
   
   
 }
