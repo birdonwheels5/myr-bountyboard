@@ -70,7 +70,7 @@
 			echo "---------";
 			echo "<br>";
 			//$array[index] = new bounty($title, $description, $myrAddress, $userName, $active);
-			$index++;
+			$index = index + 1;
 		}
 	}
     	
