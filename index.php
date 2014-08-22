@@ -20,42 +20,37 @@
     	{
 		$index = 0;
 		
+		// Fetch bounty information line-by-line, construct the bounty, then add 1 to bounty count
+		if (stristr($line,"title: ") == "title: ")
+		{
+			strpbrk($line,"title: ");
+			$title = $line;
+		}
+		
+		if (strpbrk($line,"desc: ") == "desc: ")
+		{
+			str_ireplace("desc: ", "", $line);
+			$description = $line;
+		}
+	
+		if (strpbrk($line,"addr: ") == "addr: ")
+		{
+			str_ireplace("addr: ", "", $line);
+			$myrAddress = $line;
+		}
+	
+		if (strpbrk($line,"user: ") == "user: ")
+		{
+			str_ireplace("user: ", "", $line);
+			$userName = $line;
+		}
 		// Check the current line for "-" which separates bounties
 		if (strcmp(strpbrk($line, "-"),"-") == 0)
 		{
-		}
-		// Fetch bounty information line-by-line, construct the bounty, then add 1 to bounty count
-		else
-		{
-			if (stristr($line,"title: ") == "title: ")
-			{
-				strpbrk($line,"title: ");
-				$title = $line;
-			}
-			
-			if (strpbrk($line,"desc: ") == "desc: ")
-			{
-				str_ireplace("desc: ", "", $line);
-				$description = $line;
-			}
-		
-			if (strpbrk($line,"addr: ") == "addr: ")
-			{
-				str_ireplace("addr: ", "", $line);
-				$myrAddress = $line;
-			}
-		
-			if (strpbrk($line,"user: ") == "user: ")
-			{
-				str_ireplace("user: ", "", $line);
-				$userName = $line;
-			}
-		
 			// bounty.create($title, $description, $myrAddress, $userName)
-		
 			$index++;
 		}
-    	}
+	}
     	
     	echo $title;
 	echo $description;
