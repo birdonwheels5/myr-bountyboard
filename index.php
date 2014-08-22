@@ -50,6 +50,8 @@
 			// bounty.create($title, $description, $myrAddress, $userName)
 			$index++;
 		}
+		
+		$title = $line;
 	}
     	
     	echo $title;
