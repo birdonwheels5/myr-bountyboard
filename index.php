@@ -14,10 +14,9 @@
 	$myrAddress = "";
 	$userName = "";
 	
-	$file = fopen("inputfile.txt", "r");
-	if ($file) 
-	{
-    		while (($line = fgets($file)) !== false) 
+	$fileName = "bounties.dat";
+	$handle = fopen($fileName, "r") or die("Error loading bounties!");
+    		while (($line = fgets($handle)) !== false) 
     		{
 			$index = 0;
 			if (strcasecmp(strpbrk($line, "-"),"-") > 0)
@@ -54,12 +53,7 @@
 		
 			$index++;
 		}
-		else
-		{
-			print "Error loading bounties!";
-		}
 	fclose($file);
-	}
 	
 	// class bounty
 	?>
