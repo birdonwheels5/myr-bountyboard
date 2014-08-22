@@ -1,8 +1,6 @@
 <?php
 
-error_reporting(E_ALL);
-
-include "classBounty.php";
+//include "classBounty.php";
 
 function readBounties($fileName)
 {
