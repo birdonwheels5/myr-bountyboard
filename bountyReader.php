@@ -106,9 +106,9 @@ function countBounties($fileName)
 ?>
 
 // ---------------------------
-<?php
+/*<?php
 
-/*class Bounty
+class Bounty
 {
   private $title = "";
   private $description = "";
@@ -189,7 +189,7 @@ function countBounties($fileName)
   }
   
   
-}*/
+}
 
 
-?>
+?>*/
