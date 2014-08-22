@@ -70,9 +70,6 @@
 				<td>hi</td>
 				<td>MYR</td>
 			</tr>
-			<?php
-			
-			?>
 		<table>
 		</article>
 	</div
