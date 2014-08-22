@@ -38,11 +38,6 @@
 			{
 				$description = $description . "\n" . "<br>" . "\n" . $line;
 			}
-			
-			if (strcmp(stristr($line,":endofdesc:"), $line) == 0)
-			{
-				$line = str_ireplace(":endofdesc:", "", $line);
-			}
 		}
 		
 		if (strcmp(stristr($line,"title: "), $line) == 0)
@@ -54,6 +49,11 @@
 		{
 			$description = str_ireplace("desc: ", "", $line);
 		}
+		
+					if (strcmp(stristr($line,":endofdesc:"), $line) == 0)
+			{
+				$line = str_ireplace(":endofdesc:", "", $line);
+			}
 	
 		if (strcmp(stristr($line,"addr: "), $line) == 0)
 		{
