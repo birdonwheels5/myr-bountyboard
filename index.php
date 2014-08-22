@@ -30,7 +30,11 @@
 			    (strcmp(stristr($line,"addr: "), $line) != 0) or (strcmp(stristr($line,"user: "), $line) != 0) or 
 			    (strcmp(stristr($line,"active: "), $line) != 0))
 			{
-				if (strcmp(stristr($line,$description), $line) != 0)
+				if (strcmp(stristr($line,$description), $line) != 0 and 
+				   (strcmp(stristr($line,"addr: "), $line) != 0) and 
+				   (strcmp(stristr($line,"user: "), $line) != 0) and 
+				   (strcmp(stristr($line,"active: "), $line) != 0) and 
+				   (strcmp(stristr($line,"-"), $line) != 0))
 				{
 					$description = $description . "\n" . "<br>" . "\n" . $line;
 				}
