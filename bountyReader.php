@@ -5,6 +5,7 @@ $separator = "&-$";
 function readBounties($fileName)
 {
 	global $seperator;
+	print $separator;
 	
 	$title = "";
 	$description = "";
