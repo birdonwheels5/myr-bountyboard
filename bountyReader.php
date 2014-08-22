@@ -102,7 +102,7 @@ function countBounties($fileName)
 
 // ---------------------------
 
-/*class bounty
+class bounty
 {
   /*$title = "";
   $description = "";
@@ -180,10 +180,10 @@ function countBounties($fileName)
   function getActive()
   {
     return $this->active;
-  }
+  }*/
   
   
-}*/
+}
 
 
 ?>
