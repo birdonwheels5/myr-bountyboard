@@ -157,7 +157,7 @@ class bounty
   
   
   
-  function getTitle()
+  /*function getTitle()
   {
     return $this->title;
   }
@@ -180,7 +180,7 @@ class bounty
   function getActive()
   {
     return $this->active;
-  }
+  }*/
   
   
 }
