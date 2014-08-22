@@ -92,7 +92,7 @@ function cleanInput($data)
 $fileName = "bounties.dat";
 $separator = "-";
 
-$test = file_put_contents($fileName, $title . "\n" . $description . "\n" . $myrAddress . "\n" . $userName . "\n" . $separator . "\n", FILE_APPEND);
+$test = file_put_contents($fileName, $bountyTitle . "\n" . $description . "\n" . $myrAddress . "\n" . $userName . "\n" . $separator . "\n", FILE_APPEND);
 
 echo $test;
 echo " characters were written to file.";
