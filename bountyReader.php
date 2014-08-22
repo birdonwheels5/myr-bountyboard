@@ -106,7 +106,7 @@ function countBounties($fileName)
 // ---------------------------
 <?php
 
-/*class Bounty
+class Bounty
 {
   private $title = "";
   private $description = "";
@@ -157,7 +157,7 @@ function countBounties($fileName)
   function setActive($newActive)
   {
     $this->$active = $newActive;
-  }
+  }*/
   
   
   
@@ -187,7 +187,7 @@ function countBounties($fileName)
   }
   
   
-}*/
+}
 
 
 ?>
