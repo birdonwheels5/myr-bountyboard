@@ -18,33 +18,33 @@
 	while ($line = fgets($file))
 	{
 		index = 0;
-		if $line == "-"
+		if strpbrk($line,"-") == "-"
 		{
 			return;
 		}
 		else // Fetch bounty information line-by-line, then add 1 to bounty count
 		{
-			if $line == "title: "
+			if strpbrk($line,"title: ") == "title: "
 			{
-				$title = $line - "title: ";
+				str_replace("title: ", "", $title);
 			}
 			
-			if $line == "desc: "
+			if strpbrk($line,"desc: ") == "desc: "
 			{
-				$description = $line - "desc: ";
+				str_replace("desc: ", "", $description);
 			}
 			
-			if $line == "addr: "
+			if strpbrk($line,"addr: ") == "addr: "
 			{
-				$myrAddress = $line - "addr: ";
+				str_replace("addr: ", "", $myrAddress);
 			}
 			
-			if $line == "user: "
+			if strpbrk($line,"user: ") == "user: "
 			{
-				$userName = $line - "user: ";
+				str_replace("user: ", "", $userName);
 			}
 			
-			bounty.create($title, $description, $myrAddress, $userName)
+			// bounty.create($title, $description, $myrAddress, $userName)
 			
 			index++;
 		}
