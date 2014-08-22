@@ -52,8 +52,6 @@
 	fclose($file);
 	
 	// class bounty
-	
-	echo "title";
 	?>
 	
 	
