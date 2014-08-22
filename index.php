@@ -15,11 +15,12 @@
 	$userName = "";
 	$active = "";
 	
+	$index = 0;
+	
 	$fileName = "bounties.dat";
 	$handle = fopen($fileName, "r") or print ("Error loading bounties!");
     	while (($line = fgets($handle)) !== false) 
     	{
-		$index = 0;
 		
 		// Fetch bounty information line-by-line, construct the bounty, then add 1 to bounty count
 		if (strcmp(stristr($line,"title: "), $line) == 0)
@@ -70,7 +71,7 @@
 			echo "---------";
 			echo "<br>";
 			//$array[index] = new bounty($title, $description, $myrAddress, $userName, $active);
-			$index = index + 1;
+			$index++;
 		}
 	}
     	
