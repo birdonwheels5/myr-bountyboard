@@ -4,6 +4,11 @@ include ("classBounty.php");
 
 class bountyReader
 {
+	
+function __construct()
+{
+	
+}
 
 function readBounties($fileName)
 {
