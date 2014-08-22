@@ -115,8 +115,8 @@ if ($bountySubmitted == FAILURE)
 }
 else if ($bountySubmitted == SUCCESS)
 {
-	print("Bounty submission successful! \n
-	       Redirecting to bounty page in 3 seconds...");
+	print "Bounty submission successful!";
+	print "Redirecting to bounty page in 3 seconds...";
 	header("Refresh: 3, URL = https://birdonwheels5.no-ip.org/myr-bountyboard/");
 	exit;
 }
