@@ -29,6 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     	{
 		$title = cleanInput($_POST["title"]);
     	}
+    	
+//TODO 
+	if (strcmp($title))
+	{
+		
+	}
 
     	if (empty($_POST["description"])) 
 	{
