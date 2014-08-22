@@ -50,9 +50,13 @@
 	}
     	
     	echo $title;
+    	echo "<br>";
 	echo $description;
+	echo "<br>";
 	echo $myrAddress;
+	echo "<br>";
 	echo $userName;
+	echo "<br>";
 	fclose($file);
 	
 	// class bounty
