@@ -104,11 +104,11 @@ function countBounties($fileName)
 
 class bounty
 {
-  var $title = "";
-  var $description = "";
-  var $myrAddress = "";
-  var $userName = "";
-  var $active = "";
+  $title = "";
+  $description = "";
+  $myrAddress = "";
+  $userName = "";
+  $active = "";
   
   
   
