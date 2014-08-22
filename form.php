@@ -10,18 +10,18 @@
 
 <?php
 // define variables and set to empty values
-$bountyTitleErr = $descriptionErr = $myrAddressErr = $userNameErr = "";
-$bountyTitle = $description = $myrAddress = $userName = "";
+$titleErr = $descriptionErr = $myrAddressErr = $userNameErr = "";
+$title = $description = $myrAddress = $userName = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-	if (empty($_POST["bountyTitle"])) 
+	if (empty($_POST["title"])) 
 	{
-		$bountyTitleErr = "A title is required";
+		$titleErr = "A title is required";
 	} 
     	else 
     	{
-		$bountyTitle = cleanInput($_POST["bountyTitle"]);
+		$title = cleanInput($_POST["title"]);
     	}
 
     	if (empty($_POST["description"])) 
@@ -53,12 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     	
     	$fileName = "bounties.dat";
 $separator = "-";
-if(file_put_contents($fileName, "title: " . $bountyTitle . "\n" . "desc: " . $description . "\n" . "addr: " . $myrAddress . "\n" . "user: " . $userName . "\n" . $separator . "\n", FILE_APPEND) == false)
+if((strcmp($title, $titleErr) == 0) or (strcmp($description, $descriptionErr) == 0) or (strcmp($myrAddress, $myrAddressErr) == 0) or (strcmp($userName, $userNameErr) == 0))
 {
 	print "Bounty submission failed!";
 }
 else
 {
+	file_put_contents($fileName, "title: " . $bountyTitle . "\n" . "desc: " . $description . "\n" . "addr: " . $myrAddress . "\n" . "user: " . $userName . "\n" . $separator . "\n", FILE_APPEND);
 	print "Bounty successfully submitted!";
 }
 }
@@ -76,8 +77,8 @@ function cleanInput($data)
 		
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 				Bounty Title:<br>
-				<input type="text" name="bountyTitle" value="<?php echo $bountyTitle;?>">
-				<span class="error">* <?php echo $bountyTitleErr;?></span>
+				<input type="text" name="title" value="<?php echo $title;?>">
+				<span class="error">* <?php echo $titleErr;?></span>
 				
 				<br><br>
 				Bounty Description:<br>
