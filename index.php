@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-	<?php include ("class_bounty.php");
+	<?php include ("classBounty.php");
 	      include ("bountyReader.php");
 	?>
 	</head>
