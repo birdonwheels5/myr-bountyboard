@@ -30,10 +30,10 @@
 		
 		if (strcmp(stristr($line,"desc: "), $line) == 0)
 		{
-			$line = str_ireplace("desc: ", "", $line);
+			$description = str_ireplace("desc: ", "", $line);
 			
 			// Check for Enter keystrokes and concatenate new lines to the Description.
-			while ((strcmp(stristr($line,":newline:"), $line) == 0) and (strcmp(stristr($line,"addr: "), $line) != 0))
+			/*while ((strcmp(stristr($line,":newline:"), $line) == 0) and (strcmp(stristr($line,"addr: "), $line) != 0))
 			{
 				print "hi mom";
 				if (strcmp(stristr($line,$description), $line) != 0)
@@ -42,7 +42,7 @@
 					$description = $description . "\n" . "<br>" . "\n" . $line;
 				}
 				
-			}
+			}*/
 		}
 	
 		if (strcmp(stristr($line,"addr: "), $line) == 0)
