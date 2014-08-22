@@ -23,17 +23,9 @@
     	{
 		
 		// Fetch bounty information line-by-line, construct the bounty, then add 1 to bounty count
-		if (strcmp(stristr($line,"title: "), $line) == 0)
-		{
-			$title = str_ireplace("title: ", "", $line);
-		}
 		
-		if (strcmp(stristr($line,"desc: "), $line) == 0)
-		{
-			$description = str_ireplace("desc: ", "", $line);
-		}
 		
-				// Check for Enter keystrokes and concatenate new lines to the Description.
+			// Check for Enter keystrokes and concatenate new lines to the Description.
 			if ((strcmp(stristr($line,"title: "), $line) != 0) or (strcmp(stristr($line,"desc: "), $line) != 0) or 
 			    (strcmp(stristr($line,"addr: "), $line) != 0) or (strcmp(stristr($line,"user: "), $line) != 0) or 
 			    (strcmp(stristr($line,"active: "), $line) != 0))
@@ -54,6 +46,16 @@
 				}*/
 				
 			}
+			
+		if (strcmp(stristr($line,"title: "), $line) == 0)
+		{
+			$title = str_ireplace("title: ", "", $line);
+		}
+		
+		if (strcmp(stristr($line,"desc: "), $line) == 0)
+		{
+			$description = str_ireplace("desc: ", "", $line);
+		}
 	
 		if (strcmp(stristr($line,"addr: "), $line) == 0)
 		{
