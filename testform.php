@@ -69,7 +69,7 @@ if((strcmp($title, $empty) == 0) or (strcmp($description, $empty) == 0) or (strc
 else
 {
 	$bountySubmitted = SUCCESS;
-	file_put_contents($fileName, "title: " . $title . "\n" . "desc: " . $description . "\n" ":endofdesc:" . "\n" . "addr: " . $myrAddress . "\n" . "user: " . $userName . "\n" . "active: " . $active . "\n" . $separator . "\n", FILE_APPEND);
+	file_put_contents($fileName, "title: " . $title . "\n" . "desc: " . $description . "\n" . ":endofdesc:" . "\n" . "addr: " . $myrAddress . "\n" . "user: " . $userName . "\n" . "active: " . $active . "\n" . $separator . "\n", FILE_APPEND);
 }
 }
 
