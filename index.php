@@ -38,7 +38,6 @@
 				{
 					$line = str_ireplace("^M", "", $line);
 					$description = $description . "\n" . "<br>" . "\n" . $line;
-					print "added";
 				}
 			}
 		}
@@ -66,7 +65,8 @@
 			echo "<br>";
 			echo $active;
 			echo "<br>";
-			echo index;
+			echo $index;
+			echo "<br>";
 			echo "---------";
 			echo "<br>";
 			//$array[index] = new bounty($title, $description, $myrAddress, $userName, $active);
