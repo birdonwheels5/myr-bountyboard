@@ -17,36 +17,36 @@
 	$file = fopen("bounties.dat", "r");
 	while ($line = fgets($file))
 	{
-		index = 0;
-		if strpbrk($line,"-") == "-"
+		$index = 0;
+		if (strcasecmp(strpbrk($line, "-"),"-") > 0)
 		{
 			return;
 		}
 		else // Fetch bounty information line-by-line, then add 1 to bounty count
 		{
-			if strpbrk($line,"title: ") == "title: "
+			if (strpbrk($line,"title: ") == "title: ")
 			{
 				str_replace("title: ", "", $title);
 			}
 			
-			if strpbrk($line,"desc: ") == "desc: "
+			if (strpbrk($line,"desc: ") == "desc: ")
 			{
 				str_replace("desc: ", "", $description);
 			}
 			
-			if strpbrk($line,"addr: ") == "addr: "
+			if (strpbrk($line,"addr: ") == "addr: ")
 			{
 				str_replace("addr: ", "", $myrAddress);
 			}
 			
-			if strpbrk($line,"user: ") == "user: "
+			if (strpbrk($line,"user: ") == "user: ")
 			{
 				str_replace("user: ", "", $userName);
 			}
 			
 			// bounty.create($title, $description, $myrAddress, $userName)
 			
-			index++;
+			$index++;
 		}
 	}
 	fclose($file);
