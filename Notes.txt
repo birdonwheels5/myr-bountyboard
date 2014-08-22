@@ -22,9 +22,9 @@ done
 
 Notes:
 
-*Add "Active" flag
+DONE *Add "Active" flag
 *Updating a bounty will cause it to drop to the bottom of the bounty list
-*Pressing the enter key in any field will cause any data after the keystroke to be lost.
+FIXED *Pressing the enter key in any field will cause any data after the keystroke to be lost.
 *Make the new bounty form search current bounties, and compare titles to make sure that the new bounty does not already exist.
 *Make the new bounty form show the error messages at the bottom. (use int codes to hide/show the messages!)
 
