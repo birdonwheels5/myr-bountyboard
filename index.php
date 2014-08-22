@@ -4,6 +4,7 @@
 	<head>
 	<?php include ("classBounty.php");
 	      include ("bountyReader.php");
+	      error_reporting(E_ALL);
 	?>
 	</head>
 
@@ -16,7 +17,7 @@
 	
 	$reader = new bountyReader();
 	
-	bountyReader::readBounties($fileName);
+	$reader->readBounties($fileName);
 	
 	?>
 	
