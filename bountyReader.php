@@ -2,7 +2,7 @@
 
 function readBounties($fileName)
 {
-	$debugMode = false;
+	$debugMode = true;
 	$separator = "&-$";
 
 	$title = "";
