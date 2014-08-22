@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-	<?php //include "classBounty.php";
+	<?php include "classBounty.php";
 	      include "bountyReader.php";
 	      error_reporting(E_ALL);
 	?>
