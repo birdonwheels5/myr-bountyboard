@@ -15,7 +15,7 @@
 	$userName = "";
 	
 	$fileName = "bount5ies.dat";
-	$handle = fopen($fileName, "r") or die("Error loading bounties!");
+	$handle = fopen($fileName, "r") or print ("Error loading bounties!");
     	while (($line = fgets($handle)) !== false) 
     	{
 		$index = 0;
