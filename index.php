@@ -86,7 +86,8 @@
     	
 	fclose($file);
 	
-	// class bounty
+	$file = file_get_contents($fileName);
+	print $file;
 	?>
 	
 	
