@@ -14,7 +14,7 @@
 	$myrAddress = "";
 	$userName = "";
 	
-	$fileName = "bount5ies.dat";
+	$fileName = "bounties.dat";
 	$handle = fopen($fileName, "r") or print ("Error loading bounties!");
     	while (($line = fgets($handle)) !== false) 
     	{
@@ -29,7 +29,8 @@
 		{
 			if (strpbrk($line,"title: ") == "title: ")
 			{
-				str_replace("title: ", "", $title);
+				str_replace("title: ", "", $line);
+				$title = $line;
 			}
 			
 			if (strpbrk($line,"desc: ") == "desc: ")
