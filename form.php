@@ -50,6 +50,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{
       		$userName = cleanInput($_POST["userName"]);
     	}
+    	
+    	$fileName = "bounties.dat";
+$separator = "-";
+if(file_put_contents($fileName, "title: " . $bountyTitle . "\n" . "desc: " . $description . "\n" . "addr: " . $myrAddress . "\n" . "user: " . $userName . "\n" . $separator . "\n", FILE_APPEND) == false)
+{
+	print "Bounty submission failed!";
+}
+else
+{
+	print "Bounty successfully submitted!";
+}
 }
 
 function cleanInput($data) 
@@ -88,18 +99,6 @@ function cleanInput($data)
 				<input type="submit" name="submit" value="Submit"> 
 			</form>
 
-<?php
-$fileName = "bounties.dat";
-$separator = "-";
-if(file_put_contents($fileName, "title: " . $bountyTitle . "\n" . "desc: " . $description . "\n" . "addr: " . $myrAddress . "\n" . "user: " . $userName . "\n" . $separator . "\n", FILE_APPEND) == false)
-{
-	print "Bounty submission failed!";
-}
-else
-{
-	print "Bounty successfully submitted!";
-}
-?>
 
 	</body>
 </html>
