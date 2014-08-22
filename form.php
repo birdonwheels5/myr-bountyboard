@@ -89,7 +89,7 @@ function cleanInput($data)
 				<span class="error">* <?php echo $titleErr;?></span>
 				
 				<br><br>
-				Bounty Description: Bounty Description: (Anything after a return keystroke will <b>not</b> appear in the bounty)<br>
+				Bounty Description: (Anything after a return keystroke will <b>not</b> appear in the bounty)<br>
 				<textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
 				<span class="error">* <?php echo $descriptionErr;?></span>
 
