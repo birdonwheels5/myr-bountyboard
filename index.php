@@ -19,10 +19,13 @@
     	while (($line = fgets($handle)) !== false) 
     	{
 		$index = 0;
+		
+		// Check the current line for "-" which separates bounties
 		if (strcasecmp(strpbrk($line, "-"),"-") > 0)
 		{
 		}
-		else // Fetch bounty information line-by-line, cunstruct the bounty, then add 1 to bounty count
+		// Fetch bounty information line-by-line, construct the bounty, then add 1 to bounty count
+		else
 		{
 			if (strpbrk($line,"title: ") == "title: ")
 			{
@@ -43,17 +46,17 @@
 			{
 				str_replace("user: ", "", $userName);
 			}
-			
-			echo $title;
-			echo $description;
-			echo $myrAddress;
-			echo $userName;
 		
 			// bounty.create($title, $description, $myrAddress, $userName)
 		
 			$index++;
 		}
     	}
+    	
+    	echo $title;
+	echo $description;
+	echo $myrAddress;
+	echo $userName;
 	fclose($file);
 	
 	// class bounty
