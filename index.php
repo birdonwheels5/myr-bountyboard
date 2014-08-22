@@ -21,7 +21,7 @@
 		$index = 0;
 		
 		// Check the current line for "-" which separates bounties
-		if (strcasecmp(strpbrk($line, "-"),"-") > 0)
+		if (strcasecmp(strpbrk($line, "-"),"-") == 0)
 		{
 		}
 		// Fetch bounty information line-by-line, construct the bounty, then add 1 to bounty count
@@ -29,23 +29,23 @@
 		{
 			if (strpbrk($line,"title: ") == "title: ")
 			{
-				str_replace("title: ", "", $line);
+				str_ireplace("title: ", "", $line);
 				$title = $line;
 			}
 			
 			if (strpbrk($line,"desc: ") == "desc: ")
 			{
-					str_replace("desc: ", "", $description);
+				str_ireplace("desc: ", "", $description);
 			}
 		
 			if (strpbrk($line,"addr: ") == "addr: ")
 			{
-				str_replace("addr: ", "", $myrAddress);
+				str_ireplace("addr: ", "", $myrAddress);
 			}
 		
 			if (strpbrk($line,"user: ") == "user: ")
 			{
-				str_replace("user: ", "", $userName);
+				str_ireplace("user: ", "", $userName);
 			}
 		
 			// bounty.create($title, $description, $myrAddress, $userName)
