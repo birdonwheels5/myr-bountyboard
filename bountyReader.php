@@ -2,12 +2,7 @@
 
 error_reporting(E_ALL);
 
-include ("classBounty.php");
-	
-function __construct()
-{
-	
-}
+include "classBounty.php";
 
 function readBounties($fileName)
 {
