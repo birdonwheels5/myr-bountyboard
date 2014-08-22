@@ -3,8 +3,7 @@
 function readBounties($fileName)
 {
 	$separator = "&-$";
-	print $separator;
-	
+
 	$title = "";
 	$description = "";
 	$myrAddress = "";
@@ -103,7 +102,6 @@ function countBounties($fileName)
 }
 ?>
 
-// ---------------------------
 <?php
 
 class Bounty
