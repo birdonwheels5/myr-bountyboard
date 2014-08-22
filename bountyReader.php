@@ -102,7 +102,7 @@ function countBounties($fileName)
 
 // ---------------------------
 
-class bounty
+//class bounty
 {
   /*$title = "";
   $description = "";
