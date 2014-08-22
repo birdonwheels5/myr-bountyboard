@@ -91,11 +91,14 @@ function cleanInput($data)
 <?php
 $fileName = "bounties.dat";
 $separator = "-";
-
-$test = file_put_contents($fileName, $bountyTitle . "\n" . $description . "\n" . $myrAddress . "\n" . $userName . "\n" . $separator . "\n", FILE_APPEND);
-
-echo $test;
-echo " characters were written to file.";
+if(file_put_contents($fileName, $bountyTitle . "\n" . $description . "\n" . $myrAddress . "\n" . $userName . "\n" . $separator . "\n", FILE_APPEND) == false)
+{
+	print "Bounty submission failed!";
+}
+else
+{
+	print "Bounty successfully submitted!";
+}
 ?>
 
 	</body>
