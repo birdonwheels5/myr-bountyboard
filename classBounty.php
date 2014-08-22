@@ -18,12 +18,11 @@ class bounty
     $this->userName = $par1UserName;
     $this->active = $par1Active;
     
-
     /*setTitle($par1Title);
     setDescription($par1Description);
     setMyrAddress($par1MyrAddress);
     setUserName($par1UserName);
-    setActive($par1Active);2*/
+    setActive($par1Active);*/
   }
   
   
