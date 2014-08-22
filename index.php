@@ -50,11 +50,6 @@
 		{
 			$description = str_ireplace("desc: ", "", $line);
 		}
-		
-		if (strcmp(stristr($line,":endofdesc:"), $line) == 0)
-		{
-			$line = str_ireplace(":endofdesc:", "", $line);
-		}
 	
 		if (strcmp(stristr($line,"addr: "), $line) == 0)
 		{
