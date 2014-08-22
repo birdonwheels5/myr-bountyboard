@@ -99,20 +99,22 @@ function countBounties($fileName)
 	fclose($file);
 	return index;
 }
+?>
 
 // ---------------------------
+<?php
 
 class bounty
 {
-  /*$title = "";
+  $title = "";
   $description = "";
   $myrAddress = "";
   $userName = "";
-  $active = "";*/
+  $active = "";
   
   
   
-  /*function __construct($par1Title, $par1Description, $par1MyrAddress, $par1UserName, $par1Active)
+  global function __construct($par1Title, $par1Description, $par1MyrAddress, $par1UserName, $par1Active)
   {
     $this->title = $par1Title;
     $this->description = $par1Description;
@@ -121,12 +123,12 @@ class bounty
     $this->active = $par1Active;
     
 
-    setTitle($par1Title);
+    /*setTitle($par1Title);
     setDescription($par1Description);
     setMyrAddress($par1MyrAddress);
     setUserName($par1UserName);
-    setActive($par1Active);
-  }*/
+    setActive($par1Active);*/
+  }
   
   
   
@@ -157,7 +159,7 @@ class bounty
   
   
   
-  /*function getTitle()
+  function getTitle()
   {
     return $this->title;
   }
@@ -180,7 +182,7 @@ class bounty
   function getActive()
   {
     return $this->active;
-  }*/
+  }
   
   
 }
