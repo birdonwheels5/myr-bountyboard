@@ -13,10 +13,12 @@
 	
 	$fileName = "bounties.dat";
 	
+	// With this, you can pull any aspect of a bounty's data and display it.
 	$bounties = array();
 	$bounties = readBounties($fileName);
+	
 	//print_r($bounties);
-	print $bounties[1]->getTitle();
+	//print $bounties[1]->getTitle();
 	
 	?>
 	
