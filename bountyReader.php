@@ -15,7 +15,7 @@ function readBounties($fileName)
 	
 	$index = 0;
 	
-	$bounties = array();
+	global $bounties = array();
 	
   $handle = fopen($fileName, "r") or print ("Error loading bounties!");
     	while (($line = fgets($handle)) !== false) 
