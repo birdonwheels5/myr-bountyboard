@@ -186,7 +186,7 @@ function searchBounty($fileName, $title)
 	
 	// Loop through the bounty array, and look for a match with $titleResult. Returns the number of the bounty in
 	// the array.
-	for($i = 1; $i <= $bountyCount ; $i++)
+	for($i = 1; $i < $bountyCount ; $i++)
 	{
 		if ((strcmp(stristr($bounties[$i]->getTitle(), $titleResult), $bounties[$i]->getTitle()) == 0))
 		{
