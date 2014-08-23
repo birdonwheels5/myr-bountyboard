@@ -124,13 +124,13 @@ function removeBounty($fileName, $title)
   $handle = fopen($fileName, "r") or print ("Error loading bounties!");
     	while (($line = fgets($handle)) !== false) 
     	{
-    		if (strcmp(stristr($line, $title), $line) != 0)
+    		if (strcmp(stristr($line, $title), $title) != 0)
     		{
     			$index++;
     		}
     		
     		// Look for specified title and delete it, along with all lines up until the next separator sign
-		if (strcmp(stristr($line, $title), $line) == 0)
+		if (strcmp(stristr($line, $title), $title) == 0)
 		{
 			 print $line;
 			 print $index;
