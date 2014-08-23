@@ -153,6 +153,13 @@ function removeBounty($fileName, $title)
 		}
 	}
 	
+	if (feof($fileName))
+	{
+		replaceLineInTextFile($fileName, $separator, "");
+		print "<br> " . $separator . " reached and deleted!";
+		break;	
+	}
+	
 	return $code;
 }
 
