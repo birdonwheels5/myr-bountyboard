@@ -93,7 +93,7 @@ function readBounties($fileName)
 	}
 	fclose($file);
 	//return $bounties;
-	return;
+	return $bounties[];
 }
 
 function countBounties($fileName)
