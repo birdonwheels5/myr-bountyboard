@@ -5,7 +5,7 @@ include "Bounty.php";
 function readBounties($fileName)
 {
 	$debugMode = true;
-	$separator = "&-$";
+	$separator = "qpwoeiruty";
 
 	$title = "";
 	$description = "";
@@ -96,7 +96,7 @@ function readBounties($fileName)
 
 function countBounties($fileName)
 {
-  $separator = "&-$";
+  $separator = "qpwoeiruty";
   $index = 0;
 	
   $handle = fopen($fileName, "r") or print ("Error loading bounties!");
@@ -114,7 +114,7 @@ function countBounties($fileName)
 
 function removeBounty($fileName, $title)
 {
-	$separator = "&-$";
+	$separator = "qpwoeiruty";
 	
 	$lineNumber = 0;
 	
@@ -165,7 +165,7 @@ function removeBounty($fileName, $title)
 
 function searchBounty($fileName, $title)
 {
-	$separator = "&-$";
+	$separator = "qpwoeiruty";
 	
 	$lineNumber = 0;
 	
@@ -199,7 +199,7 @@ function searchBounty($fileName, $title)
  $content; // ...and another...
 
  for($i = 0; $i < count($f); $i++) { // ...run through the loop...
- if(preg_match($pattern, $f[$i])) { // and
+ if(preg_match("/" . $pattern . "/", $f[$i])) { // and
  $content .= $replacement; // get
  } else { // the
  $content .= $f[$i]; // content.
