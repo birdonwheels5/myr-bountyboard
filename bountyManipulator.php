@@ -130,32 +130,6 @@ function removeBounty($fileName, $title)
 		if (strcmp(stristr($line, $title), $line) == 0)
 		{
 			 print $line;
-			 print $lineNumber;
-			 break;
-		}
-	}
-	fclose($file);
-	return $code;
-}
-
-function searchBounty($fileName, $title)
-{
-	$separator = "&-$";
-	
-	$lineNumber = 0;
-	
-	$SUCCESS = 0;
-	$FAILURE = 1;
-	
-  $handle = fopen($fileName, "r") or print ("Error loading bounties!");
-    	while (($line = fgets($handle)) !== false) 
-    	{
-    		$lineNumber++;
-    		
-    		// Look for specified title and delete it, along with all lines up until the next separator sign
-		if (strcmp(stristr($line, $title), $line) == 0)
-		{
-			 print $line;
 			 break;
 		}
 	}
@@ -177,6 +151,32 @@ function searchBounty($fileName, $title)
 	}
 	
 	return $lineNumber;
+}
+
+function searchBounty($fileName, $title)
+{
+	$separator = "&-$";
+	
+	$lineNumber = 0;
+	
+	$SUCCESS = 0;
+	$FAILURE = 1;
+	
+  $handle = fopen($fileName, "r") or print ("Error loading bounties!");
+    	while (($line = fgets($handle)) !== false) 
+    	{
+    		$lineNumber++;
+    		
+    		// Look for specified title and delete it, along with all lines up until the next separator sign
+		if (strcmp(stristr($line, $title), $line) == 0)
+		{
+			 print $line;
+			 print $lineNumber;
+			 break;
+		}
+	}
+	fclose($file);
+	return $code;
 }
 
 //Function for replacing line in text file.
