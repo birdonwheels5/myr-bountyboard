@@ -13,7 +13,7 @@
 	
 	$fileName = "bounties.dat";
 	
-	//$bounties = array();
+	$bounties = array();
 	readBounties($fileName);
 	//print_r($bounties);
 	//print $bounties[1]->getTitle();
