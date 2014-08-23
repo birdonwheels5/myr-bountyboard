@@ -109,7 +109,7 @@ function countBounties($fileName)
 		}
 	}
 	fclose($file);
-	return index;
+	return $index;
 }
 
 function removeBounty($fileName, $title)
@@ -194,7 +194,7 @@ function searchBounty($fileName, $title)
 		}
 	}
 	
-	return $bountyCount;
+	return $searchResult;
 }
 
 //Function for replacing line in text file.
