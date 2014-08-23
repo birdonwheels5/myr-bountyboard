@@ -31,6 +31,10 @@ $bounties = readBounties($fileName);
 
 $confirmFlag = false;
 
+$fileName = "bounties.dat";
+$separator = "qpwoeiruty";
+$empty = "";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
@@ -43,9 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		$title = cleanInput($_POST["title"]);
     	}
     	
-$fileName = "bounties.dat";
-$separator = "qpwoeiruty";
-$empty = "";
 
 $bountyNumber = searchBounty($fileName, $title);
 
