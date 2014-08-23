@@ -137,17 +137,16 @@ function removeBounty($fileName, $title)
 	
 	$file = new SplFileObject($fileName, 'r');
 	
-	$file->seek($lineNumber);
+	$file->seek($lineNumber - 1);
 	
 	while (!feof($fileName))
 	{
 		replaceLineInTextFile($fileName, $file->current(), "");
-		$file->next();
 		print "<br> Line deleted!";
+		$file->next();
 		
-		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
+		if ((strcmp(stristr($file->current(), "title: "), $file->current()) == 0))
 		{
-			replaceLineInTextFile($fileName, $file->current(), "");
 			print "<br> " . $separator . " reached and deleted!";
 			break;
 		}
@@ -202,8 +201,6 @@ function searchBounty($fileName, $title)
  $fi = fopen($file, "w"); // open specified file...
  fwrite($fi, $content); // and rewrite it's content.
  fclose($fi); // close file.
-
- print "Line replaced!!!";
  }
  
  }
