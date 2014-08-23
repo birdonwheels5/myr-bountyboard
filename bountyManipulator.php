@@ -116,7 +116,7 @@ function removeBounty($fileName, $title)
 {
 	$separator = "&-$";
 	
-	$index = 0;
+	$lineNumber = 0;
 	
 	$SUCCESS = 0;
 	$FAILURE = 1;
@@ -124,33 +124,59 @@ function removeBounty($fileName, $title)
   $handle = fopen($fileName, "r") or print ("Error loading bounties!");
     	while (($line = fgets($handle)) !== false) 
     	{
-    		$index++;
+    		$lineNumber++;
     		
     		// Look for specified title and delete it, along with all lines up until the next separator sign
 		if (strcmp(stristr($line, $title), $line) == 0)
 		{
 			 print $line;
-			 print $index;
+			 print $lineNumber;
+			 break;
 		}
-		
-		/*if ((strcmp(stristr($line, $separator), $line) != 0))
-		{
-			if (fwrite($line, "") == false)
-			 {
-			 	print "Line overwrite failed!";
-			 }
-			 else
-			 {
-			 	print "Line overwrite successful";
-			 }
-		}
-		else if ((strcmp(stristr($line, $separator), $line) == 0))
-		{
-			break;
-		}*/
 	}
 	fclose($file);
 	return $code;
+}
+
+function searchBounty($fileName, $title)
+{
+	$separator = "&-$";
+	
+	$lineNumber = 0;
+	
+	$SUCCESS = 0;
+	$FAILURE = 1;
+	
+  $handle = fopen($fileName, "r") or print ("Error loading bounties!");
+    	while (($line = fgets($handle)) !== false) 
+    	{
+    		$lineNumber++;
+    		
+    		// Look for specified title and delete it, along with all lines up until the next separator sign
+		if (strcmp(stristr($line, $title), $line) == 0)
+		{
+			 print $line;
+			 break;
+		}
+	}
+	fclose($file);
+	
+	$file = new SplFileObject($fileName, 'w');
+	
+	$file->seek($lineNumber);
+	
+	while (!feof($file->next))
+	{
+		print "<br> Line to be deleted";
+		
+		if ((strcmp(stristr($file->next, $separator), $file->next) == 0))
+		{
+			print $separator . " reached!";
+			break;
+		}
+	}
+	
+	return $lineNumber;
 }
 
 //Function for replacing line in text file.
