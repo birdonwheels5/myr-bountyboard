@@ -36,7 +36,7 @@ function readBounties($fileName)
 			   (strcmp(stristr($line,"active: "), $line) != 0) and 
 			   (strcmp(stristr($line, $separator), $line) != 0))
 			{
-				$description = $description . "<br>" . $line;
+				$description = $description . "\n" . "<br>" . "\n" . $line;
 			}
 		}
 		
