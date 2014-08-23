@@ -105,7 +105,7 @@ function cleanInput($data)
 				<input type="text" name="active" value="<?php echo $active;?>">
 				<br><br>
 				
-				<input type="submit" name="delete" value="Delete"> 
+				<input type="submit" name="submit" value="Delete"> 
 			</form>
 
 <?php
