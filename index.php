@@ -15,7 +15,7 @@
 	
 	//$bounties = array();
 	$bounties = readBounties($fileName);
-	var_dump($bounties[1]);
+	print_r($bounties);
 	//print $bounties[1]->getTitle();
 	
 	?>
