@@ -111,4 +111,41 @@ function countBounties($fileName)
 	fclose($file);
 	return index;
 }
+
+function removeBounty($fileName, $title)
+{
+	$separator = "&-$";
+
+	$title = "";
+	$description = "";
+	$myrAddress = "";
+	$userName = "";
+	$active = "";
+	
+	$index = 0;
+	
+	$SUCCESS = 0;
+	$FAILURE = 1;
+	
+  $handle = fopen($fileName, "r") or print ("Error loading bounties!");
+    	while (($line = fgets($handle)) !== false) 
+    	{
+    		// Look for specified title and delete it, along with all lines up until the next separator sign
+		if (strcmp(stristr($line, $title), $line) == 0)
+		{
+			 fwrite($handle, "");
+		}
+		
+		if ((strcmp(stristr($line, $separator), $line) != 0))
+		{
+			fwrite($handle, "");
+		}
+		else if ((strcmp(stristr($line, $separator), $line) == 0))
+		{
+			break;
+		}
+	}
+	fclose($file);
+	return $code;
+}
 ?>
