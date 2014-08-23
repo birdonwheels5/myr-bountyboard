@@ -142,6 +142,11 @@ function removeBounty($fileName, $title)
 			 	print "Title overwrite successful";
 			 }
 		}
+		else
+		{
+			print "Title not found!"; // change to error code
+			break;
+		}
 		
 		if ((strcmp(stristr($line, $separator), $line) != 0))
 		{
