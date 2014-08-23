@@ -25,8 +25,8 @@ Notes:
 DONE *Add "Active" flag
 FIXED *Updating a bounty will cause it to drop to the bottom of the bounty list
 FIXED *Pressing the enter key in any field will cause any data after the keystroke to be lost.
-*Make the new bounty form search current bounties, and compare titles to make sure that the new bounty does not already exist.
-*Make the new bounty form show the error messages at the bottom. (use int codes to hide/show the messages!)
+*Make a search current bounties function, for use in the bunty submit, bounty delete, and bunty update forms.
+*Make the new bounty form show the error messages at the bottom. (use int codes to hide/show the messages!) // What? I don't remember why I wrote this. For if a title is not found?
 
 .......
 
