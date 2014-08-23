@@ -18,6 +18,8 @@
 	$bounties = readBounties($fileName);
 	
 	var_dump($bounties);
+	
+	print "<br><br>" . searchBounty($fileName, "Test Delete Form");
 
 	//removeBounty($fileName, "title: " . $bounties[1]->getTitle());
 	
