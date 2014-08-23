@@ -15,7 +15,7 @@ include "bountyManipulator.php";
 
 // define variables and set to empty values
 $titleErr = "";
-$title = $description = $myrAddress = $userName = "";
+$title = $description = $myrAddress = $userName = $active =  "";
 
 $WAITING = -1;
 $FAILURE = 1;
@@ -63,6 +63,19 @@ if ($confirmFlag == false)
 {
 	$bountyDeleted = $CONFIRM;
 	$confirmFlag = true;
+	
+	$description = $bounty[$bountyNumber]->getDescription();
+	$myrAddress = $bounty[$bountyNumber]->getMyrAddress();
+	$userName = $bounty[$bountyNumber]->getUserName();
+	$active = $bounty[$bountyNumber]->getActive();
+}
+
+function cleanInput($data) 
+{
+    $data = trim($data);
+    $data = ltrim($data,"^M");
+    $data = htmlspecialchars($data);
+    return $data;
 }
 
 }
@@ -87,6 +100,10 @@ if ($confirmFlag == false)
 				
 				Username:<br>
 				<input type="text" name="userName" value="<?php echo $userName;?>">
+				<br><br>
+				
+				Is active?:<br>
+				<input type="text" name="active" value="<?php echo $active;?>">
 				<br><br>
 				
 				<input type="submit" name="delete" value="Delete"> 
