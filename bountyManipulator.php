@@ -139,7 +139,7 @@ function removeBounty($fileName, $title)
 	
 	$file->seek($lineNumber);
 	
-	while (!feof($file->next))
+	while ($file->next != feof($fileName))
 	{
 		print "<br> Line to be deleted";
 		
