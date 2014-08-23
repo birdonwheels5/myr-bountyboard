@@ -18,6 +18,8 @@
 	$bounties = readBounties($fileName);
 	
 	replaceInFile("title: " . $bounties[1]->getTitle(), "j", $fileName);
+
+	replaceLineInTextFile($fileName, "title: " . $bounties[1]->getTitle(), "");
 	
 	//print_r($bounties);
 	print $bounties[1]->getTitle();
