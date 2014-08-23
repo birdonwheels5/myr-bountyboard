@@ -15,7 +15,7 @@ function readBounties($fileName)
 	
 	$index = 0;
 	
-	$bounties[] = array();
+	$bounties = array();
 	
   $handle = fopen($fileName, "r") or print ("Error loading bounties!");
     	while (($line = fgets($handle)) !== false) 
@@ -87,7 +87,7 @@ function readBounties($fileName)
 			
 			$index++;
 			$bounty = new Bounty($title, $description, $myrAddress, $userName, $active);
-			$bounties[] = $bounty;
+			$bounties = array($index => $bounty);
 			var_dump($array[1]);
 		}
 	}
