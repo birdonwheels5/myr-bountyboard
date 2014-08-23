@@ -124,7 +124,7 @@ function removeBounty($fileName, $title)
   $handle = fopen($fileName, "r") or print ("Error loading bounties!");
     	while (($line = fgets($handle)) !== false) 
     	{
-    		if (strcmp(stristr($line, $title), $line) != 0)
+    		if (strcmp(stristr($line, $line), $line) == 0)
     		{
     			$index++;
     		}
