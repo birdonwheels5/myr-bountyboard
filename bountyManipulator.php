@@ -142,16 +142,18 @@ function removeBounty($fileName, $title)
 	while (!feof($fileName))
 	{
 		$file->next();
-		print "<br> Line to be deleted";
+		replaceLineInTextFile($fileName, $file->current(), "")
+		print "<br> Line deleted!";
 		
 		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
-			print $separator . " reached!";
+			replaceLineInTextFile($fileName, $file->current(), "")
+			print "<br> " . $separator . " reached and deleted!";
 			break;
 		}
 	}
 	
-	return $lineNumber;
+	return $code;
 }
 
 function searchBounty($fileName, $title)
