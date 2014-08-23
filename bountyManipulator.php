@@ -167,4 +167,15 @@ function removeBounty($fileName, $title)
 	fclose($file);
 	return $code;
 }
+
+function replaceInFile($what, $with, $fileName){
+    $buffer = "";
+    $fp = file($fileName);
+    foreach($fp as $line){
+        $buffer .= preg_replace("|".$what."[A-Za-z_.]*|", $what.$with, $line);
+    }
+    fclose($fp);
+    echo $buffer;
+    file_put_contents($fileName, $buffer);
+}
 ?>
