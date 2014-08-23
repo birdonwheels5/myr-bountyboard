@@ -144,7 +144,7 @@ function removeBounty($fileName, $title)
 		}
 		else
 		{
-			print "Title not found!"; // change to error code
+			print "Bounty not found!"; // change to error code
 			break;
 		}
 		
