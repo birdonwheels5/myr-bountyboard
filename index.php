@@ -20,7 +20,7 @@
 	removeBounty($fileName, $bounties[1]->getTitle());
 	
 	//print_r($bounties);
-	//print $bounties[1]->getTitle();
+	print $bounties[1]->getTitle();
 	
 	?>
 	
