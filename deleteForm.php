@@ -14,52 +14,66 @@ include "bountyManipulator.php";
 
 
 // define variables and set to empty values
-$titleErr = $descriptionErr = $myrAddressErr = $userNameErr = "";
+$titleErr = "";
 $title = $description = $myrAddress = $userName = "";
 
 $WAITING = -1;
 $FAILURE = 1;
 $SUCCESS = 0;
+$CONFIRM = 100;
 
 $fileName = "bounties.dat";
 $bountyDeleted = WAITING;
 $redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 
+$bounties = array();
+$bounties = readBounties($fileName);
+
+$confirmFlag = false;
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-	$_POST["title"] = bounties[x]
-    	
-//TODO Implement title search and throw error if title already exists
-
+	if (empty($_POST["title"])) 
+	{
+		$titleErr = "A title is required";
+	} 
+    	else 
+    	{
+		$title = cleanInput($_POST["title"]);
+    	}
     	
 $fileName = "bounties.dat";
 $separator = "qpwoeiruty";
 $empty = "";
-$active = "true";
 
-if((strcmp($title, $empty) == 0) or (strcmp($description, $empty) == 0) or (strcmp($myrAddress, $empty) == 0) or (strcmp($userName, $empty) == 0))
+$bountyNumber = searchBounty($fileName, $title);
+
+if ((strcmp(stristr($_POST["title"],$bounty[$bountyNumber]->getTitle()), $_POST["title"]) == 0) and $confirmFlag == true)
 {
-	$bountyDeleted = FAILURE;
+	$bountyDeleted = $SUCCESS;
+	removeBounty($fileName, $bounty[$bountyNumber]->getTitle())
 }
-else
+else if ($confirmFlag == false)
 {
-	$bountyDeleted = SUCCESS;
-	file_put_contents($fileName, "title: " . $title . "\n" . "desc: " . $description  . "\n" . "addr: " . $myrAddress . "\n" . "user: " . $userName . "\n" . "active: " . $active . "\n" . $separator . "\n", FILE_APPEND);
+	$bountyDeleted = $CONFIRM;
+	$confirmFlag = true;
 }
+
 }
 ?> 
 
 			<h2>Submit a New Bounty</h2>
-		<p><span class="error">Review bounty before deleting it!</span></p>
+		<p><span class="error">Enter the title of the bounty you wish to delete.</span></p>
 		
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 				Bounty Title:<br>
 				<input type="text" name="title" value="<?php echo $title;?>">
-
+				<span class="error">* <?php echo $titleErr;?></span>
+				
 				<br><br>
 				Bounty Description:<br>
 				<textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
-
 				<br><br>
 				
 				Myriadcoin Address: <br>
@@ -70,16 +84,22 @@ else
 				<input type="text" name="userName" value="<?php echo $userName;?>">
 				<br><br>
 				
-				<input type="submit" name="submit" value="Submit"> 
+				<input type="submit" name="delete" value="Delete"> 
 			</form>
 
 <?php
-if ($bountyDeleted == FAILURE)
+
+if ($bountyDeleted == $CONFIRM)
+{
+	print "Please confirm that this is the bounty that you wish to delete! Click \"delete\" once you are sure.";
+}
+
+if ($bountyDeleted == $FAILURE)
 {
 	print "Bounty deletion failed! (Could not find bounty)";
-	print $description;
 }
-else if ($bountyDeleted == SUCCESS)
+
+if ($bountyDeleted == $SUCCESS)
 {
 	print "Bounty deleted!";
 	print "<br>";
@@ -87,6 +107,7 @@ else if ($bountyDeleted == SUCCESS)
 	header("Refresh: 3, URL = " . $redirectURL);
 	exit;
 }
+
 ?>
 
 	</body>
