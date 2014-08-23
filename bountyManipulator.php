@@ -194,7 +194,7 @@ function searchBounty($fileName, $title)
 		}
 	}
 	
-	return $searchResult;
+	return $bountyCount;
 }
 
 //Function for replacing line in text file.
