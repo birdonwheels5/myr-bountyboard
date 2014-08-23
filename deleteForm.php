@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	if (empty($_POST["title"])) 
 	{
 		$titleErr = "A title is required";
-	} 
+	}
     	else 
     	{
 		$title = cleanInput($_POST["title"]);
@@ -52,9 +52,14 @@ $bountyNumber = searchBounty($fileName, $title);
 if ((strcmp(stristr($_POST["title"],$bounty[$bountyNumber]->getTitle()), $_POST["title"]) == 0) and $confirmFlag == true)
 {
 	$bountyDeleted = $SUCCESS;
-	removeBounty($fileName, $bounty[$bountyNumber]->getTitle())
+	removeBounty($fileName, $bounty[$bountyNumber]->getTitle());
 }
-else if ($confirmFlag == false)
+else
+{
+	$bountyDeleted = $FAILURE;
+}
+
+if ($confirmFlag == false)
 {
 	$bountyDeleted = $CONFIRM;
 	$confirmFlag = true;
