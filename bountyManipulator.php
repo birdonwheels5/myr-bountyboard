@@ -147,11 +147,11 @@ function removeBounty($fileName, $title)
 		{
 			if (fwrite($handle, "") == false)
 			 {
-			 	print "Title overwrite failed!";
+			 	print "Line overwrite failed!";
 			 }
 			 else
 			 {
-			 	print "Title overwrite successful";
+			 	print "Line overwrite successful";
 			 }
 		}
 		else if ((strcmp(stristr($line, $separator), $line) == 0))
