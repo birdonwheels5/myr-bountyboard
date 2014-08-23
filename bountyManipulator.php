@@ -168,7 +168,7 @@ function searchBounty($fileName, $title)
     	while (($line = fgets($handle)) !== false) 
     	{
 
-    		// Look for specified title and delete it, along with all lines up until the next separator sign
+    		// Look for specified title and store it in memory
 		if (strcmp(stristr($line, $title), $line) == 0)
 		{
 			 $titleResult = str_ireplace("title: ", "", $line);
@@ -184,11 +184,13 @@ function searchBounty($fileName, $title)
 	
 	$searchResult = $FAILURE;
 	
+	// Loop through the bounty array, and look for a match with $titleResult. Returns the number of the bounty in
+	// the array.
 	for($i = 0; i <= $bountyCount ; $i++)
 	{
 		if ((strcmp(stristr($bounties[i]->getTitle(), $titleResult), $bounties[i]->getTitle()) == 0))
 		{
-			$searchResult = i;
+			$searchResult = $i;
 		}
 	}
 	
