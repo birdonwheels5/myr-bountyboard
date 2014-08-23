@@ -129,11 +129,6 @@ function removeBounty($fileName, $title)
 		{
 			 print $line;
 		}
-		else
-		{
-			print "Bounty not found!"; // change to error code
-			break;
-		}
 		
 		if ((strcmp(stristr($line, $separator), $line) != 0))
 		{
