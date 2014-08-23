@@ -121,7 +121,6 @@ function cleanInput($data)
 if ($bountySubmitted == FAILURE)
 {
 	print "Bounty submission failed!";
-	print $description;
 }
 else if ($bountySubmitted == SUCCESS)
 {
