@@ -188,7 +188,7 @@ function searchBounty($fileName, $title)
 	// the array.
 	for($i = 1; $i <= $bountyCount ; $i++)
 	{
-		if ((strcmp(stristr($bounties[i]->getTitle(), $titleResult), $bounties[i]->getTitle()) == 0))
+		if ((strcmp(stristr($bounties[$i]->getTitle(), $titleResult), $bounties[$i]->getTitle()) == 0))
 		{
 			$searchResult = $i;
 		}
