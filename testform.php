@@ -17,7 +17,7 @@ $WAITING = -1;
 $FAILURE = 1;
 $SUCCESS = 0;
 
-$bountySubmitted = WAITING;
+$bountySubmitted = $WAITING;
 $redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
@@ -71,11 +71,11 @@ $active = "true";
 
 if((strcmp($title, $empty) == 0) or (strcmp($description, $empty) == 0) or (strcmp($myrAddress, $empty) == 0) or (strcmp($userName, $empty) == 0))
 {
-	$bountySubmitted = FAILURE;
+	$bountySubmitted = $FAILURE;
 }
 else
 {
-	$bountySubmitted = SUCCESS;
+	$bountySubmitted = $SUCCESS;
 	file_put_contents($fileName, "title: " . $title . "\n" . "desc: " . $description  . "\n" . "addr: " . $myrAddress . "\n" . "user: " . $userName . "\n" . "active: " . $active . "\n" . $separator . "\n", FILE_APPEND);
 }
 }
@@ -118,11 +118,11 @@ function cleanInput($data)
 			</form>
 
 <?php
-if ($bountySubmitted == FAILURE)
+if ($bountySubmitted == $FAILURE)
 {
 	print "Bounty submission failed!";
 }
-else if ($bountySubmitted == SUCCESS)
+else if ($bountySubmitted == $SUCCESS)
 {
 	print "Bounty submission successful!";
 	print "<br>";
