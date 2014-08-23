@@ -18,6 +18,7 @@ $FAILURE = 1;
 $SUCCESS = 0;
 
 $bountySubmitted = WAITING;
+$redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
@@ -127,7 +128,7 @@ else if ($bountySubmitted == SUCCESS)
 	print "Bounty submission successful!";
 	print "<br>";
 	print "Redirecting to bounty page...";
-	header("Refresh: 3, URL = https://birdonwheels5.no-ip.org/myr-bountyboard/");
+	header("Refresh: 3, URL = . $redirectURL);
 	exit;
 }
 ?>
