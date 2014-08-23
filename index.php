@@ -17,10 +17,7 @@
 	$bounties = array();
 	$bounties = readBounties($fileName);
 
-	replaceLineInTextFile($fileName, "title: " . $bounties[1]->getTitle(), "");
-	
-	//print_r($bounties);
-	print $bounties[1]->getTitle();
+	//replaceLineInTextFile($fileName, "title: " . $bounties[1]->getTitle(), "");
 	
 	?>
 	
