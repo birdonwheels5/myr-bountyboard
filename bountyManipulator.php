@@ -178,4 +178,29 @@ function replaceInFile($what, $with, $fileName){
     echo $buffer;
     file_put_contents($fileName, $buffer);
 }
+
+//Function for replacing line in text file.
+ //Credit: Iiro Krankka
+ function replaceLineInTextFile($file, $pattern, $replacement) {
+ if(!file_exists($file)) { // if file doesn't exist...
+ print "The specified file doesn't seem to exist."; // ...stop executing code.
+ } else { // if file exists...
+ $f = file($file); // ...make new variable...
+ $content; // ...and another...
+
+ for($i = 0; $i < count($f); $i++) { // ...run through the loop...
+ if(eregi($pattern, $f[$i])) { // and
+ $content .= $replacement . "\n"; // get
+ } else { // the
+ $content .= $f[$i]; // content.
+ }
+ }
+
+ $fi = fopen($file, "w"); // open specified file...
+ fwrite($fi, $content); // and rewrite it's content.
+ fclose($fi); // close file.
+
+ print "Line replaced!!!";
+ }
+ }
 ?>
