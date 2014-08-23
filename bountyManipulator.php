@@ -137,7 +137,7 @@ function removeBounty($fileName, $title)
 	
 	$file = new SplFileObject($fileName, 'r');
 	
-	$file->seek($lineNumber - 2);
+	$file->seek($lineNumber - 1);
 	
 	while (!feof($fileName))
 	{
@@ -152,6 +152,13 @@ function removeBounty($fileName, $title)
 			break;
 		}
 	}
+	
+	if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
+		{
+			replaceLineInTextFile($fileName, $separator, "");
+			print "<br> " . $separator . " reached and deleted!";
+			break;
+		}
 	
 	return $code;
 }
