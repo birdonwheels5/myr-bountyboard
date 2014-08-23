@@ -115,12 +115,6 @@ function countBounties($fileName)
 function removeBounty($fileName, $title)
 {
 	$separator = "&-$";
-
-	$title = "";
-	$description = "";
-	$myrAddress = "";
-	$userName = "";
-	$active = "";
 	
 	$index = 0;
 	
@@ -133,14 +127,7 @@ function removeBounty($fileName, $title)
     		// Look for specified title and delete it, along with all lines up until the next separator sign
 		if (strcmp(stristr($line, $title), $line) == 0)
 		{
-			 if (fwrite($line, "") == false)
-			 {
-			 	print "Title overwrite failed!";
-			 }
-			 else
-			 {
-			 	print "Title overwrite successful";
-			 }
+			 print $line;
 		}
 		else
 		{
@@ -150,14 +137,14 @@ function removeBounty($fileName, $title)
 		
 		if ((strcmp(stristr($line, $separator), $line) != 0))
 		{
-			if (fwrite($line, "") == false)
+			/*if (fwrite($line, "") == false)
 			 {
 			 	print "Line overwrite failed!";
 			 }
 			 else
 			 {
 			 	print "Line overwrite successful";
-			 }
+			 }*/
 		}
 		else if ((strcmp(stristr($line, $separator), $line) == 0))
 		{
@@ -191,5 +178,6 @@ function removeBounty($fileName, $title)
 
  print "Line replaced!!!";
  }
+ 
  }
 ?>
