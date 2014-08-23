@@ -88,7 +88,7 @@ function readBounties($fileName)
 			$index++;
 			$bounty = new Bounty($title, $description, $myrAddress, $userName, $active);
 			$bounties = array($index => $bounty);
-			var_dump($array[1]);
+			var_dump($bounties[1]);
 		}
 	}
 	fclose($file);
