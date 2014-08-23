@@ -160,8 +160,7 @@ function searchBounty($fileName, $title)
 {
 	$separator = "qpwoeiruty";
 	
-	$SUCCESS = 0;
-	$FAILURE = 1;
+	$FAILURE = -1;
 	
 	$titleResult = "";
 	
@@ -182,6 +181,8 @@ function searchBounty($fileName, $title)
 	$bounties = readBounties($fileName);
 	
 	$bountyCount = countBounties($fileName);
+	
+	$searchResult = $FAILURE;
 	
 	for($i = bountyCount; (strcmp(stristr($bounties[i]->getTitle(), $titleResult), $bounties[i]->getTitle()) == 0); $i++)
 	{
