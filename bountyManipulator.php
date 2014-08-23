@@ -190,7 +190,7 @@ function replaceInFile($what, $with, $fileName){
 
  for($i = 0; $i < count($f); $i++) { // ...run through the loop...
  if(eregi($pattern, $f[$i])) { // and
- $content .= $replacement . "\n"; // get
+ $content .= $replacement; // get
  } else { // the
  $content .= $f[$i]; // content.
  }
