@@ -12,18 +12,18 @@ Updating a bounty:
 
 Open bounties.dat file
 search by the title of the bounty that you are looking for
-Once found, store in memory under the appropriate variable name and set to "*#*"
-store in memory the next 5 lines and set to "*#*" (hint: use index++ on each loop iteration, stop at index=6ish)
+Once found, store in memory
+store the rest of the bounty in memory (hint: use index++ on each loop iteration, stop at index=6ish)
 store original title under $titleOld
 Present the form with values filled in, prompting user to change them
-If user submits an updated bounty, delete the old bounty using delete algorithm
+If user submits an updated bounty, delete the old bounty (search for it with $titleOld) using delete algorithm
 write new bounty
 done
 
 Notes:
 
 DONE *Add "Active" flag
-FIXED *Updating a bounty will cause it to drop to the bottom of the bounty list
+*Updating a bounty will cause it to drop to the bottom of the bounty list
 FIXED *Pressing the enter key in any field will cause any data after the keystroke to be lost.
 *Make a search current bounties function, for use in the bunty submit, bounty delete, and bunty update forms.
 *Make the new bounty form show the error messages at the bottom. (use int codes to hide/show the messages!) // What? I don't remember why I wrote this. For if a title is not found?
