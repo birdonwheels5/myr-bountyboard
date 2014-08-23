@@ -168,17 +168,6 @@ function removeBounty($fileName, $title)
 	return $code;
 }
 
-function replaceInFile($what, $with, $fileName){
-    $buffer = "";
-    $fp = file($fileName);
-    foreach($fp as $line){
-        $buffer .= preg_replace("|".$what."[A-Za-z_.]*|", $what.$with, $line);
-    }
-    fclose($fp);
-    echo $buffer;
-    file_put_contents($fileName, $buffer);
-}
-
 //Function for replacing line in text file.
  //Credit: Iiro Krankka
  function replaceLineInTextFile($file, $pattern, $replacement) {
