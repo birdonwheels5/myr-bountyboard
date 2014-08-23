@@ -19,7 +19,9 @@
 	
 	var_dump($bounties);
 
-	removeBounty($fileName, $bounties[1]->getTitle());
+	removeBounty($fileName, "title: " . $bounties[1]->getTitle());
+	
+	print $bounties[1]->getTitle();
 	
 	?>
 	
