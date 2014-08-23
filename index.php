@@ -16,6 +16,8 @@
 	// With this, you can pull any aspect of a bounty's data and display it.
 	$bounties = array();
 	$bounties = readBounties($fileName);
+	
+	var_dump($bounties);
 
 	//replaceLineInTextFile($fileName, "title: " . $bounties[1]->getTitle(), "");
 	
