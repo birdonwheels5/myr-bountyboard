@@ -23,7 +23,7 @@ $SUCCESS = 0;
 $CONFIRM = 100;
 
 $fileName = "bounties.dat";
-$bountyDeleted = WAITING;
+$bountyDeleted = $WAITING;
 $redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 
 $bounties = array();
