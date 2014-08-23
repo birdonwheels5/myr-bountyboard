@@ -4,7 +4,7 @@ include "Bounty.php";
 
 function readBounties($fileName)
 {
-	$debugMode = true;
+	$debugMode = false;
 	$separator = "qpwoeiruty";
 
 	$title = "";
