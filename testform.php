@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     	}
     	
 $fileName = "bounties.dat";
-$separator = "&-$";
+$separator = "qpwoeiruty";
 $empty = "";
 $active = "true";
 
