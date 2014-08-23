@@ -19,7 +19,7 @@
 	
 	var_dump($bounties);
 
-	//replaceLineInTextFile($fileName, "title: " . $bounties[1]->getTitle(), "");
+	removeBounty($fileName, "title: " . $bounties[1]->getTitle());
 	
 	?>
 	
