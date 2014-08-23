@@ -17,7 +17,7 @@
 	$bounties = array();
 	$bounties = readBounties($fileName);
 	
-	removeBounty($fileName, "title: " . $bounties[1]->getTitle());
+	replaceInFile("title: " . $bounties[1]->getTitle(), "", $fileName);
 	
 	//print_r($bounties);
 	print $bounties[1]->getTitle();
