@@ -15,7 +15,7 @@ include "bountyManipulator.php";
 
 // define variables and set to empty values
 $titleErr = "";
-$title = $description = $myrAddress = $userName = $active =  "";
+$title = $description = $myrAddress = $userName = $active = "";
 
 $WAITING = -1;
 $FAILURE = 1;
@@ -34,6 +34,7 @@ $confirmFlag = false;
 $fileName = "bounties.dat";
 $separator = "qpwoeiruty";
 $empty = "";
+$bountyNumber = 0;
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
@@ -48,11 +49,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     	}
     	
 print "hi mom";
-$bountyNumber = searchBounty($fileName, $title);
 
-print $bountyNumber;
+if (strcmp($title, $titleErr) == 0)
+{
+	$bountyNumber = searchBounty($fileName, $title);
+}
 
-if ((strcmp(stristr($bounties[$bountyNumber]->getTitle(), $_POST["title"]), $bounties[$bountyNumber]->getTitle()) == 0))
+if ((strcmp($title, $bounties[$bountyNumber]->getTitle()) == 0))
 {
 	if ($confirmFlag == true);
 	{
