@@ -250,7 +250,7 @@ function searchBounty($fileName, $title)
  		{ // ...run through the loop...
  			if(preg_match("/" . $pattern . "/", $f[$i])) 
  			{ // and
- 				$content .= preg_replace($pattern, $replacement, $f[i]); // get
+ 				$content .= preg_replace($pattern, $replacement, $f[i], 1); // get
  			} 
  			else 
  			{ // the
