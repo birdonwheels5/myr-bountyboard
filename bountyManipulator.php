@@ -254,8 +254,7 @@ function searchBounty($fileName, $title)
  		
  			if (strcmp(stristr($f[i],$pattern), $f[i]) == 0)
  			{ // and
- 				$line = str_ireplace(line, $replacement, $line); // get
- 				$content .= $line;
+ 				$content .= str_ireplace($pattern, $replacement, $line); // get
  			} 
  			else 
  			{ // the
