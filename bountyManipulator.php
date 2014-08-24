@@ -314,7 +314,7 @@ function searchBounty($fileName, $title)
  			if ((strcmp(stristr($lines[$i], $pattern), $lines[$i]) == 0) and $replaceCount < 1)
  			{ // and
  				$content .= str_ireplace($pattern, $replacement, $lines[$i]); // get
- 				$replaceCount++;
+ 				$replaceCount = 1337;
  			} 
  			else 
  			{ // the
