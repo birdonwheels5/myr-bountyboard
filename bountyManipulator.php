@@ -169,7 +169,7 @@ function removeBounty($fileName, $title)
 		
 		if ($debugMode == true)
 		{
-			print "<br> Line deleted!";
+			print "<br> Line " . $file->current() . " deleted!";
 		}
 		
 		$file->next();
@@ -186,7 +186,7 @@ function removeBounty($fileName, $title)
 			break;
 		}
 		
-		$lineNumber++;
+		//$lineNumber++;
 	}
 	
 	if ($debugMode == true)
