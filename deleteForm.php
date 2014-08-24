@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
 if ($confirmFlag == false)
 {
-	$bountyNumber = searchBounty($fileName, $_POST["title"]);
+	$bountyNumber = searchBounty($fileName, cleanInput($_POST["title"]));
 }
 	
 if ($bountyNumber < 1)
@@ -52,14 +52,14 @@ if ($bountyNumber < 1)
 	
 if ($bountyNumber > 0)
 {
-	
-	if ($confirmFlag == false);
+	$title = cleanInput($_POST["title"]);
+	if ($confirmFlag == true);
 	{
 		$bountyDeleted = $SUCCESS;
 		removeBounty($fileName, cleanInput($_POST["title"]));	
 	}
 	
-	if ($confirmFlag == true)
+	if ($confirmFlag == false)
 	{
 		$bountyDeleted = $CONFIRM;
 		$confirmFlag = true;
