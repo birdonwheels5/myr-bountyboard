@@ -249,6 +249,8 @@ function searchBounty($fileName, $title)
  		
  		$replaceCount = 0;
  		
+ 		$part2 = 0;
+ 		
  		for($i = 0; $i < $lineNumber; $i++)
  		{
  			$content .= $lines[$i]; // content.
@@ -263,11 +265,17 @@ function searchBounty($fileName, $title)
  			{ // and
  				$content .= str_ireplace($pattern, $replacement, $lines[$i]); // get
  				$replaceCount++;
+ 				$part2 = $i;
+ 				break;
  			} 
  			else 
  			{ // the
  				$content .= $lines[$i]; // content.
  			}
+ 		}
+ 		for ($i = part2; $i < count($lines); $i++)
+ 		{
+ 			$content .= $lines[$i]; // content.
  		}
  		fclose($f);
  		
