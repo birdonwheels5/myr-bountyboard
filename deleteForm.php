@@ -45,10 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	} 
     	else 
     	{
-		$title = cleanInput($_POST["title"]);
+		//$title = cleanInput($_POST["title"]);
     	}
     	
-$bountyNumber = searchBounty($fileName, $_POST["title"]);
+$bountyNumber = searchBounty($fileName, $title);
 	
 if ($bountyNumber < 1)
 {
@@ -58,7 +58,7 @@ if ($bountyNumber < 1)
 	
 if ($bountyNumber > 0)
 {
-	//$title = cleanInput($_POST["title"]);
+	$title = cleanInput($_POST["title"]);
 	if ($confirmFlag == true);
 	{
 		$bountyDeleted = $SUCCESS;
@@ -79,7 +79,6 @@ if ($bountyNumber > 0)
 
 function cleanInput($data) 
 {
-    $data = trim($data);
     $data = htmlspecialchars($data);
     return $data;
 }
