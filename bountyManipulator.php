@@ -197,6 +197,8 @@ function removeBounty($fileName, $title)
 	{
 		print "<br>Finished deleting lines!";
 	}
+	
+	$file = null;
 	}
 	else
 	{
@@ -239,6 +241,7 @@ function removeBounty($fileName, $title)
 	{
 		print "<br>Finished deleting lines!";
 	}
+	$file = null;
 	}
 	
 	return;
