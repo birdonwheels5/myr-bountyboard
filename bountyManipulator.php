@@ -248,7 +248,7 @@ function searchBounty($fileName, $title)
  		for($i = $lineNumber; $i < count($f); $i++) 
  		{ // ...run through the loop...
  		
- 			if (strcmp(stristr($f[i],$pattern), f[i]) == 0)
+ 			if (strcmp(stristr($f[i],$pattern), $f[i]) == 0)
  			{ // and
  				$content .= preg_replace($pattern, $replacement, $f[i], 1); // get
  			} 
