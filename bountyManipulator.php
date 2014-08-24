@@ -152,7 +152,7 @@ function removeBounty($fileName, $title)
 		print "<br>SPLFileObject created!";
 	}
 	
-	$file->seek($lineNumber);
+	$file->seek($lineNumber - 1);
 	
 	if ($debugMode == true)
 	{
@@ -166,6 +166,7 @@ function removeBounty($fileName, $title)
 			print "<br>Going through the loops!";
 		}
 		replaceLineInTextFile($fileName, $file->current(), "");
+		
 		if ($debugMode == true)
 		{
 			print "<br> Line deleted!";
@@ -248,12 +249,6 @@ function searchBounty($fileName, $title)
  $fi = fopen($file, "w"); // open specified file...
  fwrite($fi, $content); // and rewrite it's content.
  fclose($fi); // close file.
- 
- if ($debugMode == true)
- {
- 	print "Line replaced!";
- }
- 
  }
  
  }
