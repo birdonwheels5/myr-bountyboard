@@ -261,12 +261,11 @@ function searchBounty($fileName, $title)
  		//while (($line = fgets($f)) !== false) 
  		{ // ...run through the loop...
  		
- 			if ((strcmp(stristr($lines[$i], $pattern), $lines[$i]) == 0) and $replaceCount < 1)
+ 			if ((strcmp(stristr($lines[$i], $pattern), $lines[$i]) == 0) and $replaceCount < 1) break
  			{ // and
  				$content .= str_ireplace($pattern, $replacement, $lines[$i]); // get
  				$replaceCount++;
  				$part2 = $i;
- 				break;
  			} 
  			else 
  			{ // the
