@@ -169,9 +169,10 @@ function removeBounty($fileName, $title)
 			print "<br>Going through the loops!";
 		}
 		
-		if ((strcmp(stristr($file->current(), "title: "), $file->current()) == 0))
+		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
-			//replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
+			$lineNumber++;
+			replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
 			
 			if ($debugMode == true)
 			{
