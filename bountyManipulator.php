@@ -90,7 +90,7 @@ function readBounties($fileName)
 			$bounties[$index] = $bounty;
 		}
 	}
-	fclose($file);
+	fclose($handle);
 	return $bounties;
 }
 
@@ -137,7 +137,7 @@ function removeBounty($fileName, $title)
 			 break;
 		}
 	}
-	fclose($file);
+	fclose($handle);
 	
 	if ($debugMode == true)
 	{
@@ -254,13 +254,15 @@ function searchBounty($fileName, $title)
  		
  			if (strcmp(stristr($f[i],$pattern), $f[i]) == 0)
  			{ // and
- 				$content .= $replacement; // get
+ 				$line = str_ireplace(line, $replacement, $line); // get
+ 				$content .= $line;
  			} 
  			else 
  			{ // the
  				$content .= $line; // content.
  			}
  		}
+ 		fclose($f);
  		
  		print "<br>" . $content;
 
