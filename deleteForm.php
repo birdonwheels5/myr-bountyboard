@@ -56,7 +56,7 @@ if ($bountyNumber > 0)
 	if ($confirmFlag == true);
 	{
 		$bountyDeleted = $SUCCESS;
-		removeBounty($fileName, "title: " . cleanInput($_POST["title"]));	
+		removeBounty($fileName, "title: " . $title);	
 	}
 	
 	if ($confirmFlag == false)
