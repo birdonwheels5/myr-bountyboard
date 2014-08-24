@@ -71,8 +71,6 @@ if ($bountyNumber > 0)
 	}
 }
 
-	$title = cleanInput($_POST["title"]);
-
 function cleanInput($data) 
 {
     $data = trim($data);
