@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		$titleErr = "A title is required";
 	} 
-$bountyNumber = searchBounty($fileName, cleanInput($_POST['title']));
+$bountyNumber = searchBounty($fileName, $_POST['title']);
 	
 if ($bountyNumber < 1)
 {
