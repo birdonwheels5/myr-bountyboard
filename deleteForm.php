@@ -16,6 +16,7 @@ include "bountyManipulator.php";
 // define variables and set to empty values
 $titleErr = "";
 $title = $description = $myrAddress = $userName = $active = "";
+$tmpTitle = "";
 
 $WAITING = -1;
 $FAILURE = 1;
@@ -42,17 +43,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	if (empty($_POST["title"])) 
 	{
 		$titleErr = "A title is required";
+		$bountyDeleted = $FAILURE;
 	}
     	else 
     	{
-		$title = cleanInput($_POST["title"]);
+		$tmpTitle = cleanInput($_POST["title"]);
     	}
+    	
+    	$title = $tmpTitle;
     	
 	$bountyNumber = searchBounty($fileName, $title);
 	
 if ($bountyNumber < 1)
 {
-	$title = "";
 	$titleErr = "Title not found.";
 	$bountyDeleted = $FAILURE;
 }
