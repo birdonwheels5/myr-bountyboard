@@ -247,6 +247,8 @@ function searchBounty($fileName, $title)
  		
  		$content; // ...and another...
  		
+ 		$replaceCount = 0;
+ 		
  		for($i = 0; $i < $lineNumber; $i++)
  		{
  			$content .= $lines[$i]; // content.
@@ -257,7 +259,7 @@ function searchBounty($fileName, $title)
  		//while (($line = fgets($f)) !== false) 
  		{ // ...run through the loop...
  		
- 			if (strcmp(stristr($lines[$i], $pattern), $lines[$i]) == 0)
+ 			if ((strcmp(stristr($lines[$i], $pattern), $lines[$i]) == 0) and $replaceCount < 1)
  			{ // and
  				$content .= str_ireplace($pattern, $replacement, $lines[$i]); // get
  			} 
