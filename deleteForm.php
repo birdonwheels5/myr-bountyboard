@@ -50,11 +50,11 @@ if ($bountyNumber < 1)
 	
 if ($bountyNumber > 0)
 {
-	$title = cleanInput($_POST["title"]);
+	//$title = cleanInput($_POST["title"]);
 	if ($confirmFlag == true);
 	{
 		$bountyDeleted = $SUCCESS;
-		removeBounty($fileName, "title: " . $title);	
+		removeBounty($fileName, "title: " . cleanInput($_POST['title']));	
 	}
 	
 	if ($confirmFlag == false)
