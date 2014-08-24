@@ -242,10 +242,14 @@ function searchBounty($fileName, $title)
  	} 
  	else 
  	{ // if file exists...
- 		$f = file($file); // ...make new variable...
+ 		//$f = file($file); // ...make new variable...
+ 		$f = fopen($fileName, "r") or print ("Error loading bounties!");
+ 		
  		$content; // ...and another...
  	
- 		for($i = $lineNumber; $i < count($f); $i++) 
+ 		//for($i = $lineNumber; $i < count($f); $i++) 
+ 		
+ 		while (($line = fgets($f)) !== false) 
  		{ // ...run through the loop...
  		
  			if (strcmp(stristr($f[i],$pattern), $f[i]) == 0)
@@ -254,7 +258,7 @@ function searchBounty($fileName, $title)
  			} 
  			else 
  			{ // the
- 				$content .= $f[$i]; // content.
+ 				$content .= $line; // content.
  			}
  		}
  		
