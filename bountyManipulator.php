@@ -160,7 +160,7 @@ function removeBounty($fileName, $title)
 		}
 	}
 	
-	return $code;
+	return;
 }
 
 // Returns -1 if the title supplied cannot be found in the bounty array.
