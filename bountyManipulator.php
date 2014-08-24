@@ -359,7 +359,7 @@ function searchBounty($fileName, $title)
  		
  			if ($i == $lineNumber)
  			{ // and
- 				$content .= $lines[$i] . "\n" . $stringToAdd; // get
+ 				$content .= $lines[$i] . chr(10) . $stringToAdd . chr(10); // get
  			} 
  			else 
  			{ // the
