@@ -160,7 +160,7 @@ function removeBounty($fileName, $title)
 	}
 	
 	// Special case for deleting the first entry in the bounty list
-	if ($lineNumber == 0)
+	if ($lineNumber == 1)
 	{
 		while (!feof($fileName))
 	{
