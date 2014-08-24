@@ -48,16 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		$title = cleanInput($_POST["title"]);
     	}
     	
-
-if (strcmp($title, $titleErr) != 0)
-{
 	$bountyNumber = searchBounty($fileName, $title);
-}
-
-print "hi mom";
-
-
-if ((strcmp($title, $bounties[$bountyNumber]->getTitle()) == 0))
+	
+if ($bountyNumber > 0)
 {
 	if ($confirmFlag == true);
 	{
@@ -81,7 +74,6 @@ else
 	$titleErr = "Title not found.";
 	$bountyDeleted = $FAILURE;
 }
-
 
 function cleanInput($data) 
 {
@@ -130,7 +122,7 @@ if ($bountyDeleted == $CONFIRM)
 
 if ($bountyDeleted == $FAILURE)
 {
-	print "Bounty deletion failed! (Could not find bounty)";
+	print "Bounty deletion failed!";
 }
 
 if ($bountyDeleted == $SUCCESS)
