@@ -208,10 +208,17 @@ function removeBounty($fileName, $title)
 			print "<br>Going through the loops!";
 		}
 		
+		
+		replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
+		
+		if ($debugMode == true)
+		{
+			print "<br> Line \"" . $file->current() . "\" deleted!";
+		}
+		
 		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
-			$lineNumber--;
-			replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
+			//replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
 			
 			if ($debugMode == true)
 			{
@@ -219,13 +226,6 @@ function removeBounty($fileName, $title)
 			}
 			
 			break;
-		}
-		
-		replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
-		
-		if ($debugMode == true)
-		{
-			print "<br> Line \"" . $file->current() . "\" deleted!";
 		}
 		
 		
