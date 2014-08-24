@@ -19,7 +19,7 @@
 	
 	var_dump($bounties);
 	
-	print "<br><br>" . searchBounty($fileName, "Test Delete Form");
+	print "<br><br>" . searchBounty($fileName, "Blahhhhh");
 
 	//removeBounty($fileName, "title: " . $bounties[1]->getTitle());
 	
