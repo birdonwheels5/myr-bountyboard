@@ -160,10 +160,10 @@ function removeBounty($fileName, $title)
 	}
 	
 	// Special case for deleting the first entry in the bounty list
-	if ($lineNumber == 1)
+	/*if ($lineNumber == 1)
 	{
 		while (!feof($fileName))
-	{
+		{
 		if ($debugMode == true)
 		{
 			print "<br>Going through the loops!";
@@ -200,7 +200,7 @@ function removeBounty($fileName, $title)
 	
 	$file = null;
 	}
-	else
+	else*/
 	{
 		
 	while (!feof($fileName))
@@ -221,7 +221,7 @@ function removeBounty($fileName, $title)
 				print "<br> " . $separator . " reached!";
 			}
 			
-			break;
+			break 2;
 		}
 		
 		replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
