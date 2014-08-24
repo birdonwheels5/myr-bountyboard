@@ -42,27 +42,27 @@ function readBounties($fileName)
 		
 		if (strcmp(stristr($line,"title: "), $line) == 0)
 		{
-			$title = str_ireplace("title: ", "", $line);
+			$title = trim(str_ireplace("title: ", "", $line));
 		}
 		
 		if (strcmp(stristr($line,"desc: "), $line) == 0)
 		{
-			$description = str_ireplace("desc: ", "", $line);
+			$description = trim(str_ireplace("desc: ", "", $line));
 		}
 	
 		if (strcmp(stristr($line,"addr: "), $line) == 0)
 		{
-			$myrAddress = str_ireplace("addr: ", "", $line);
+			$myrAddress = trim(str_ireplace("addr: ", "", $line));
 		}
 	
 		if (strcmp(stristr($line,"user: "), $line) == 0)
 		{
-			$userName = str_ireplace("user: ", "", $line);
+			$userName = trim(str_ireplace("user: ", "", $line));
 		}
 		
 		if (strcmp(stristr($line,"active: "), $line) == 0)
 		{
-			$active = str_ireplace("active: ", "", $line);
+			$active = trim(str_ireplace("active: ", "", $line));
 		}
 
 		// Check the current line for "-" which separates bounties, and create bounties
