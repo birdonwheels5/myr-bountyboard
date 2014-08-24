@@ -76,7 +76,11 @@ if ($bountyNumber > 0)
 		$active = $bounties[$bountyNumber]->getActive();
 	}
 }
-$title = cleanInput($_POST["title"]);
+
+if ($bountyNumber > 0)
+{
+	$title = cleanInput($_POST["title"]);
+}
 
 function cleanInput($data) 
 {
