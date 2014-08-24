@@ -55,7 +55,7 @@ if ($bountyNumber > 0)
 	if ($confirmFlag == true);
 	{
 		$bountyDeleted = $SUCCESS;
-		removeBounty($fileName, $bounty[$bountyNumber]->getTitle());	
+		removeBounty($fileName, $bounties[$bountyNumber]->getTitle());	
 	}
 	
 	if ($confirmFlag == false)
@@ -63,10 +63,10 @@ if ($bountyNumber > 0)
 		$bountyDeleted = $CONFIRM;
 		$confirmFlag = true;
 		
-		$description = $bounty[$bountyNumber]->getDescription();
-		$myrAddress = $bounty[$bountyNumber]->getMyrAddress();
-		$userName = $bounty[$bountyNumber]->getUserName();
-		$active = $bounty[$bountyNumber]->getActive();
+		$description = $bounties[$bountyNumber]->getDescription();
+		$myrAddress = $bounties[$bountyNumber]->getMyrAddress();
+		$userName = $bounties[$bountyNumber]->getUserName();
+		$active = $bounties[$bountyNumber]->getActive();
 	}
 }
 
