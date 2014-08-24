@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     	
     	$title = $tmpTitle;
     	
-	$bountyNumber = searchBounty($fileName, $title);
+	$bountyNumber = searchBounty($fileName, $_POST["title"]);
 	
 if ($bountyNumber < 1)
 {
