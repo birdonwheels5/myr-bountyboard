@@ -37,7 +37,8 @@ $empty = "";
 $bountyNumber = -1;
 
 
-//if ($_SERVER["REQUEST_METHOD"] == "POST") 
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
 if($_POST["delete"])
 {
 	if (empty($_POST["title"])) 
@@ -81,6 +82,7 @@ function cleanInput($data)
     $data = trim($data);
     $data = htmlspecialchars($data);
     return $data;
+}
 }
 
 }
