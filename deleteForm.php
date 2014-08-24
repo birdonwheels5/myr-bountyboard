@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     	}
     	
 
-if (strcmp($title, $titleErr) == 0)
+if (strcmp($title, $titleErr) != 0)
 {
 	$bountyNumber = searchBounty($fileName, $title);
 }
