@@ -250,7 +250,7 @@ function searchBounty($fileName, $title)
  		
  			if (strcmp(stristr($f[i],$pattern), $f[i]) == 0)
  			{ // and
- 				$content .= preg_replace($pattern, $replacement, $f[i], 1); // get
+ 				$content .= $replacement; // get
  			} 
  			else 
  			{ // the
