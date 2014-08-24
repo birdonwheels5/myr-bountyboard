@@ -114,6 +114,7 @@ function countBounties($fileName)
 
 function removeBounty($fileName, $title)
 {
+	$debugMode = true;
 	$separator = "qpwoeiruty";
 	
 	$lineNumber = 0;
@@ -129,6 +130,10 @@ function removeBounty($fileName, $title)
     		// Look for specified title, and grab the line count
 		if (strcmp(stristr($line, $title), $line) == 0)
 		{
+			if ($debugMode == true)
+			{
+				print "Title found in line: " . $line . "! Breaking loop.";
+			}
 			 break;
 		}
 	}
