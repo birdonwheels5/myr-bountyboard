@@ -197,6 +197,8 @@ function removeBounty($fileName, $title)
 		print "<br>Finished deleting lines!";
 	}
 	}
+	else
+	{
 	
 	while (!feof($fileName))
 	{
@@ -231,6 +233,7 @@ function removeBounty($fileName, $title)
 	if ($debugMode == true)
 	{
 		print "<br>Finished deleting lines!";
+	}
 	}
 	
 	return;
