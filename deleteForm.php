@@ -57,7 +57,7 @@ if ($bountyNumber > 0)
 {
 	if ($confirmFlag == false)
 	{
-		$title = cleanInput($_POST["title"]);
+		$title = $_POST["title"];
 		$bountyDeleted = $CONFIRM;
 		$confirmFlag = true;
 		
