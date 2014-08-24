@@ -270,7 +270,7 @@ function searchBounty($fileName, $title)
  			$content .= $lines[$i]; // content.
  		}
  	
- 		for($i = $lineNumber); $i < count($lines); $i++) 
+ 		for($i = $lineNumber; $i < count($lines); $i++) 
  		
  		{ // ...run through the loop...
  		
