@@ -68,7 +68,7 @@ if ($bountyNumber > 0)
 		$userName = $bounties[$bountyNumber]->getUserName();
 		$active = $bounties[$bountyNumber]->getActive();
 	} 
-	else if ($_POST["submit"] == "Confirm")
+	else //if ($_POST["submit"] == "Confirm")
 	{
 		
 		$title = $bounties[$bountyNumber]->getTitle();
@@ -113,19 +113,19 @@ function cleanInput($data)
 				<input type="text" name="active" value="<?php echo $active;?>">
 				<br><br>
 				
-				<input type="submit" name="delete" value="Delete">
+				<input type="submit" name="submit" value="Delete">
 			</form>
 
 <?php
 
 if ($bountyDeleted == $CONFIRM)
 {
-	print "Please confirm that this is the bounty that you wish to delete! Click \"delete\" once you are sure.";
-	print "<form method=\"post\" action=\"";
+	print "Please confirm that this is the bounty that you wish to delete! Click \"delete\" again once you are sure.";
+	/*print "<form method=\"post\" action=\"";
 	echo $_SERVER["PHP_SELF"];
 	print "\">";
 	print "<input type=\"submit\" name=\"confirm\" value=\"Confirm\">";
-	print "</form>";
+	print "</form>";*/
 }
 
 if ($bountyDeleted == $FAILURE)
