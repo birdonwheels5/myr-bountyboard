@@ -58,7 +58,8 @@ if ((strcmp(stristr($bounty[$bountyNumber]->getTitle(), $_POST["title"]), $bount
 		$bountyDeleted = $SUCCESS;
 		removeBounty($fileName, $bounty[$bountyNumber]->getTitle());	
 	}
-	else if ($confirmFlag == false)
+	
+	if ($confirmFlag == false)
 	{
 		$bountyDeleted = $CONFIRM;
 		$confirmFlag = true;
