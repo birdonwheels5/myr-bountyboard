@@ -50,6 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     	
 	$bountyNumber = searchBounty($fileName, $title);
 	
+if ($bountyNumber < 1)
+{
+	$title = "";
+	$titleErr = "Title not found.";
+	$bountyDeleted = $FAILURE;
+}
+	
 if ($bountyNumber > 0)
 {
 	if ($confirmFlag == true);
@@ -69,10 +76,6 @@ if ($bountyNumber > 0)
 		$active = $bounties[$bountyNumber]->getActive();
 	}
 }
-
-$title = "";
-$titleErr = "Title not found.";
-$bountyDeleted = $FAILURE;
 
 function cleanInput($data) 
 {
