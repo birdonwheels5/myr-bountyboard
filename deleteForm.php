@@ -23,7 +23,7 @@ $SUCCESS = 0;
 $CONFIRM = 100;
 
 $fileName = "bounties.dat";
-$bountyDeleted = $CONFIRM;
+$bountyDeleted = $WAITING;
 $redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 
 $bounties = array();
@@ -113,7 +113,7 @@ function cleanInput($data)
 				<input type="text" name="active" value="<?php echo $active;?>">
 				<br><br>
 				
-				<input type="button" name="delete" value="Delete">
+				<input type="submit" name="delete" value="Delete">
 			</form>
 
 <?php
