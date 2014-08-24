@@ -54,6 +54,9 @@ if (strcmp($title, $titleErr) == 0)
 	$bountyNumber = searchBounty($fileName, $title);
 }
 
+print "hi mom";
+
+
 if ((strcmp($title, $bounties[$bountyNumber]->getTitle()) == 0))
 {
 	if ($confirmFlag == true);
@@ -77,8 +80,6 @@ else
 {
 	$bountyDeleted = $FAILURE;
 }
-
-print "hi mom";
 
 
 function cleanInput($data) 
