@@ -190,7 +190,7 @@ function searchBounty($fileName, $title)
 	{
 		print "Bounty: " . $bounties[$i]->getTitle() . "<br>";
 		
-		if ((strcmp(stristr($bounties[$i]->getTitle(), $titleResult), $bounties[$i]->getTitle()) == 0))
+		if ((strcmp(stristr($bounties[$i]->getTitle(), $title), $bounties[$i]->getTitle()) == 0))
 		{
 			print "Title match!";
 			$searchResult = $i;
