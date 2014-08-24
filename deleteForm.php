@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		$titleErr = "A title is required";
 	} 
-$bountyNumber = searchBounty($fileName, $_POST['title']) + 1;
+$bountyNumber = searchBounty($fileName, $_POST['title']);
 	
 if ($bountyNumber < 1)
 {
@@ -53,12 +53,6 @@ if ($bountyNumber < 1)
 	
 if ($bountyNumber > 0)
 {
-	if ($confirmFlag == true);
-	{
-		$bountyDeleted = $SUCCESS;
-		removeBounty($fileName, "title: " . $title);	
-	}
-	
 	if ($confirmFlag == false)
 	{
 		$title = cleanInput($_POST["title"]);
@@ -69,6 +63,11 @@ if ($bountyNumber > 0)
 		$myrAddress = $bounties[$bountyNumber]->getMyrAddress();
 		$userName = $bounties[$bountyNumber]->getUserName();
 		$active = $bounties[$bountyNumber]->getActive();
+	} 
+	else
+	{
+		$bountyDeleted = $SUCCESS;
+		removeBounty($fileName, "title: " . $title);	
 	}
 }
 
