@@ -291,7 +291,7 @@ function searchBounty($fileName, $title)
  		// Makes sure that only the first occurance is overwritten	
  		$replaceCount = 0;
  		
- 		for($i = 0; $i < ($lineNumber - 1); $i++)
+ 		for($i = 1; $i < ($lineNumber - 1); $i++)
  		{
  			$content .= $lines[$i]; // content.
  		}
