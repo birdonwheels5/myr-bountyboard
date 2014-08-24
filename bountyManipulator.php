@@ -152,11 +152,11 @@ function removeBounty($fileName, $title)
 		print "<br>SPLFileObject created!";
 	}
 	
-	$file->seek($lineNumber - 2);
+	$file->seek($lineNumber);
 	
 	if ($debugMode == true)
 	{
-		print "<br>File Object skipped to line " . ($lineNumber - 2) . " in the file!";
+		print "<br>File Object skipped to line " . ($lineNumber) . " in the file!";
 	}
 	
 	while (!feof($fileName))
@@ -186,7 +186,7 @@ function removeBounty($fileName, $title)
 			break;
 		}
 		
-		$lineNumber = $lineNumber - 1;
+		$lineNumber = $lineNumber;
 	}
 	
 	if ($debugMode == true)
