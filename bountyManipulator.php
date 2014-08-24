@@ -176,10 +176,9 @@ function removeBounty($fileName, $title)
 		
 		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
-			replaceLineInTextFile($fileName, $separator, "");
 			if ($debugMode == true)
 			{
-				print "<br> " . $separator . " reached and deleted!";
+				print "<br> " . $separator . " reached!";
 			}
 			
 			break;
