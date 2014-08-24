@@ -186,7 +186,7 @@ function removeBounty($fileName, $title)
 			break;
 		}
 		
-		$lineNumber = $lineNumber - 1;
+		$lineNumber = $lineNumber;
 	}
 	
 	if ($debugMode == true)
