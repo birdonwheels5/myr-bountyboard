@@ -77,7 +77,7 @@ if ($bountyNumber > 0)
 	}
 }
 
-if ($bountyNumber > 0)
+if ($bountyNumber > 0 and $confirmFlag == true)
 {
 	$title = cleanInput($_POST["title"]);
 }
