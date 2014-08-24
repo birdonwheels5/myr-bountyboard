@@ -50,25 +50,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 $bountyNumber = searchBounty($fileName, $title);
 
-if ((strcmp(stristr($_POST["title"],$bounty[$bountyNumber]->getTitle()), $_POST["title"]) == 0) and $confirmFlag == true)
+if ((strcmp(stristr($_POST["title"], $bounty[$bountyNumber]->getTitle()), $_POST["title"]) == 0))
 {
-	$bountyDeleted = $SUCCESS;
-	removeBounty($fileName, $bounty[$bountyNumber]->getTitle());
+	if ($confirmFlag == true);
+	{
+		$bountyDeleted = $SUCCESS;
+		removeBounty($fileName, $bounty[$bountyNumber]->getTitle());	
+	}
+	else if ($confirmFlag == false)
+	{
+		$bountyDeleted = $CONFIRM;
+		$confirmFlag = true;
+		
+		$description = $bounty[$bountyNumber]->getDescription();
+		$myrAddress = $bounty[$bountyNumber]->getMyrAddress();
+		$userName = $bounty[$bountyNumber]->getUserName();
+		$active = $bounty[$bountyNumber]->getActive();
+	}
 }
 else
 {
 	$bountyDeleted = $FAILURE;
-}
-
-if ($confirmFlag == false)
-{
-	$bountyDeleted = $CONFIRM;
-	$confirmFlag = true;
-	
-	$description = $bounty[$bountyNumber]->getDescription();
-	$myrAddress = $bounty[$bountyNumber]->getMyrAddress();
-	$userName = $bounty[$bountyNumber]->getUserName();
-	$active = $bounty[$bountyNumber]->getActive();
 }
 
 function cleanInput($data) 
@@ -81,7 +83,7 @@ function cleanInput($data)
 }
 ?> 
 
-			<h2>Submit a New Bounty</h2>
+			<h2>Delete a Bounty</h2>
 		<p><span class="error">Enter the title of the bounty you wish to delete.</span></p>
 		
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
