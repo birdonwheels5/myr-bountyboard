@@ -122,9 +122,9 @@ if ($bountyDeleted == $CONFIRM)
 {
 	print "Please confirm that this is the bounty that you wish to delete! Click \"delete\" once you are sure.";
 	print "<form method=\"post\" action=\"";
-	echo htmlspecialchars($_SERVER["PHP_SELF"]);
+	echo $_SERVER["PHP_SELF"];
 	print "\">";
-	print "<input type=\"submit\" name=\"submit\" value=\"Confirm\">";
+	print "<input type=\"submit\" name=\"confirm\" value=\"Confirm\">";
 	print "</form>";
 }
 
