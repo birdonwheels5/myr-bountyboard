@@ -229,6 +229,8 @@ function removeBounty($fileName, $title)
 		
 		
 		$file->next();
+		
+		$lineNumber++;
 	
 	}
 	
