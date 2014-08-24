@@ -152,7 +152,7 @@ function removeBounty($fileName, $title)
 		print "<br>SPLFileObject created!";
 	}
 	
-	$file->seek($lineNumber - 1);
+	$file->seek($lineNumber - 2);
 	
 	if ($debugMode == true)
 	{
