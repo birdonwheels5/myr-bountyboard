@@ -171,7 +171,7 @@ function removeBounty($fileName, $title)
 		
 		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
-			$lineNumber++;
+			$lineNumber--;
 			replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
 			
 			if ($debugMode == true)
@@ -295,12 +295,9 @@ function searchBounty($fileName, $title)
  		// Makes sure that only the first occurance is overwritten	
  		$replaceCount = 0;
  		
- 		if ($lineNumber > 1)
+ 		for($i = 0; $i < ($lineNumber - 1); $i++)
  		{
- 			for($i = 0; $i < ($lineNumber - 1); $i++)
- 			{
- 				$content .= $lines[$i]; // content.
- 			}
+ 			$content .= $lines[$i]; // content.
  		}
  	
  		for($i = $lineNumber; $i < count($lines); $i++) 
