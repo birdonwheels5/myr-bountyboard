@@ -78,6 +78,7 @@ if ((strcmp($title, $bounties[$bountyNumber]->getTitle()) == 0))
 }
 else
 {
+	$titleErr = "Title not found.";
 	$bountyDeleted = $FAILURE;
 }
 
