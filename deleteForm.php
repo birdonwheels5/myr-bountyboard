@@ -45,12 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		$titleErr = "A title is required";
 		$bountyDeleted = $FAILURE;
 	}
-    	else 
-    	{
-		//$tmpTitle = cleanInput($_POST["title"]);
-    	}
-    	
-    	$title = $tmpTitle;
     	
 	$bountyNumber = searchBounty($fileName, $_POST["title"]);
 	
@@ -79,7 +73,7 @@ if ($bountyNumber > 0)
 		$active = $bounties[$bountyNumber]->getActive();
 	}
 }
-
+$title = $_POST["title"];
 function cleanInput($data) 
 {
     $data = trim($data);
