@@ -248,13 +248,15 @@ function searchBounty($fileName, $title)
  		{ // ...run through the loop...
  			if(preg_match("/" . $pattern . "/", $f[$i])) 
  			{ // and
- 				$content = $replacement; // get
+ 				$content .= $replacement; // get
  			} 
  			else 
  			{ // the
  				$content .= $f[$i]; // content.
  			}
  		}
+ 		
+ 		print "<br>" . $content;
 
  		$fi = fopen($file, "w"); // open specified file...
  		fwrite($fi, $content); // and rewrite it's content.
