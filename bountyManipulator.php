@@ -171,11 +171,6 @@ function removeBounty($fileName, $title)
 		if ((strcmp(stristr($file->current(), $title), $file->current()) == 0))
 		{
 			replaceLineInTextFile($fileName, $title, "", $lineNumber);
-			
-			if (debugMode == true)
-			{
-				print "<br>Just replaced the title in line \"" . $file->current() . "!";
-			}
 
 		}
 		
