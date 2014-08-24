@@ -161,8 +161,6 @@ function removeBounty($fileName, $title)
 	
 	while (!feof($fileName))
 	{
-		$file->next();
-
 		if ($debugMode == true)
 		{
 			print "<br>Going through the loops!";
@@ -173,6 +171,8 @@ function removeBounty($fileName, $title)
 		{
 			print "<br> Line " . $file->current() . " deleted!";
 		}
+		
+		
 		
 		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
@@ -185,6 +185,8 @@ function removeBounty($fileName, $title)
 			
 			break;
 		}
+		
+		$file->next();
 		
 		$lineNumber = $lineNumber;
 	}
