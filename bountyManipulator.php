@@ -244,13 +244,11 @@ function searchBounty($fileName, $title)
  	{ // if file exists...
  		$f = file($file); // ...make new variable...
  		$content; // ...and another...
- 		
- 		$replaceCount = 0;
  	
-
  		for($i = $lineNumber; $i < count($f); $i++) 
  		{ // ...run through the loop...
- 			if(preg_match("/" . $pattern . "/", $f[$i])) 
+ 		
+ 			if (strcmp(stristr($f[i],$pattern), f[i]) == 0)
  			{ // and
  				$content .= preg_replace($pattern, $replacement, $f[i], 1); // get
  			} 
