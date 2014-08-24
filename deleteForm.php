@@ -69,11 +69,9 @@ if ($bountyNumber > 0)
 		$active = $bounty[$bountyNumber]->getActive();
 	}
 }
-else
-{
-	$titleErr = "Title not found.";
-	$bountyDeleted = $FAILURE;
-}
+
+$titleErr = "Title not found.";
+$bountyDeleted = $FAILURE;
 
 function cleanInput($data) 
 {
