@@ -34,7 +34,7 @@ $confirmFlag = false;
 $fileName = "bounties.dat";
 $separator = "qpwoeiruty";
 $empty = "";
-$bountyNumber = 1;
+$bountyNumber = -1;
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
