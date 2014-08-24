@@ -16,7 +16,6 @@ include "bountyManipulator.php";
 // define variables and set to empty values
 $titleErr = "";
 $title = $description = $myrAddress = $userName = $active = "";
-$tmpTitle = "";
 
 $WAITING = -1;
 $FAILURE = 1;
@@ -53,6 +52,8 @@ if ($bountyNumber < 1)
 	
 if ($bountyNumber > 0)
 {
+	$title = $_POST["title"];
+	
 	if ($confirmFlag == true);
 	{
 		$bountyDeleted = $SUCCESS;
