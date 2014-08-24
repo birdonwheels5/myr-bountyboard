@@ -59,7 +59,7 @@ if ($bountyNumber > 0)
 {
 	if ($confirmFlag == false)
 	{
-		$title = $_POST["title"];
+		$title = $bounties[$bountyNumber]->getTitle();
 		$bountyDeleted = $CONFIRM;
 		$confirmFlag = true;
 		
@@ -71,7 +71,7 @@ if ($bountyNumber > 0)
 	else if ($_POST["submit"] == "Confirm")
 	{
 		
-		$title = $_POST["title"];
+		$title = $bounties[$bountyNumber]->getTitle();
 		$bountyDeleted = $SUCCESS;
 		removeBounty($fileName, "title: " . $title);	
 	}
