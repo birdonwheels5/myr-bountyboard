@@ -68,6 +68,7 @@ if ($bountyNumber > 0)
 	} 
 	else
 	{
+		$title = $_POST["title"];
 		$bountyDeleted = $SUCCESS;
 		removeBounty($fileName, "title: " . $title);	
 	}
