@@ -51,6 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 $bountyNumber = searchBounty($fileName, $title);
 
+print $bountyNumber;
+
 if ((strcmp(stristr($bounties[$bountyNumber]->getTitle(), $_POST["title"]), $bounties[$bountyNumber]->getTitle()) == 0))
 {
 	if ($confirmFlag == true);
