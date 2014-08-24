@@ -37,7 +37,8 @@ $empty = "";
 $bountyNumber = -1;
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
+//if ($_SERVER["REQUEST_METHOD"] == "POST") 
+if($_POST["delete"])
 {
 	if (empty($_POST["title"])) 
 	{
@@ -66,8 +67,9 @@ if ($bountyNumber > 0)
 		$userName = $bounties[$bountyNumber]->getUserName();
 		$active = $bounties[$bountyNumber]->getActive();
 	} 
-	else
+	else if ($_POST["confirm"])
 	{
+		
 		$title = $_POST["title"];
 		$bountyDeleted = $SUCCESS;
 		removeBounty($fileName, "title: " . $title);	
@@ -109,7 +111,7 @@ function cleanInput($data)
 				<input type="text" name="active" value="<?php echo $active;?>">
 				<br><br>
 				
-				<input type="submit" name="submit" value="Delete"> 
+				<input type="button" name="delete" value="Delete">
 			</form>
 
 <?php
@@ -117,6 +119,9 @@ function cleanInput($data)
 if ($bountyDeleted == $CONFIRM)
 {
 	print "Please confirm that this is the bounty that you wish to delete! Click \"delete\" once you are sure.";
+	print "<form action=\"<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>\">"
+	print "<input type=\"submit\" name=\"submit\" value=\"Confirm\">";
+	print "</form>";
 }
 
 if ($bountyDeleted == $FAILURE)
