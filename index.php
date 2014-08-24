@@ -19,7 +19,7 @@
 	
 	var_dump($bounties);
 	
-	print "<br><br>" . searchBounty($fileName, "Make Bird Rich");
+	print "<br><br>" . searchBounty($fileName, "make bird rich");
 
 	//removeBounty($fileName, "title: " . $bounties[1]->getTitle());
 	
