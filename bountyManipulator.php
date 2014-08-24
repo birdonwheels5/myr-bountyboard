@@ -136,7 +136,7 @@ function removeBounty($fileName, $title)
 	
 	$file = new SplFileObject($fileName, 'r');
 	
-	$file->seek($lineNumber - 1);
+	$file->seek($lineNumber);
 	
 	while (!feof($fileName))
 	{
