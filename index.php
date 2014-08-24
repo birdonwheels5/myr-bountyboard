@@ -19,6 +19,8 @@
 	
 	var_dump($bounties);
 	
+	removeBounty($fileName, $bounties[2]->getTitle());
+	
 	?>
 	
 	
