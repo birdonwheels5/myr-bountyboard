@@ -247,7 +247,7 @@ function searchBounty($fileName, $title)
  		
  		$content; // ...and another...
  		
- 		for($i = 0, $i < $lineNumber; $i++)
+ 		for($i = 0; $i < $lineNumber; $i++)
  		{
  			$content .= $lines[$i]; // content.
  		}
