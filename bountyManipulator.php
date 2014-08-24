@@ -162,6 +162,7 @@ function removeBounty($fileName, $title)
 	// Special case for deleting the first entry in the bounty list
 	if ($lineNumber == 1)
 	{
+		$lineNumber++;
 	while (!feof($fileName))
 	{
 		if ($debugMode == true)
@@ -173,7 +174,6 @@ function removeBounty($fileName, $title)
 		{
 			$lineNumber--;
 			replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
-			addLineInTextFile($fileName, $separator, ($lineNumber - 2));
 
 			if ($debugMode == true)
 			{
