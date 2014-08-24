@@ -212,8 +212,9 @@ function removeBounty($fileName, $title)
 		
 		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
+			$lineNumber--;
 			replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
-			addLineInTextFile($fileName, $separator, ($lineNumber - 2));
+			addLineInTextFile($fileName, $separator, ($lineNumber - 1));
 			
 			if ($debugMode == true)
 			{
