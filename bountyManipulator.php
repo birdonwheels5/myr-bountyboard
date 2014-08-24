@@ -152,7 +152,7 @@ function removeBounty($fileName, $title)
 		print "<br>SPLFileObject created!";
 	}
 	
-	$file->seek($lineNumber - 1);
+	$file->seek($lineNumber);
 	
 	if ($debugMode == true)
 	{
@@ -165,7 +165,7 @@ function removeBounty($fileName, $title)
 		{
 			print "<br>Going through the loops!";
 		}
-		replaceLineInTextFile($fileName, $file->current(), "");
+		replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
 		
 		if ($debugMode == true)
 		{
@@ -176,7 +176,7 @@ function removeBounty($fileName, $title)
 		
 		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
-			replaceLineInTextFile($fileName, $file->current(), "");
+			replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
 			
 			if ($debugMode == true)
 			{
@@ -185,6 +185,8 @@ function removeBounty($fileName, $title)
 			
 			break;
 		}
+		
+		$lineNumber++;
 	}
 	
 	if ($debugMode == true)
@@ -231,7 +233,7 @@ function searchBounty($fileName, $title)
 }
 
 //Function for replacing line in text file.
- //Credit: Iiro Krankka
+ //Credit: Iiro Krankka, with changes made by birdonwheels5
  function replaceLineInTextFile($file, $pattern, $replacement, $lineNumber) 
  {
  	if(!file_exists($file)) 
