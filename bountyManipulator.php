@@ -242,13 +242,19 @@ function searchBounty($fileName, $title)
  	{ // if file exists...
  		$f = file($file); // ...make new variable...
  		$content; // ...and another...
+ 		
+ 		$replaceCount = 0;
  	
 
  		for($i = 0; $i < count($f); $i++) 
  		{ // ...run through the loop...
  			if(preg_match("/" . $pattern . "/", $f[$i])) 
  			{ // and
- 				$content .= $replacement; // get
+ 				if ($replaceCount < 1)
+ 				{
+ 					$content .= $replacement; // get
+ 				}
+ 				$replaceCount++;
  			} 
  			else 
  			{ // the
