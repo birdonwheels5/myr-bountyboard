@@ -50,15 +50,15 @@ if ($bountyNumber < 1)
 	
 if ($bountyNumber > 0)
 {
-	//$title = cleanInput($_POST["title"]);
 	if ($confirmFlag == true);
 	{
 		$bountyDeleted = $SUCCESS;
-		removeBounty($fileName, "title: " . cleanInput($_POST['title']));	
+		removeBounty($fileName, "title: " . $title);	
 	}
 	
 	if ($confirmFlag == false)
 	{
+		$title = cleanInput($_POST["title"]);
 		$bountyDeleted = $CONFIRM;
 		$confirmFlag = true;
 		
@@ -71,6 +71,7 @@ if ($bountyNumber > 0)
 
 function cleanInput($data) 
 {
+    $data = trim($data);
     $data = htmlspecialchars($data);
     return $data;
 }
