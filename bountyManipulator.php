@@ -159,7 +159,10 @@ function removeBounty($fileName, $title)
 		print "<br>File Object skipped to line " . ($lineNumber) . " in the file!";
 	}
 	
-	while (!feof($fileName))
+	// Special case for deleting the first entry in the bounty list
+	if ($lineNumber == 0)
+	{
+		while (!feof($fileName))
 	{
 		if ($debugMode == true)
 		{
@@ -183,6 +186,42 @@ function removeBounty($fileName, $title)
 		if ($debugMode == true)
 		{
 			print "<br> Line \"" . $file->current() . "\" deleted!";
+		}
+		
+		$file->next();
+	
+	}
+	
+	if ($debugMode == true)
+	{
+		print "<br>Finished deleting lines!";
+	}
+	}
+	
+	while (!feof($fileName))
+	{
+		if ($debugMode == true)
+		{
+			print "<br>Going through the loops!";
+		}
+		
+		replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
+		
+		if ($debugMode == true)
+		{
+			print "<br> Line \"" . $file->current() . "\" deleted!";
+		}
+		
+		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
+		{
+			//replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
+			
+			if ($debugMode == true)
+			{
+				print "<br> " . $separator . " reached!";
+			}
+			
+			break;
 		}
 		
 		$file->next();
