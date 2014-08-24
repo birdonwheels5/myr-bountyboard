@@ -188,13 +188,16 @@ function searchBounty($fileName, $title)
 	// the array.
 	for($i = 1; $i <= $bountyCount; $i++)
 	{
+		print "Bounty: " . $bounties[$i]->getTitle() . "<br>";
+		
 		if ((strcmp(stristr($bounties[$i]->getTitle(), $titleResult), $bounties[$i]->getTitle()) == 0))
 		{
+			print "Title match!";
 			$searchResult = $i;
 		}
 	}
 	
-	return $bountyCount;
+	return $searchResult;
 }
 
 //Function for replacing line in text file.
