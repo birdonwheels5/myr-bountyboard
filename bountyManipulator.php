@@ -156,7 +156,7 @@ function removeBounty($fileName, $title)
 	
 	if ($debugMode == true)
 	{
-		print "<br>File Object skipped to line " . $lineNumber - 1 . " in the file!";
+		print "<br>File Object skipped to line " . ($lineNumber - 1) . " in the file!";
 	}
 	
 	while (!feof($fileName))
@@ -186,7 +186,7 @@ function removeBounty($fileName, $title)
 			break;
 		}
 		
-		//$lineNumber++;
+		$lineNumber = $lineNumber - 1;
 	}
 	
 	if ($debugMode == true)
