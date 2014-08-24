@@ -168,12 +168,6 @@ function removeBounty($fileName, $title)
 		
 		replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
 		
-		if ((strcmp(stristr($file->current(), $title), $file->current()) == 0))
-		{
-			replaceLineInTextFile($fileName, $title, "", $lineNumber);
-
-		}
-		
 		if ($debugMode == true)
 		{
 			print "<br> Line \"" . $file->current() . "\" deleted!";
