@@ -156,6 +156,8 @@ function removeBounty($fileName, $title)
 	return $code;
 }
 
+// Returns -1 if the title supplied cannot be found in the bounty array.
+// If successful, the number of the bounty is returned (will always be > 0).
 function searchBounty($fileName, $title)
 {
 	$separator = "qpwoeiruty";
