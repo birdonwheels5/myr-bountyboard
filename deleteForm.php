@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		$title = cleanInput($_POST["title"]);
     	}
     	
-
+print "hi mom";
 $bountyNumber = searchBounty($fileName, $title);
 
 print $bountyNumber;
