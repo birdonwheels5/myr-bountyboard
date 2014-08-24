@@ -58,7 +58,7 @@ if ($bountyNumber > 0)
 		removeBounty($fileName, $bounty[$bountyNumber]->getTitle());	
 	}
 	
-	if ($confirmFlag == false and $bountyNumber > 0)
+	if ($confirmFlag == false)
 	{
 		$bountyDeleted = $CONFIRM;
 		$confirmFlag = true;
@@ -70,6 +70,7 @@ if ($bountyNumber > 0)
 	}
 }
 
+$title = "";
 $titleErr = "Title not found.";
 $bountyDeleted = $FAILURE;
 
