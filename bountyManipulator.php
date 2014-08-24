@@ -173,7 +173,7 @@ function removeBounty($fileName, $title)
 		{
 			$lineNumber--;
 			replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
-			addLineInTextFile($fileName, "", ($lineNumber - 2));
+			addLineInTextFile($fileName, $separator, ($lineNumber - 2));
 
 			if ($debugMode == true)
 			{
