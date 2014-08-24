@@ -126,10 +126,9 @@ function removeBounty($fileName, $title)
     	{
     		$lineNumber++;
     		
-    		// Look for specified title and delete it, along with all lines up until the next separator sign
+    		// Look for specified title, and grab the line count
 		if (strcmp(stristr($line, $title), $line) == 0)
 		{
-			 print $line;
 			 break;
 		}
 	}
@@ -142,13 +141,21 @@ function removeBounty($fileName, $title)
 	while (!feof($fileName))
 	{
 		replaceLineInTextFile($fileName, $file->current(), "");
-		print "<br> Line deleted!";
+		if ($debugMode == true)
+		{
+			print "<br> Line deleted!";
+		}
+		
 		$file->next();
 		
 		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
 			replaceLineInTextFile($fileName, $separator, "");
-			print "<br> " . $separator . " reached and deleted!";
+			if ($debugMode == true)
+			{
+				print "<br> " . $separator . " reached and deleted!";
+			}
+			
 			break;
 		}
 	}
