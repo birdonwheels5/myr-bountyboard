@@ -232,7 +232,7 @@ function searchBounty($fileName, $title)
 
 //Function for replacing line in text file.
  //Credit: Iiro Krankka
- function replaceLineInTextFile($file, $pattern, $replacement) 
+ function replaceLineInTextFile($file, $pattern, $replacement, $lineNumber) 
  {
  	if(!file_exists($file)) 
  	{ // if file doesn't exist...
@@ -246,7 +246,7 @@ function searchBounty($fileName, $title)
  		$replaceCount = 0;
  	
 
- 		for($i = 0; $i < count($f); $i++) 
+ 		for($i = $lineNumber; $i < count($f); $i++) 
  		{ // ...run through the loop...
  			if(preg_match("/" . $pattern . "/", $f[$i])) 
  			{ // and
