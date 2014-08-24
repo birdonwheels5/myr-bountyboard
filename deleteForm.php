@@ -29,7 +29,7 @@ $redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 $bounties = array();
 $bounties = readBounties($fileName);
 
-$confirmFlag = false;
+$confirmFlag = true;
 
 $fileName = "bounties.dat";
 $separator = "qpwoeiruty";
