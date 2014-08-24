@@ -46,7 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		$bountyDeleted = $FAILURE;
 	}
     	
-	$bountyNumber = searchBounty($fileName, $_POST["title"]);
+	if ($confirmFlag == false)
+	{
+		$bountyNumber = searchBounty($fileName, $_POST["title"]);
+	}
 	
 if ($bountyNumber < 1)
 {
@@ -73,7 +76,8 @@ if ($bountyNumber > 0)
 		$active = $bounties[$bountyNumber]->getActive();
 	}
 }
-$title = $_POST["title"];
+$title = cleanInput($_POST["title"]);
+
 function cleanInput($data) 
 {
     $data = trim($data);
