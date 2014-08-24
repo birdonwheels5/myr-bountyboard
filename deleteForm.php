@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	} 
 $bountyNumber = searchBounty($fileName, $_POST['title']);
 	
-if ($bountyNumber < 1)
+if ($bountyNumber < 0)
 {
 	$titleErr = "Title not found.";
 	$bountyDeleted = $FAILURE;
