@@ -201,7 +201,7 @@ function removeBounty($fileName, $title)
 	else
 	{
 		
-		$lineNumber++;
+		$lineNumber--;
 	
 	while (!feof($fileName))
 	{
