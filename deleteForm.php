@@ -50,6 +50,8 @@ if ($bountyNumber < 0)
 	$titleErr = "Title not found.";
 	$bountyDeleted = $FAILURE;
 }
+
+print $bountyNumber;
 	
 if ($bountyNumber > 0)
 {
