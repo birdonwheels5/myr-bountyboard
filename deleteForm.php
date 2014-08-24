@@ -48,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		$title = cleanInput($_POST["title"]);
     	}
     	
-print "hi mom";
 
 if (strcmp($title, $titleErr) == 0)
 {
@@ -78,6 +77,9 @@ else
 {
 	$bountyDeleted = $FAILURE;
 }
+
+print "hi mom";
+
 
 function cleanInput($data) 
 {
