@@ -40,16 +40,10 @@ $bountyNumber = -1;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-	if (empty($_POST["title"])) 
-	{
-		$titleErr = "A title is required";
-		$bountyDeleted = $FAILURE;
-	}
-    	
-	if ($confirmFlag == false)
-	{
-		$bountyNumber = searchBounty($fileName, $_POST["title"]);
-	}
+if ($confirmFlag == false)
+{
+	$bountyNumber = searchBounty($fileName, $_POST["title"]);
+}
 	
 if ($bountyNumber < 1)
 {
@@ -77,10 +71,7 @@ if ($bountyNumber > 0)
 	}
 }
 
-if ($bountyNumber > 0 and $confirmFlag == true)
-{
 	$title = cleanInput($_POST["title"]);
-}
 
 function cleanInput($data) 
 {
