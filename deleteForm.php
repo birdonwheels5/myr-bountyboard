@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	}
     	else 
     	{
-		$tmpTitle = cleanInput($_POST["title"]);
+		//$tmpTitle = cleanInput($_POST["title"]);
     	}
     	
     	$title = $tmpTitle;
