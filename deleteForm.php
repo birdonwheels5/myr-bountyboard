@@ -39,10 +39,7 @@ $bountyNumber = -1;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-if ($confirmFlag == false)
-{
 	$bountyNumber = searchBounty($fileName, cleanInput($_POST["title"]));
-}
 	
 if ($bountyNumber < 1)
 {
