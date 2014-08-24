@@ -191,7 +191,7 @@ function removeBounty($fileName, $title)
 	
 	if ($debugMode == true)
 	{
-		print "Finished deleting lines!";
+		print "<br>Finished deleting lines!";
 	}
 	
 	return;
@@ -242,23 +242,23 @@ function searchBounty($fileName, $title)
  	} 
  	else 
  	{ // if file exists...
- 		//$f = file($file); // ...make new variable...
+ 		$lines = file($file); // ...make new variable...
  		$f = fopen($file, "r") or print ("Error loading bounties!");
  		
  		$content; // ...and another...
  	
- 		//for($i = $lineNumber; $i < count($f); $i++) 
+ 		for($i = $lineNumber; $i < count($lines); $i++) 
  		
- 		while (($line = fgets($f)) !== false) 
+ 		//while (($line = fgets($f)) !== false) 
  		{ // ...run through the loop...
  		
- 			if (strcmp(stristr($line, $pattern), $line) == 0)
+ 			if (strcmp(stristr($lines[$i], $pattern), $lines[$i]) == 0)
  			{ // and
- 				$content .= str_ireplace($pattern, $replacement, $line); // get
+ 				$content .= str_ireplace($pattern, $replacement, $lines[$i]); // get
  			} 
  			else 
  			{ // the
- 				$content .= $line; // content.
+ 				$content .= $lines[$i]; // content.
  			}
  		}
  		fclose($f);
