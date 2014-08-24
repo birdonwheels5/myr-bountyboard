@@ -162,21 +162,6 @@ function searchBounty($fileName, $title)
 	
 	$FAILURE = -1;
 	
-	$titleResult = "";
-	
-  $handle = fopen($fileName, "r") or print ("Error loading bounties!");
-    	while (($line = fgets($handle)) !== false) 
-    	{
-
-    		// Look for specified title and store it in memory
-		if (strcmp(stristr($line, $title), $line) == 0)
-		{
-			 $titleResult = str_ireplace("title: ", "", $line);
-			 break;
-		}
-	}
-	fclose($file);
-	
 	$bounties = array();
 	$bounties = readBounties($fileName);
 	
