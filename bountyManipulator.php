@@ -246,6 +246,11 @@ function searchBounty($fileName, $title)
  		$f = fopen($file, "r") or print ("Error loading bounties!");
  		
  		$content; // ...and another...
+ 		
+ 		for($i = 0, $i < $lineNumber; $i++)
+ 		{
+ 			$content .= $lines[$i]; // content.
+ 		}
  	
  		for($i = $lineNumber; $i < count($lines); $i++) 
  		
