@@ -161,6 +161,8 @@ function removeBounty($fileName, $title)
 	
 	while (!feof($fileName))
 	{
+		$file->next();
+
 		if ($debugMode == true)
 		{
 			print "<br>Going through the loops!";
@@ -171,8 +173,6 @@ function removeBounty($fileName, $title)
 		{
 			print "<br> Line " . $file->current() . " deleted!";
 		}
-		
-		$file->next();
 		
 		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
@@ -234,6 +234,8 @@ function searchBounty($fileName, $title)
 
 //Function for replacing line in text file.
  //Credit: Iiro Krankka, with changes made by birdonwheels5
+ 
+ // $lineNumber: Specifiy line number to begin searching at
  function replaceLineInTextFile($file, $pattern, $replacement, $lineNumber) 
  {
  	if(!file_exists($file)) 
@@ -246,10 +248,9 @@ function searchBounty($fileName, $title)
  		$f = fopen($file, "r") or print ("Error loading bounties!");
  		
  		$content; // ...and another...
- 		
+ 	
+ 		// Makes sure that only the first occurance is overwritten	
  		$replaceCount = 0;
- 		
- 		$part2 = 0;
  		
  		for($i = 0; $i < $lineNumber; $i++)
  		{
@@ -258,24 +259,19 @@ function searchBounty($fileName, $title)
  	
  		for($i = $lineNumber; $i < count($lines); $i++) 
  		
- 		//while (($line = fgets($f)) !== false) 
  		{ // ...run through the loop...
  		
- 			if ((strcmp(stristr($lines[$i], $pattern), $lines[$i]) == 0) and $replaceCount < 1) break
+ 			if ((strcmp(stristr($lines[$i], $pattern), $lines[$i]) == 0) and $replaceCount < 1)
  			{ // and
  				$content .= str_ireplace($pattern, $replacement, $lines[$i]); // get
  				$replaceCount++;
- 				$part2 = $i;
  			} 
  			else 
  			{ // the
  				$content .= $lines[$i]; // content.
  			}
  		}
- 		for ($i = part2; $i < count($lines); $i++)
- 		{
- 			$content .= $lines[$i]; // content.
- 		}
+
  		fclose($f);
  		
  		print "<br>" . $content;
