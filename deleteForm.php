@@ -61,8 +61,7 @@ if ($bountyNumber > 0)
 	{
 		$title = $bounties[$bountyNumber]->getTitle();
 		$bountyDeleted = $CONFIRM;
-		$confirmFlag = true;
-		
+
 		$description = $bounties[$bountyNumber]->getDescription();
 		$myrAddress = $bounties[$bountyNumber]->getMyrAddress();
 		$userName = $bounties[$bountyNumber]->getUserName();
@@ -120,6 +119,7 @@ function cleanInput($data)
 
 if ($bountyDeleted == $CONFIRM)
 {
+	$confirmFlag = true;
 	print "Please confirm that this is the bounty that you wish to delete! Click \"delete\" again once you are sure.";
 	/*print "<form method=\"post\" action=\"";
 	echo $_SERVER["PHP_SELF"];
