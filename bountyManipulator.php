@@ -132,7 +132,7 @@ function removeBounty($fileName, $title)
 		{
 			if ($debugMode == true)
 			{
-				print "Title found in line: " . $line . "! Breaking loop.";
+				print "<br>Title found in line: " . $line . "! Breaking loop.";
 			}
 			 break;
 		}
@@ -165,11 +165,23 @@ function removeBounty($fileName, $title)
 		{
 			print "<br>Going through the loops!";
 		}
+		
 		replaceLineInTextFile($fileName, $file->current(), "", $lineNumber);
+		
+		if ((strcmp(stristr($file->current(), $title), $file->current()) == 0))
+		{
+			replaceLineInTextFile($fileName, $title, "", $lineNumber);
+			
+			if (debugMode == true)
+			{
+				print "<br>Just replaced the title in line \"" . $file->current() . "!";
+			}
+
+		}
 		
 		if ($debugMode == true)
 		{
-			print "<br> Line " . $file->current() . " deleted!";
+			print "<br> Line \"" . $file->current() . "\" deleted!";
 		}
 		
 		
@@ -187,8 +199,7 @@ function removeBounty($fileName, $title)
 		}
 		
 		$file->next();
-		
-		$lineNumber = $lineNumber;
+	
 	}
 	
 	if ($debugMode == true)
