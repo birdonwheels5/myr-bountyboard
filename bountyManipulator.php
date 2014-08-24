@@ -152,7 +152,7 @@ function removeBounty($fileName, $title)
 		print "<br>SPLFileObject created!";
 	}
 	
-	$file->seek($lineNumber - 2);
+	$file->seek($lineNumber - 1);
 	
 	if ($debugMode == true)
 	{
@@ -176,6 +176,8 @@ function removeBounty($fileName, $title)
 		
 		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
+			replaceLineInTextFile($fileName, $file->current(), "");
+			
 			if ($debugMode == true)
 			{
 				print "<br> " . $separator . " reached!";
@@ -230,25 +232,34 @@ function searchBounty($fileName, $title)
 
 //Function for replacing line in text file.
  //Credit: Iiro Krankka
- function replaceLineInTextFile($file, $pattern, $replacement) {
- if(!file_exists($file)) { // if file doesn't exist...
- print "The specified file doesn't seem to exist."; // ...stop executing code.
- } else { // if file exists...
- $f = file($file); // ...make new variable...
- $content; // ...and another...
+ function replaceLineInTextFile($file, $pattern, $replacement) 
+ {
+ 	if(!file_exists($file)) 
+ 	{ // if file doesn't exist...
+ 		print "The specified file doesn't seem to exist."; // ...stop executing code.
+ 	} 
+ 	else 
+ 	{ // if file exists...
+ 		$f = file($file); // ...make new variable...
+ 		$content; // ...and another...
+ 	
 
- for($i = 0; $i < count($f); $i++) { // ...run through the loop...
- if(preg_match("/" . $pattern . "/", $f[$i])) { // and
- $content .= $replacement; // get
- } else { // the
- $content .= $f[$i]; // content.
- }
- }
+ 		for($i = 0; $i < count($f); $i++) 
+ 		{ // ...run through the loop...
+ 			if(preg_match("/" . $pattern . "/", $f[$i])) 
+ 			{ // and
+ 				$content = $replacement; // get
+ 			} 
+ 			else 
+ 			{ // the
+ 				$content .= $f[$i]; // content.
+ 			}
+ 		}
 
- $fi = fopen($file, "w"); // open specified file...
- fwrite($fi, $content); // and rewrite it's content.
- fclose($fi); // close file.
+ 		$fi = fopen($file, "w"); // open specified file...
+ 		fwrite($fi, $content); // and rewrite it's content.
+ 		fclose($fi); // close file.
+ 	}
  }
  
- }
 ?>
