@@ -220,7 +220,7 @@ function removeBounty($fileName, $title)
 		
 		if ((strcmp(stristr($file->current(), $separator), $file->current()) == 0))
 		{
-			addLineInTextFile($fileName, $separator, ($lineNumber - 1));
+			addLineInTextFile($fileName, $separator, ($lineNumber - 2));
 			
 			if ($debugMode == true)
 			{
@@ -353,7 +353,7 @@ function searchBounty($fileName, $title)
  			$content .= $lines[$i]; // content.
  		}
  	
- 		for($i = ($lineNumber - 1); $i <= count($lines); $i++) 
+ 		for($i = ($lineNumber - 1); $i < count($lines); $i++) 
  		
  		{ // ...run through the loop...
  		
