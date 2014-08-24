@@ -68,7 +68,7 @@ if ($bountyNumber > 0)
 		$userName = $bounties[$bountyNumber]->getUserName();
 		$active = $bounties[$bountyNumber]->getActive();
 	} 
-	else if ($_POST["confirm"])
+	else if ($_POST["submit"] == "Confirm")
 	{
 		
 		$title = $_POST["title"];
