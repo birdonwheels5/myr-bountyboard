@@ -156,7 +156,7 @@ function removeBounty($fileName, $par1BountyNumber)
 	$bounties = array();
 	$bounties = readBounties($fileName);
 	
-	$lineNumber = 1;
+	$lineNumber = 0;
 	
 	$SUCCESS = 0;
 	$FAILURE = 1;
@@ -214,9 +214,11 @@ function removeBounty($fileName, $par1BountyNumber)
 				print "<br> " . $lineNumber;
 			}
 			
-			if ($lineNumber == ($bountyNumber--)) // We want the separator count to equal the bounty number
+			$lineNumber++; // Keeping track of the separators
+			
+			if ($lineNumber == ($bountyNumber - 1)) // We want the separator count to equal the bounty #
 			{
-				$lineNumber = $i++; // Replacing the separator count with the line count of the title
+				$lineNumber = $i + 1; // Replacing the separator count with the line count of the title
 				if ($debugMode == true)
 				{
 					print "<br> " . $lineNumber;
@@ -224,8 +226,6 @@ function removeBounty($fileName, $par1BountyNumber)
 				
 				break;
 			}
-			
-			$lineNumber++; // Keeping track of the separators
 		}
 		
 		
