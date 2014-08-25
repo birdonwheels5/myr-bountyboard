@@ -109,7 +109,9 @@ function cleanInput($data)
 		
 			<nav>
 
+			<hr/>
 			<h2>Delete a Bounty</h2>
+			<hr/>
 		<p><span class="error">Enter the title of the bounty you wish to delete.</span></p>
 		
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
