@@ -144,8 +144,8 @@ function removeBounty($fileName, $title)
 		print "<br>File closed!";
 	}
 	
-	$lines = file($file); // ...make new variable...
- 		$f = fopen($file, "r") or print ("Error loading bounties!");
+	$lines = file($fileName); // ...make new variable...
+ 		$f = fopen($fileName, "r") or print ("Error loading bounties!");
  		
  		for($i = ($lineNumber); $i <= count($lines); $i++) 
  		
@@ -213,11 +213,6 @@ function removeBounty($fileName, $title)
 			{
 				print "<br> Line \"" . $lines[$i] . "\" deleted!";
 			}
-			
-			
-			$file->next();
-			
-		
 		}
 	
 		if ($debugMode == true)
