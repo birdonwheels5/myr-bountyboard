@@ -197,6 +197,7 @@ function removeBounty($fileName, $bountyNumber)
 			 break;
 		}
 	}
+	fclose($file);
 	
 	
 	$lines = file($fileName);
