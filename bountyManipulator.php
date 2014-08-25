@@ -183,21 +183,21 @@ function removeBounty($fileName, $bountyNumber)
 	$title = $bounties[$bountyNumber]->getTitle();
 	
 	// Search for the line number where the bounty's title resides
-	$lines = file($fileName);
-	for ($i = 0; $i < count($lines); $i++)
+	$file = file($fileName);
+	for ($i = 0; $i < count($file); $i++)
 	{
-		if (strcmp(stristr($lines[$i], $title), $lines[$i]) == 0)
+		if (strcmp(stristr($file[$i], $title), $file[$i]) == 0)
 		{
 			if ($debugMode == true)
 			{
-				print "<br>Title found in line: " . $lines[$i] . "! Breaking loop.";
+				print "<br>Title found in line: " . $file[$i] . "! Breaking loop.";
 			}
 			
 			$lineNumber = $i;
 			break;
 		}
 	}
-	fclose($lines);
+	fclose($file);
 	
 	
 	$lines = file($fileName);
