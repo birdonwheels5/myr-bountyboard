@@ -36,6 +36,8 @@ $confirmFlag = $FALSE;
 $fileName = "bounties.dat";
 $separator = "qpwoeiruty";
 $empty = "";
+
+global $bountyNumber;
 $bountyNumber = -1;
 
 
