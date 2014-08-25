@@ -227,7 +227,7 @@ function removeBounty($fileName, $par1BountyNumber)
 			$lineNumber++;
 			if ($debugMode == true)
 			{
-				print $lineNumber;
+				print "<br> " . $lineNumber;
 			}
 			
 			if ($lineNumber == $bountyNumber)
@@ -235,7 +235,7 @@ function removeBounty($fileName, $par1BountyNumber)
 				$lineNumber = $i;
 				if ($debugMode == true)
 				{
-					print $lineNumber . " is equal to " . $bountyNumber;
+					print "<br> " . $lineNumber;
 				}
 				
 				break;
