@@ -149,7 +149,7 @@ function searchBounty($fileName, $title)
 
 function removeBounty($fileName, $par1BountyNumber)
 {
-	$bountyNumber = $par1BountyNumber;
+	$bountyNumber = (int)$par1BountyNumber;
 	$debugMode = true;
 	$separator = "qpwoeiruty";
 	
@@ -182,6 +182,7 @@ function removeBounty($fileName, $par1BountyNumber)
 	
 	// Get the title of the bounty we're working with
 	print "<br> Getting bounty title...";
+	print $bountyNumber;
 	$title = $bounties[$bountyNumber]->getTitle();
 	print "<br> Bounty title is: " . $title;
 	
