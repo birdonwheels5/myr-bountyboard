@@ -186,6 +186,7 @@ function removeBounty($fileName, $bountyNumber)
 	$file = file($fileName);
 	for ($i = 0; $i < count($file); $i++)
 	{
+		print "<br> Looking for  the line number...";
 		if ($file[$i] === $title)
 		{
 			if ($debugMode == true)
