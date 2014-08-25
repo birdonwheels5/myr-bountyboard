@@ -125,7 +125,7 @@ function removeBounty($fileName, $title)
   $handle = fopen($fileName, "r") or print ("Error loading bounties!");
     	while (($line = fgets($handle)) !== false) 
     	{
-    		$lineNumber++;
+    		//$lineNumber++;
     		
     		// Look for specified title, and grab the line count
 		if (strcmp(stristr($line, $title), $line) == 0)
@@ -136,6 +136,7 @@ function removeBounty($fileName, $title)
 			}
 			 break;
 		}
+		$lineNumber++;
 	}
 	fclose($handle);
 	
@@ -144,13 +145,11 @@ function removeBounty($fileName, $title)
 		print "<br>File closed!";
 	}
 	
-	$lineNumber--;
 	
 	$lines = file($fileName); // ...make new variable...
 
  		$content;
- 		$counter = 0;
- 		
+
  		if ($lineNumber != 0)
  		{
  			for ($i = 0; $i < $lineNumber; $i++)
@@ -164,33 +163,46 @@ function removeBounty($fileName, $title)
  			}
  		}
  		
+ 		$lastLine;
  		if ($lineNumber == 0)
  		{
- 			for($i = ($lineNumber); $i <= count($lines); $i++) 
+ 			for($i = 0; $i < count($lines); $i++) 
  		
  			{ // ...run through the loop...
  			
  				$content .= str_ireplace($lines[$i], "", $lines[$i]);
  				
- 				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0) and $counter < 1)
+ 				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
  				{
  					$content .= str_ireplace($lines[$i], "", $lines[$i]);
- 					$counter++;
+ 					$lastLine = $i;
+ 					break;
  				}
+ 			}
+ 			
+ 			for($i = ($lastLine + 1); $i < count($lines); $i++)
+ 			{
+ 				$content .= $lines[$i];
  			}
  		}
  		else
  		{
- 			for($i = ($lineNumber); $i <= count($lines); $i++) 
+ 			for($i = ($lineNumber); $i < count($lines); $i++) 
  		
  			{ // ...run through the loop...
- 				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0) and $counter < 1)
+ 				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
  				{
  					$content .= $lines[$i];
- 					$counter++;
+ 					$lastLine = $i;
+ 					break;
  				}
  				
  				$content .= str_ireplace($lines[$i], "", $lines[$i]);
+ 			}
+ 			
+ 			for($i = ($lastLine + 1); $i < count($lines); $i++)
+ 			{
+ 				$content .= $lines[$i];
  			}
  		}
 
