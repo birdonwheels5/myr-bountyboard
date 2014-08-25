@@ -74,7 +74,8 @@ if ($bountyNumber > 0 and $confirmFlag == $FALSE)
 }
 	if ($_POST["submit"] and $_POST["submit"] == "Confirm")
 	{
-		print "hello";
+		print $bountyNumber;
+		print $bounties[$bountyNumber]->getTitle();
 		
 		$title = $bounties[$bountyNumber]->getTitle();
 		$bountyDeleted = $SUCCESS;
