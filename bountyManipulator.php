@@ -230,7 +230,7 @@ function removeBounty($fileName, $par1BountyNumber)
 				print "<br> " . $lineNumber;
 			}
 			
-			if ($lineNumber == ($bountyNumber - 1))
+			if ($lineNumber == $bountyNumber)
 			{
 				$lineNumber = $i; // Replacing the separator count with the line count
 				if ($debugMode == true)
