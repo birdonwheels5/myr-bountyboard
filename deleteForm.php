@@ -45,6 +45,9 @@ if($_POST["submit"])
 	{
 		$titleErr = "A title is required";
 	} 
+
+if ($confirmFlag == false)
+{
 $bountyNumber = searchBounty($fileName, $_POST['title']);
 	
 if ($bountyNumber < 0)
@@ -54,9 +57,8 @@ if ($bountyNumber < 0)
 }
 
 print $bountyNumber;
-print $confirmFlag;
-	
-if ($bountyNumber > 0)
+}
+if ($bountyNumber > 0 and $confirmFlag == false)
 {
 	if ($confirmFlag == false)
 	{
@@ -68,15 +70,16 @@ if ($bountyNumber > 0)
 		$userName = $bounties[$bountyNumber]->getUserName();
 		$active = $bounties[$bountyNumber]->getActive();
 	} 
-	else //if ($_POST["submit"] == "Confirm")
+	//if ($_POST["submit"] == "Confirm")
+}
+	if ($confirmFlag == true)
 	{
 		
 		$title = $bounties[$bountyNumber]->getTitle();
 		$bountyDeleted = $SUCCESS;
 		removeBounty($fileName, "title: " . $title);	
 	}
-print $confirmFlag;
-}
+
 
 function cleanInput($data) 
 {
