@@ -9,6 +9,9 @@
 	<body> 
 
 <?php
+
+include "bountyManipulator.php";
+
 // define variables and set to empty values
 $titleErr = $descriptionErr = $myrAddressErr = $userNameErr = "";
 $title = $description = $myrAddress = $userName = "";
@@ -17,16 +20,27 @@ $WAITING = -1;
 $FAILURE = 1;
 $SUCCESS = 0;
 
+$fileName = "bounties.dat";
+$bounties = array();
+$bounties = readBounties($fileName);
+
+$bountyNumber = -1;
+
 $bountySubmitted = $WAITING;
 $redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
+	$bountyNumber = searchBounty($fileName, $_POST["title"]);
 	if (empty($_POST["title"])) 
 	{
 		$titleErr = "A title is required";
 	} 
-    	else 
+    	else if($$_POST["title"] == $bounties[$bountyNumber]->getTitle())
+    	{
+    		$titleErr = "That bounty already exists. Please specify another name.";
+    	}
+    	else
     	{
 		$title = cleanInput($_POST["title"]);
     	}
