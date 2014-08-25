@@ -232,6 +232,7 @@ function removeBounty($fileName, $par1BountyNumber)
 			
 			if ($lineNumber == $bountyNumber)
 			{
+				$lineNumber = $i;
 				if ($debugMode == true)
 				{
 					print $lineNumber . " is equal to " . $bountyNumber;
