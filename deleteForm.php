@@ -90,7 +90,7 @@ if ($bountyNumber > 0)
 		
 		$title = $bounties[$bountyNumber]->getTitle();
 		$bountyDeleted = $SUCCESS;
-		removeBounty($fileName, "title: " . $title);
+		removeBounty($fileName, $bountyNumber);
 	}
 
 
