@@ -39,13 +39,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	} 
     	else 
     	{
-    		if((strcmp(stristr($_POST["title"], $bounties[$bountyNumber]->getTitle()), $_POST["title"])) == 0)
+    		if ($bountyNumber < 1)
     		{
-    			$titleErr = "That bounty already exists. Please specify another name.";
+    			$title = cleanInput($_POST["title"]);
     		}
     		else
     		{
-			$title = cleanInput($_POST["title"]);
+    			if((strcmp(stristr($_POST["title"], $bounties[$bountyNumber]->getTitle()), $_POST["title"])) == 0)
+    			{
+    				$titleErr = "That bounty already exists. Please specify another name.";
+    			}
+    			else
+    			{
+				$title = cleanInput($_POST["title"]);
+    			}
     		}
     	}
 //TODO Implement title search and throw error if title already exists
