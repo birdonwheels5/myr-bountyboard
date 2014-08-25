@@ -72,7 +72,7 @@ if ($bountyNumber > 0 and $confirmFlag == $FALSE)
 
 }
 }
-	if ($_POST["submit"] == "Confirm")
+	if ($_POST["submit"] and $_POST["submit"] == "Confirm")
 	{
 		
 		$title = $bounties[$bountyNumber]->getTitle();
