@@ -57,8 +57,6 @@ if ($bountyNumber < 0)
 	$bountyDeleted = $FAILURE;
 }
 
-print $bountyNumber;
-
 if ($bountyNumber > 0)
 {
 	$title = $bounties[$bountyNumber]->getTitle();
@@ -70,12 +68,17 @@ if ($bountyNumber > 0)
 	
 	$bountyDeleted = $CONFIRM;
 	
+	/* This is a very bad way of persisting the $bountyNumber variable because if another user clicks
+	the "delete" button on a bounty *before* this user clicks "confirm", this user will have the wrong
+	$bountyNumber, and thus delete the wrong bounty.For now it is fine because we won't 
+	have a large volume of users doing this.*/
 	file_put_contents("tmpDeleteBounty.dat", $bountyNumber);
 	
 }
 }
 	if ($_POST["submit"] and $_POST["submit"] == "Confirm")
 	{
+		// Load the bounty number when the user clicks on the "confirm" button
 		$bountyNumber = (int)file_get_contents("tmpDeleteBounty.dat");
 		
 		print $bountyNumber;
