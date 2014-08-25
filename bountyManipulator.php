@@ -210,7 +210,7 @@ function removeBounty($fileName, $par1BountyNumber)
 		print "<br> File Opened!";
 	}
 	
-	for ($i = 0; $i < $bountyCount; $i++)
+	for ($i = 0; $i < count($file); $i++)
 	{
 		if ($debugMode == true)
 		{
