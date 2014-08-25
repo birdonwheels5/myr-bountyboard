@@ -180,10 +180,14 @@ function removeBounty($fileName, $bountyNumber)
 	}*/
 	
 	// Get the title of the bounty we're working with
+	print "<br> Getting bounty title...";
 	$title = $bounties[$bountyNumber]->getTitle();
+	print "<br> Bounty title is: " . $title;
 	
 	// Search for the line number where the bounty's title resides
+	print "<br> Opening file...";
 	$file = file($fileName);
+	print "<br> File Opened!";
 	for ($i = 0; $i < count($file); $i++)
 	{
 		print "<br> Looking for  the line number...";
