@@ -108,7 +108,7 @@ function countBounties($fileName)
 			$index++;
 		}
 	}
-	fclose($file);
+	fclose($handle);
 	return $index;
 }
 
@@ -184,28 +184,64 @@ function removeBounty($fileName, $par1BountyNumber)
 	}*/
 	
 	// Get the title of the bounty we're working with
-	print "<br> Getting bounty title...";
-	print $bountyNumber;
+	if ($debugMode == true)
+	{
+		print "<br> Getting bounty title...";
+		print $bountyNumber;
+	}
+	
 	$title = $bounties[$bountyNumber]->getTitle();
-	print "<br> Bounty title is: " . $title;
+	
+	if ($debugMode == true)
+	{
+		print "<br> Bounty title is: " . $title;
+	}
 	
 	// Search for the line number where the bounty's title resides
-	print "<br> Opening file...";
-	$file = file($fileName);
-	print "<br> File Opened!";
-	for ($i = 0; $i < count($file); $i++)
+	if ($debugMode == true)
 	{
-		print "<br> Looking for  the line number... <br>" . $file[$i];
-		if ((strcmp(stristr($file[$i], "title: " . $title), $file[$i]) == 0))
+		print "<br> Opening file...";
+	}
+	
+	$file = file($fileName);
+	
+	if ($debugMode == true)
+	{
+		print "<br> File Opened!";
+	}
+	
+	for ($i = 0; $i < $bountyCount); $i++)
+	{
+		if ($debugMode == true)
+		{
+			print "<br> Looking for line number... Current line:  <br>" . $file[$i];
+		}
+		
+		if ((strcmp(stristr($file[$i], $separator), $file[$i]) == 0))
 		{
 			if ($debugMode == true)
 			{
-				print "<br>Title found in line: " . $file[$i] . "! Breaking loop.";
+				print "<br> Separator found";
 			}
 			
-			$lineNumber = $i;
-			break;
+			$lineNumber++;
+			if ($debugMode == true)
+			{
+				print $lineNumber;
+			}
+			
+			if ($lineNumber == $bountyNumber)
+			{
+				if ($debugMode == true)
+				{
+					print $lineNumber . " is equal to " . $bountyNumber;
+				}
+				
+				break;
+			}
 		}
+		
+		
 	}
 	fclose($file);
 	
