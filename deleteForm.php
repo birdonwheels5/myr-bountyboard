@@ -1,6 +1,10 @@
 <!DOCTYPE HTML> 
 <html>
 	<head>
+		<meta charset="ISO-8859-1">
+		<title>Bounty Delete Page</title>
+		<link rel="stylesheet" type="text/css" href="styles.css" title="Default Styles" media="screen"/>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
 		<style>
 			.error {color: #FF0000;}
 		</style>
@@ -9,6 +13,64 @@
 	<body> 
 	
 	
+
+
+
+			<h2>Delete a Bounty</h2>
+		<p><span class="error">Enter the title of the bounty you wish to delete.</span></p>
+		
+			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+				Bounty Title: (You only need to type the first few letters)<br>
+				<input type="text" name="title" value="<?php echo $title;?>">
+				<span class="error">* <?php echo $titleErr;?></span>
+				
+				<br><br>
+				Bounty Description:<br>
+				<textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
+				<br><br>
+				
+				Myriadcoin Address: <br>
+				<input type="text" name="myrAddress" rows="5" value="<?php echo $myrAddress;?>">
+				<br><br>
+				
+				Username:<br>
+				<input type="text" name="userName" value="<?php echo $userName;?>">
+				<br><br>
+				
+				Is active?:<br>
+				<input type="text" name="active" value="<?php echo $active;?>">
+				<br><br>
+				
+				<input type="submit" name="submit" value="Delete">
+			</form>
+
+<?php
+
+if ($bountyDeleted == $CONFIRM)
+{
+	print "Please confirm that this is the bounty that you wish to delete! Click \"delete\" again once you are sure.";
+	print "<form method=\"post\" action=\"";
+	echo $_SERVER["PHP_SELF"];
+	print "\">";
+	print "<input type=\"submit\" name=\"submit\" value=\"Confirm\">";
+	print "</form>";
+}
+
+if ($bountyDeleted == $FAILURE)
+{
+	print "Bounty deletion failed!";
+}
+
+if ($bountyDeleted == $SUCCESS)
+{
+	print "Bounty deleted!";
+	print "<br>";
+	print "Redirecting to bounty page...";
+	header("Refresh: 3, URL = " . $redirectURL);
+	exit;
+}
+
+?>
 
 <?php
 
@@ -99,62 +161,6 @@ function cleanInput($data)
 
 }
 ?> 
-
-			<h2>Delete a Bounty</h2>
-		<p><span class="error">Enter the title of the bounty you wish to delete.</span></p>
-		
-			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-				Bounty Title: (You only need to type the first few letters)<br>
-				<input type="text" name="title" value="<?php echo $title;?>">
-				<span class="error">* <?php echo $titleErr;?></span>
-				
-				<br><br>
-				Bounty Description:<br>
-				<textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
-				<br><br>
-				
-				Myriadcoin Address: <br>
-				<input type="text" name="myrAddress" rows="5" value="<?php echo $myrAddress;?>">
-				<br><br>
-				
-				Username:<br>
-				<input type="text" name="userName" value="<?php echo $userName;?>">
-				<br><br>
-				
-				Is active?:<br>
-				<input type="text" name="active" value="<?php echo $active;?>">
-				<br><br>
-				
-				<input type="submit" name="submit" value="Delete">
-			</form>
-
-<?php
-
-if ($bountyDeleted == $CONFIRM)
-{
-	print "Please confirm that this is the bounty that you wish to delete! Click \"delete\" again once you are sure.";
-	print "<form method=\"post\" action=\"";
-	echo $_SERVER["PHP_SELF"];
-	print "\">";
-	print "<input type=\"submit\" name=\"submit\" value=\"Confirm\">";
-	print "</form>";
-}
-
-if ($bountyDeleted == $FAILURE)
-{
-	print "Bounty deletion failed!";
-}
-
-if ($bountyDeleted == $SUCCESS)
-{
-	print "Bounty deleted!";
-	print "<br>";
-	print "Redirecting to bounty page...";
-	header("Refresh: 3, URL = " . $redirectURL);
-	exit;
-}
-
-?>
 
 	</body>
 </html>
