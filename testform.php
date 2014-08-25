@@ -125,7 +125,7 @@ function cleanInput($data)
 			<nav>
 
 		<hr/>
-		<h2>Submit a New Bounty</h2>
+		<center><h2>Submit a New Bounty</h2></center>
 		<hr/>
 		<p><span class="error">* required field.</span></p>
 		
