@@ -156,6 +156,11 @@ function removeBounty($fileName, $title)
  			for ($i = 0; $i < $lineNumber; $i++)
  			{
  				$content .= $lines[$i];
+ 				
+ 				if ($debugMode == true)
+ 				{
+ 					print // TODO
+ 				}
  			}
  		}
  		
