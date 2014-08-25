@@ -196,7 +196,7 @@ function removeBounty($fileName, $par1BountyNumber)
 	for ($i = 0; $i < count($file); $i++)
 	{
 		print "<br> Looking for  the line number...";
-		if ($file[$i] === $title)
+		if ((strcmp(stristr($file[$i], $title), $file[$i]) == 0))
 		{
 			if ($debugMode == true)
 			{
