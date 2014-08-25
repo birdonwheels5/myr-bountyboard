@@ -71,6 +71,7 @@ if ($bountyNumber > 0 and $confirmFlag == $FALSE)
 	$active = $bounties[$bountyNumber]->getActive();
 
 }
+}
 	if ($_POST["submit"] == "Confirm")
 	{
 		
@@ -86,7 +87,7 @@ function cleanInput($data)
     $data = htmlspecialchars($data);
     return $data;
 }
-}
+
 
 }
 ?> 
