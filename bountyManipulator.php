@@ -230,9 +230,9 @@ function removeBounty($fileName, $par1BountyNumber)
 				print "<br> " . $lineNumber;
 			}
 			
-			if ($lineNumber == ($bountyNumber--)) // We want the separator right before our target bounty
+			if ($lineNumber == ($bountyNumber)) // We want the separator right before our target bounty
 			{
-				$lineNumber = $i++; // Replacing the separator count with the line count of the title
+				$lineNumber = $i; // Replacing the separator count with the line count of the title
 				if ($debugMode == true)
 				{
 					print "<br> " . $lineNumber;
