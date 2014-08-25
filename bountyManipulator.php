@@ -153,6 +153,9 @@ function removeBounty($fileName, $par1BountyNumber)
 	$debugMode = true;
 	$separator = "qpwoeiruty";
 	
+	$bounties = array();
+	$bounties = readBounties($fileName);
+	
 	$lineNumber = 0;
 	
 	$SUCCESS = 0;
