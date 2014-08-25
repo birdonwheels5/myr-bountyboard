@@ -76,6 +76,8 @@ if ($bountyNumber > 0)
 	{
 		$bountyNumber = (int)file_get_contents("tmpDeleteBounty.dat");
 		
+		print $bountyNumber;
+		
 		$title = $bounties[$bountyNumber]->getTitle();
 		$bountyDeleted = $SUCCESS;
 		removeBounty($fileName, "title: " . $title);
