@@ -15,10 +15,11 @@ nav
 {
 	width: 70%;
 	float: left;
-	display: inline;
-	margin: 0;
-	padding: 10%;
-	margin-right: 10px;
+	display:inline;
+	margin:0;
+	padding-left:10%;
+	padding-right:10%;
+	margin-right:10px;
 }
 
 header
