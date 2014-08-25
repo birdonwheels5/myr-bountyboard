@@ -313,7 +313,7 @@ function searchBounty($fileName, $title)
  		}
  		}
  	
- 		for($i = $lineNumber; $i < count($lines); $i++) 
+ 		for($i = $lineNumber; $i <= count($lines); $i++) 
  		
  		{ // ...run through the loop...
  		
@@ -361,7 +361,7 @@ function searchBounty($fileName, $title)
  			$content .= $lines[$i]; // content.
  		}
  	
- 		for($i = ($lineNumber - 1); $i < count($lines); $i++) 
+ 		for($i = ($lineNumber - 1); $i <= count($lines); $i++) 
  		
  		{ // ...run through the loop...
  		
