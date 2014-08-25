@@ -124,7 +124,7 @@ if ($bountyDeleted == $CONFIRM)
 	print "<form method=\"post\" action=\"";
 	echo $_SERVER["PHP_SELF"];
 	print "\">";
-	print "<input type=\"submit\" name=\"confirm\" value=\"Confirm\">";
+	print "<input type=\"submit\" name=\"submit\" value=\"Confirm\">";
 	print "</form>";
 }
 
