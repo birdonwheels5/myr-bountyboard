@@ -192,7 +192,7 @@ function removeBounty($fileName, $title)
  			{ // ...run through the loop...
  				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
  				{
- 					$content .= $lines[$i];
+ 					$content .= str_ireplace($lines[$i], "", $lines[$i]);
  					$lastLine = $i;
  					break;
  				}
