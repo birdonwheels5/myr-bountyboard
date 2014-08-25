@@ -36,7 +36,6 @@ $redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 $bounties = array();
 $bounties = readBounties($fileName);
 
-$fileName = "bounties.dat";
 $separator = "qpwoeiruty";
 $empty = "";
 
@@ -85,10 +84,11 @@ if ($bountyNumber > 0)
 	{
 		// Load the bounty number when the user clicks on the "confirm" button
 		$bountyNumber = (int)file_get_contents("tmpDeleteBounty.dat");
+		$fileName = "bounties.dat";
 		
 		print $bountyNumber;
 		
-		$title = $bounties[$bountyNumber]->getTitle();
+		//$title = $bounties[$bountyNumber]->getTitle();
 		$bountyDeleted = $SUCCESS;
 		removeBounty($fileName, $bountyNumber);
 	}
@@ -154,8 +154,8 @@ if ($bountyDeleted == $SUCCESS)
 	print "Bounty deleted!";
 	print "<br>";
 	print "Redirecting to bounty page...";
-	header("Refresh: 3, URL = " . $redirectURL);
-	exit;
+	//header("Refresh: 3, URL = " . $redirectURL);
+	//exit;
 }
 
 ?>
