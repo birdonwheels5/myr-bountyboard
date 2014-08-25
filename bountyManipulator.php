@@ -210,6 +210,13 @@ function removeBounty($fileName, $par1BountyNumber)
 		print "<br> File Opened!";
 	}
 	
+	// Special case for when the first bounty needs to be deleted
+	if ($bountyNumber == 1)
+	{
+		$lineNumber = 0; // This will always be true since the bounty is at the start of the file
+	}
+	else
+	{
 	for ($i = 0; $i < count($file); $i++)
 	{
 		if ($debugMode == true)
@@ -225,14 +232,15 @@ function removeBounty($fileName, $par1BountyNumber)
 			}
 			
 			$lineNumber++; // Keeping track of the separators
+			
 			if ($debugMode == true)
 			{
 				print "<br> " . $lineNumber;
 			}
 			
-			if ($lineNumber == ($bountyNumber)) // We want the separator right before our target bounty
+			if ($lineNumber == ($bountyNumber)) // We want the separator count to equal the bounty number
 			{
-				$lineNumber = $i; // Replacing the separator count with the line count of the title
+				$lineNumber = $i++; // Replacing the separator count with the line count of the title
 				if ($debugMode == true)
 				{
 					print "<br> " . $lineNumber;
@@ -243,6 +251,7 @@ function removeBounty($fileName, $par1BountyNumber)
 		}
 		
 		
+	}
 	}
 	fclose($file);
 	
