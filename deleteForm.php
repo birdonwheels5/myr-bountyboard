@@ -66,6 +66,8 @@ if ($bountyNumber > 0)
 	$userName = $bounties[$bountyNumber]->getUserName();
 	$active = $bounties[$bountyNumber]->getActive();
 	
+	$bountyDeleted = $CONFIRM;
+	
 	file_put_contents("tmpDeleteBounty.dat", $bountyNumber);
 	
 }
