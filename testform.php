@@ -32,19 +32,22 @@ $redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
 	$bountyNumber = searchBounty($fileName, $_POST["title"]);
+	
 	if (empty($_POST["title"])) 
 	{
 		$titleErr = "A title is required";
 	} 
-    	else if((strcmp(stristr($_POST["title"], $bounties[$bountyNumber]->getTitle()), $_POST["title"])))
+    	else 
     	{
-    		$titleErr = "That bounty already exists. Please specify another name.";
+    		if((strcmp(stristr($_POST["title"], $bounties[$bountyNumber]->getTitle()), $_POST["title"])) == 0)
+    		{
+    			$titleErr = "That bounty already exists. Please specify another name.";
+    		}
+    		else
+    		{
+			$title = cleanInput($_POST["title"]);
+    		}
     	}
-    	else
-    	{
-		$title = cleanInput($_POST["title"]);
-    	}
-    	
 //TODO Implement title search and throw error if title already exists
 	if (strcmp($title))
 	{
