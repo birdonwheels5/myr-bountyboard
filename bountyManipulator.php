@@ -4,7 +4,7 @@ include "Bounty.php";
 
 function readBounties($fileName)
 {
-	$debugMode = true;
+	$debugMode = false;
 	$separator = "qpwoeiruty";
 
 	$title = "";
@@ -94,6 +94,8 @@ function readBounties($fileName)
 	return $bounties;
 }
 
+// -----------------------------------------------------------------------------------------
+
 function countBounties($fileName)
 {
   $separator = "qpwoeiruty";
@@ -111,6 +113,8 @@ function countBounties($fileName)
 	fclose($handle);
 	return $index;
 }
+
+// -----------------------------------------------------------------------------------------
 
 // Returns -1 if the title supplied cannot be found in the bounty array.
 // If successful, the number of the bounty is returned (will always be > 0).
@@ -147,10 +151,26 @@ function searchBounty($fileName, $title)
 	return $searchResult;
 }
 
+// -----------------------------------------------------------------------------------------
+
+function displayTitles($fileName)
+{
+	
+}
+
+// -----------------------------------------------------------------------------------------
+
+function displayAllBounties($fileName)
+{
+	
+}
+
+// -----------------------------------------------------------------------------------------
+
 function removeBounty($fileName, $par1BountyNumber)
 {
 	$bountyNumber = (int)$par1BountyNumber;
-	$debugMode = true;
+	$debugMode = false;
 	$separator = "qpwoeiruty";
 	
 	$bounties = array();
@@ -304,5 +324,6 @@ function removeBounty($fileName, $par1BountyNumber)
 	return;
 }
 
- 
+// -----------------------------------------------------------------------------------------
+
 ?>
