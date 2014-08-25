@@ -54,6 +54,7 @@ if ($bountyNumber < 0)
 }
 
 print $bountyNumber;
+print $confirmFlag;
 	
 if ($bountyNumber > 0)
 {
@@ -74,6 +75,7 @@ if ($bountyNumber > 0)
 		$bountyDeleted = $SUCCESS;
 		removeBounty($fileName, "title: " . $title);	
 	}
+print $confirmFlag;
 }
 
 function cleanInput($data) 
