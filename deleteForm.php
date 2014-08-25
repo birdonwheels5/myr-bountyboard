@@ -7,6 +7,8 @@
 	</head>
 	
 	<body> 
+	
+	
 
 <?php
 
@@ -99,7 +101,7 @@ function cleanInput($data)
 		<p><span class="error">Enter the title of the bounty you wish to delete.</span></p>
 		
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-				Bounty Title:<br>
+				Bounty Title: (You only need to type the first few letters)<br>
 				<input type="text" name="title" value="<?php echo $title;?>">
 				<span class="error">* <?php echo $titleErr;?></span>
 				
@@ -109,7 +111,7 @@ function cleanInput($data)
 				<br><br>
 				
 				Myriadcoin Address: <br>
-				<input type="text" name="myrAddress" value="<?php echo $myrAddress;?>">
+				<input type="text" name="myrAddress" rows="5" value="<?php echo $myrAddress;?>">
 				<br><br>
 				
 				Username:<br>
