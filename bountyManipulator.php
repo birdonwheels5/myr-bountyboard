@@ -149,77 +149,51 @@ function removeBounty($fileName, $title)
 	$lines = file($fileName); // ...make new variable...
  		$f = fopen($fileName, "r") or print ("Error loading bounties!");
  		
- 		for($i = ($lineNumber); $i <= count($lines); $i++) 
+ 		$content;
  		
- 		{ // ...run through the loop...
+ 		if ($lineNumber != 0)
+ 		{
+ 			for ($i = 0; $i < $lineNumber; $i++)
+ 			{
+ 				$content .= $lines[$i];
+ 			}
+ 		}
  		
  		if ($lineNumber == 0)
-		{
-			if ($debugMode == true)
-			{
-				print "<br>Going through the loops!";
-			}
-			
-			if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
-			{
-				replaceLineInTextFile($fileName, $lines[$i], "", $lineNumber);
-			
-				if ($debugMode == true)
-				{
-					print "<br> " . $separator . " reached!";
-				}
-				
-				break;
-			}
-			
-			replaceLineInTextFile($fileName, $lines[$i], "", $lineNumber);
-		
-			if ($debugMode == true)
-			{
-				print "<br> Line \"" . $lines[$i] . "\" deleted!";
-			}
-	
-		if ($debugMode == true)
-		{
-			print "<br>Finished deleting lines!";
-		}
-		}
-		
-		else
-		{
-			if ($debugMode == true)
-			{
-				print "<br>Going through the loops!";
-			}
-		
-			if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
-			{
-				replaceLineInTextFile($fileName, $lines[$i], "", $lineNumber);
-				addLineInTextFile($fileName, $separator, ($lineNumber - 2));
-				
-				if ($debugMode == true)
-				{
-					print "<br> " . $separator . " reached!";
-				}
-				
-				break;
-			}
-			
-			replaceLineInTextFile($fileName, $lines[$i], "", $lineNumber);
-			
-			if ($debugMode == true)
-			{
-				print "<br> Line \"" . $lines[$i] . "\" deleted!";
-			}
-		}
-	
-		if ($debugMode == true)
-		{
-			print "<br>Finished deleting lines!";
-		}
-		}
+ 		{
+ 			for($i = ($lineNumber); $i <= count($lines); $i++) 
+ 		
+ 			{ // ...run through the loop...
+ 			
+ 				$content .= str_ireplace($lines[$i], "", $lines[$i]);
+ 				
+ 				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
+ 				{
+ 					$content .= str_ireplace($lines[$i], "", $lines[$i]);
+ 					break;
+ 				}
+ 			}
+ 		}
+ 		else
+ 		{
+ 			for($i = ($lineNumber); $i <= count($lines); $i++) 
+ 		
+ 			{ // ...run through the loop...
+ 				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
+ 				{
+ 					$content .= $lines[$i];
+ 					break;
+ 				}
+ 				
+ 				$content .= str_ireplace($lines[$i], "", $lines[$i]);
+ 			}
+ 		}
 
  		fclose($f);
+ 		
+ 		$fi = fopen($fileName, "w"); // open specified file...
+ 		fwrite($fi, $content); // and rewrite it's content.
+ 		fclose($fi); // close file.
 	
 	
 	/*$file = new SplFileObject($fileName, 'r');
