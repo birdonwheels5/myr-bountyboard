@@ -146,7 +146,7 @@ function removeBounty($fileName, $title)
 	}
 	
 	
-	$lines = file($fileName); // ...make new variable...
+	$lines = file($fileName);
 
  		$content;
 
@@ -155,11 +155,6 @@ function removeBounty($fileName, $title)
  			for ($i = 0; $i < $lineNumber; $i++)
  			{
  				$content .= $lines[$i];
- 				
- 				if ($debugMode == true)
- 				{
- 					//print // TODO
- 				}
  			}
  		}
  		
@@ -168,7 +163,7 @@ function removeBounty($fileName, $title)
  		{
  			for($i = 0; $i < count($lines); $i++) 
  		
- 			{ // ...run through the loop...
+ 			{ 
  			
  				$content .= str_ireplace($lines[$i], "", $lines[$i]);
  				
@@ -189,7 +184,7 @@ function removeBounty($fileName, $title)
  		{
  			for($i = ($lineNumber); $i < count($lines); $i++) 
  		
- 			{ // ...run through the loop...
+ 			{ 
  				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
  				{
  					$content .= str_ireplace($lines[$i], "", $lines[$i]);
@@ -208,9 +203,9 @@ function removeBounty($fileName, $title)
 
  		fclose($lines);
  		
- 		$fi = fopen($fileName, "w"); // open specified file...
- 		fwrite($fi, $content); // and rewrite it's content.
- 		fclose($fi); // close file.
+ 		$fi = fopen($fileName, "w");
+ 		fwrite($fi, $content);
+ 		fclose($fi);
 	
 	return;
 }
@@ -249,104 +244,5 @@ function searchBounty($fileName, $title)
 	
 	return $searchResult;
 }
-
-//Function for replacing line in text file.
- //Credit: Iiro Krankka, with changes made by birdonwheels5
- 
- // $lineNumber: Specifiy line number to begin searching at
- function replaceLineInTextFile($file, $pattern, $replacement, $lineNumber) 
- {
- 	if(!file_exists($file)) 
- 	{ // if file doesn't exist...
- 		print "The specified file doesn't seem to exist."; // ...stop executing code.
- 	} 
- 	else 
- 	{ // if file exists...
- 		$lines = file($file); // ...make new variable...
- 		$f = fopen($file, "r") or print ("Error loading bounties!");
- 		
- 		$content; // ...and another...
- 	
- 		// Makes sure that only the first occurance is overwritten	
- 		$replaceCount = 0;
- 		
- 		if ($lineNumber > 1)
- 		{
- 		for($i = 0; $i < ($lineNumber); $i++)
- 		{
- 			$content .= $lines[$i]; // content.
- 		}
- 		}
- 	
- 		for($i = $lineNumber; $i <= count($lines); $i++) 
- 		
- 		{ // ...run through the loop...
- 		
- 			if ((strcmp(stristr($lines[$i], $pattern), $lines[$i]) == 0) and $replaceCount < 1)
- 			{ // and
- 				$content .= str_ireplace($pattern, $replacement, $lines[$i]); // get
- 				$replaceCount = 1337;
- 			} 
- 			else 
- 			{ // the
- 				$content .= $lines[$i]; // content.
- 			}
- 		}
-
- 		fclose($f);
- 		
- 		print "<br>" . $content;
-
- 		$fi = fopen($file, "w"); // open specified file...
- 		fwrite($fi, $content); // and rewrite it's content.
- 		fclose($fi); // close file.
- 	}
- }
- 
- //Function for replacing line in text file.
- //Credit: Iiro Krankka, with changes made by birdonwheels5
- 
- // $lineNumber: Specifiy line number to begin searching at
- // Adds a line AFTER the specified line number
- function addLineInTextFile($file, $stringToAdd, $lineNumber) 
- {
- 	if(!file_exists($file)) 
- 	{ // if file doesn't exist...
- 		print "The specified file doesn't seem to exist."; // ...stop executing code.
- 	} 
- 	else 
- 	{ // if file exists...
- 		$lines = file($file); // ...make new variable...
-
- 		$content; // ...and another...
- 		
- 		for($i = 0; $i < ($lineNumber); $i++)
- 		{
- 			$content .= $lines[$i]; // content.
- 		}
- 	
- 		for($i = ($lineNumber); $i <= count($lines); $i++) 
- 		
- 		{ // ...run through the loop...
- 		
- 			if ($i == $lineNumber)
- 			{ // and
- 				$content .= $lines[$i] . $stringToAdd . chr(10); // get
- 			} 
- 			else 
- 			{ // the
- 				$content .= $lines[$i]; // content.
- 			}
- 		}
-
- 		fclose($f);
- 		
- 		print "<br>" . $content;
-
- 		$fi = fopen($file, "w"); // open specified file...
- 		fwrite($fi, $content); // and rewrite it's content.
- 		fclose($fi); // close file.
- 	}
- }
  
 ?>
