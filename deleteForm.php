@@ -110,7 +110,7 @@ function cleanInput($data)
 			<nav>
 
 			<hr/>
-			<h2>Delete a Bounty</h2>
+			<center><h2>Delete a Bounty</h2></center>
 			<hr/>
 		<p><span class="error">Enter the title of the bounty you wish to delete.</span></p>
 		
