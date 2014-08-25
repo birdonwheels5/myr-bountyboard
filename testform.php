@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		$titleErr = "A title is required";
 	} 
-    	else if($$_POST["title"] == $bounties[$bountyNumber]->getTitle())
+    	else if((strcmp(stristr($_POST["title"], $bounties[$bountyNumber]->getTitle()), $_POST["title"])))
     	{
     		$titleErr = "That bounty already exists. Please specify another name.";
     	}
