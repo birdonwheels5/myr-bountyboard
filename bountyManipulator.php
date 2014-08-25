@@ -112,7 +112,42 @@ function countBounties($fileName)
 	return $index;
 }
 
-function removeBounty($fileName, $title)
+// Returns -1 if the title supplied cannot be found in the bounty array.
+// If successful, the number of the bounty is returned (will always be > 0).
+function searchBounty($fileName, $title)
+{
+	$separator = "qpwoeiruty";
+	
+	$FAILURE = -1;
+	
+	$bounties = array();
+	$bounties = readBounties($fileName);
+	
+	$bountyCount = countBounties($fileName);
+	
+	$searchResult = $FAILURE;
+	
+	// Loop through the bounty array, and look for a match with $titleResult. Returns the number of the bounty in
+	// the array.
+	for($i = 1; $i <= $bountyCount; $i++)
+	{
+		print "Bounty: " . $bounties[$i]->getTitle() . "<br>";
+		
+		if ((strcmp(stristr($bounties[$i]->getTitle(), $title), $bounties[$i]->getTitle()) == 0))
+		{
+			if ($debugMode == true)
+			{
+				print "<br>Title match!<br>" . $bounties[$i]->getTitle();
+			}
+			
+			$searchResult = $i;
+		}
+	}
+	
+	return $searchResult;
+}
+
+function removeBounty($fileName, $bountyNumber)
 {
 	$debugMode = true;
 	$separator = "qpwoeiruty";
@@ -122,7 +157,7 @@ function removeBounty($fileName, $title)
 	$SUCCESS = 0;
 	$FAILURE = 1;
 	
-  $handle = fopen($fileName, "r") or print ("Error loading bounties!");
+  /*$handle = fopen($fileName, "r") or print ("Error loading bounties!");
     	while (($line = fgets($handle)) !== false) 
     	{
     		
@@ -142,6 +177,24 @@ function removeBounty($fileName, $title)
 	if ($debugMode == true)
 	{
 		print "<br>File closed!";
+	}*/
+	
+	// Get the title of the bounty we're working with
+	$title = $bounties[$bountyNumber]->getTitle();
+	
+	// Search for the line number where the bounty's title resides
+	$lines = file($fileName);
+	for ($i = 0; $i < count($lines); i++)
+	{
+		if (strcmp(stristr($lines[$i], $title), $lines[$i]) == 0)
+		{
+			if ($debugMode == true)
+			{
+				print "<br>Title found in line: " . $lines[$i] . "! Breaking loop.";
+			}
+			
+			$lineNumber = $i;
+			 break;
 	}
 	
 	
@@ -213,41 +266,6 @@ function removeBounty($fileName, $title)
  		fclose($fi);
 	
 	return;
-}
-
-// Returns -1 if the title supplied cannot be found in the bounty array.
-// If successful, the number of the bounty is returned (will always be > 0).
-function searchBounty($fileName, $title)
-{
-	$separator = "qpwoeiruty";
-	
-	$FAILURE = -1;
-	
-	$bounties = array();
-	$bounties = readBounties($fileName);
-	
-	$bountyCount = countBounties($fileName);
-	
-	$searchResult = $FAILURE;
-	
-	// Loop through the bounty array, and look for a match with $titleResult. Returns the number of the bounty in
-	// the array.
-	for($i = 1; $i <= $bountyCount; $i++)
-	{
-		print "Bounty: " . $bounties[$i]->getTitle() . "<br>";
-		
-		if ((strcmp(stristr($bounties[$i]->getTitle(), $title), $bounties[$i]->getTitle()) == 0))
-		{
-			if ($debugMode == true)
-			{
-				print "<br>Title match!<br>" . $bounties[$i]->getTitle();
-			}
-			
-			$searchResult = $i;
-		}
-	}
-	
-	return $searchResult;
 }
  
 ?>
