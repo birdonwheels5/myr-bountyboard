@@ -125,7 +125,6 @@ function removeBounty($fileName, $title)
   $handle = fopen($fileName, "r") or print ("Error loading bounties!");
     	while (($line = fgets($handle)) !== false) 
     	{
-    		//$lineNumber++;
     		
     		// Look for specified title, and grab the line count
 		if (strcmp(stristr($line, $title), $line) == 0)
@@ -149,7 +148,9 @@ function removeBounty($fileName, $title)
 	$lines = file($fileName);
 
  		$content;
-
+		
+		// If the starting line number is not 0, then read the lines up until the line
+		// number into the temp file ($content)
  		if ($lineNumber != 0)
  		{
  			for ($i = 0; $i < $lineNumber; $i++)
@@ -159,6 +160,8 @@ function removeBounty($fileName, $title)
  		}
  		
  		$lastLine;
+ 		
+ 		// Special case for when we remove the first bounty entry from our bounties.dat file
  		if ($lineNumber == 0)
  		{
  			for($i = 0; $i < count($lines); $i++) 
@@ -175,12 +178,13 @@ function removeBounty($fileName, $title)
  				}
  			}
  			
+ 			// Pick up reading into temp file after we've stopped changing the file's contents
  			for($i = ($lastLine + 1); $i < count($lines); $i++)
  			{
  				$content .= $lines[$i];
  			}
  		}
- 		else
+ 		else // Same thing, just with changed separator rules for bounties that are not at line 0
  		{
  			for($i = ($lineNumber); $i < count($lines); $i++) 
  		
@@ -203,6 +207,7 @@ function removeBounty($fileName, $title)
 
  		fclose($lines);
  		
+ 		// Overwrite main file with temp file
  		$fi = fopen($fileName, "w");
  		fwrite($fi, $content);
  		fclose($fi);
