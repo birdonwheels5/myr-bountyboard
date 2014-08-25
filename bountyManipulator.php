@@ -144,6 +144,8 @@ function removeBounty($fileName, $title)
 		print "<br>File closed!";
 	}
 	
+	$lineNumber--;
+	
 	$lines = file($fileName); // ...make new variable...
  		$f = fopen($fileName, "r") or print ("Error loading bounties!");
  		
@@ -151,10 +153,8 @@ function removeBounty($fileName, $title)
  		
  		{ // ...run through the loop...
  		
- 		if ($lineNumber == 1)
+ 		if ($lineNumber == 0)
 		{
-			$lineNumber++;
-		
 			if ($debugMode == true)
 			{
 				print "<br>Going through the loops!";
