@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Bounty Delete Page</title>
+		<title>Delete Bounty</title>
 		<link rel="stylesheet" type="text/css" href="styles.css" title="Default Styles" media="screen"/>
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
 		<style>
@@ -101,6 +101,14 @@ function cleanInput($data)
 
 }
 ?> 
+		<header>
+		
+			<center><h1>Delete Bounty Form</h1></center>
+			
+		</header>
+		
+			<nav>
+
 			<h2>Delete a Bounty</h2>
 		<p><span class="error">Enter the title of the bounty you wish to delete.</span></p>
 		
@@ -128,6 +136,11 @@ function cleanInput($data)
 				
 				<input type="submit" name="submit" value="Delete">
 			</form>
+			</nav>
+			
+			<article>
+				<p>Hi mom</p>
+			</article>
 
 <?php
 
