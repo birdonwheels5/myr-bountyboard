@@ -41,7 +41,7 @@ $bountyNumber = -1;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-if($_POST["submit"])
+if($_POST["submit"] and $_POST["submit"] == "Delete")
 {
 	if (empty($_POST["title"])) 
 	{
