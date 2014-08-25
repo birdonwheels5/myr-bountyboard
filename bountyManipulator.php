@@ -197,12 +197,12 @@ function removeBounty($fileName, $par1BountyNumber)
 		print "<br> Bounty title is: " . $title;
 	}
 	
-	// Search for the line number where the bounty's title resides
 	if ($debugMode == true)
 	{
 		print "<br> Opening file...";
 	}
 	
+	// Search for the line number where the bounty's title resides
 	$file = file($fileName);
 	
 	if ($debugMode == true)
@@ -210,7 +210,7 @@ function removeBounty($fileName, $par1BountyNumber)
 		print "<br> File Opened!";
 	}
 	
-	for ($i = 0; $i < $bountyCount); $i++)
+	for ($i = 0; $i < $bountyCount; $i++)
 	{
 		if ($debugMode == true)
 		{
