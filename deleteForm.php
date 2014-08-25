@@ -21,8 +21,6 @@ $WAITING = -1;
 $FAILURE = 1;
 $SUCCESS = 0;
 $CONFIRM = 100;
-$FALSE = 0;
-$TRUE = 1;
 
 $fileName = "bounties.dat";
 $bountyDeleted = $WAITING;
@@ -30,8 +28,6 @@ $redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 
 $bounties = array();
 $bounties = readBounties($fileName);
-
-$confirmFlag = $FALSE;
 
 $fileName = "bounties.dat";
 $separator = "qpwoeiruty";
@@ -50,8 +46,7 @@ if($_POST["submit"] and $_POST["submit"] == "Delete")
 		$titleErr = "A title is required";
 	} 
 
-if ($confirmFlag == FALSE)
-{
+
 $bountyNumber = searchBounty($fileName, $_POST['title']);
 	
 if ($bountyNumber < 0)
@@ -61,23 +56,23 @@ if ($bountyNumber < 0)
 }
 
 print $bountyNumber;
-}
-if ($bountyNumber > 0 and $confirmFlag == $FALSE)
+
+if ($bountyNumber > 0)
 {
 	$title = $bounties[$bountyNumber]->getTitle();
-	$bountyDeleted = $CONFIRM;
 
 	$description = $bounties[$bountyNumber]->getDescription();
 	$myrAddress = $bounties[$bountyNumber]->getMyrAddress();
 	$userName = $bounties[$bountyNumber]->getUserName();
 	$active = $bounties[$bountyNumber]->getActive();
-
+	
+	file_put_contents("tmpDeleteBounty.dat", $bountyNumber);
+	
 }
 }
 	if ($_POST["submit"] and $_POST["submit"] == "Confirm")
 	{
-		print $bountyNumber;
-		print $bounties[$bountyNumber]->getTitle();
+		$bountyNumber = (int)file_get_contents("tmpDeleteBounty.dat");
 		
 		$title = $bounties[$bountyNumber]->getTitle();
 		$bountyDeleted = $SUCCESS;
@@ -128,7 +123,6 @@ function cleanInput($data)
 
 if ($bountyDeleted == $CONFIRM)
 {
-	$confirmFlag = $TRUE;
 	print "Please confirm that this is the bounty that you wish to delete! Click \"delete\" again once you are sure.";
 	print "<form method=\"post\" action=\"";
 	echo $_SERVER["PHP_SELF"];
