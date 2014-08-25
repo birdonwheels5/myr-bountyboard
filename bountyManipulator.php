@@ -224,7 +224,7 @@ function removeBounty($fileName, $par1BountyNumber)
 				print "<br> Separator found";
 			}
 			
-			$lineNumber++;
+			$lineNumber++; // Keeping track of the separators
 			if ($debugMode == true)
 			{
 				print "<br> " . $lineNumber;
@@ -232,7 +232,7 @@ function removeBounty($fileName, $par1BountyNumber)
 			
 			if ($lineNumber == $bountyNumber)
 			{
-				$lineNumber = $i;
+				$lineNumber = $i; // Replacing the separator count with the line count
 				if ($debugMode == true)
 				{
 					print "<br> " . $lineNumber;
