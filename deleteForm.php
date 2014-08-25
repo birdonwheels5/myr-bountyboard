@@ -29,7 +29,7 @@ $redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 $bounties = array();
 $bounties = readBounties($fileName);
 
-$confirmFlag = true;
+$confirmFlag = false;
 
 $fileName = "bounties.dat";
 $separator = "qpwoeiruty";
@@ -67,7 +67,7 @@ if ($bountyNumber > 0)
 		$userName = $bounties[$bountyNumber]->getUserName();
 		$active = $bounties[$bountyNumber]->getActive();
 	} 
-	else //if ($_POST["submit"] == "Confirm")
+	else if ($_POST["submit"] == "Confirm")
 	{
 		
 		$title = $bounties[$bountyNumber]->getTitle();
@@ -121,11 +121,11 @@ if ($bountyDeleted == $CONFIRM)
 {
 	$confirmFlag = true;
 	print "Please confirm that this is the bounty that you wish to delete! Click \"delete\" again once you are sure.";
-	/*print "<form method=\"post\" action=\"";
+	print "<form method=\"post\" action=\"";
 	echo $_SERVER["PHP_SELF"];
 	print "\">";
 	print "<input type=\"submit\" name=\"confirm\" value=\"Confirm\">";
-	print "</form>";*/
+	print "</form>";
 }
 
 if ($bountyDeleted == $FAILURE)
@@ -138,8 +138,8 @@ if ($bountyDeleted == $SUCCESS)
 	print "Bounty deleted!";
 	print "<br>";
 	print "Redirecting to bounty page...";
-	//header("Refresh: 3, URL = " . $redirectURL);
-	//exit;
+	header("Refresh: 3, URL = " . $redirectURL);
+	exit;
 }
 
 ?>
