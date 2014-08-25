@@ -147,8 +147,7 @@ function removeBounty($fileName, $title)
 	$lineNumber--;
 	
 	$lines = file($fileName); // ...make new variable...
- 		$f = fopen($fileName, "r") or print ("Error loading bounties!");
- 		
+
  		$content;
  		$counter = 0;
  		
@@ -195,7 +194,7 @@ function removeBounty($fileName, $title)
  			}
  		}
 
- 		fclose($f);
+ 		fclose($lines);
  		
  		$fi = fopen($fileName, "w"); // open specified file...
  		fwrite($fi, $content); // and rewrite it's content.
@@ -409,8 +408,7 @@ function searchBounty($fileName, $title)
  	else 
  	{ // if file exists...
  		$lines = file($file); // ...make new variable...
- 		$f = fopen($file, "r") or print ("Error loading bounties!");
- 		
+
  		$content; // ...and another...
  		
  		for($i = 0; $i < ($lineNumber); $i++)
