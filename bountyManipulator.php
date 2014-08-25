@@ -144,8 +144,92 @@ function removeBounty($fileName, $title)
 		print "<br>File closed!";
 	}
 	
+	$lines = file($file); // ...make new variable...
+ 		$f = fopen($file, "r") or print ("Error loading bounties!");
+ 		
+ 		for($i = ($lineNumber); $i <= count($lines); $i++) 
+ 		
+ 		{ // ...run through the loop...
+ 		
+ 		if ($lineNumber == 1)
+		{
+			$lineNumber++;
+		
+			if ($debugMode == true)
+			{
+				print "<br>Going through the loops!";
+			}
+			
+			if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
+			{
+				$lineNumber--;
+				replaceLineInTextFile($fileName, $lines[i], "", $lineNumber);
+			
+				if ($debugMode == true)
+				{
+					print "<br> " . $separator . " reached!";
+				}
+				
+				break;
+			}
+			
+			replaceLineInTextFile($fileName, $lines[$i], "", $lineNumber);
+		
+			if ($debugMode == true)
+			{
+				print "<br> Line \"" . $lines[$i] . "\" deleted!";
+			}
 	
-	$file = new SplFileObject($fileName, 'r');
+		if ($debugMode == true)
+		{
+			print "<br>Finished deleting lines!";
+		}
+		}
+		
+		else
+		{
+			if ($debugMode == true)
+			{
+				print "<br>Going through the loops!";
+			}
+		
+			if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
+			{
+				$lineNumber--;
+				replaceLineInTextFile($fileName, $lines[$i], "", $lineNumber);
+				addLineInTextFile($fileName, $separator, ($lineNumber - 2));
+				
+				if ($debugMode == true)
+				{
+					print "<br> " . $separator . " reached!";
+				}
+				
+				break;
+			}
+			
+			replaceLineInTextFile($fileName, $lines[$i], "", $lineNumber);
+			
+			if ($debugMode == true)
+			{
+				print "<br> Line \"" . $lines[$i] . "\" deleted!";
+			}
+			
+			
+			$file->next();
+			
+		
+		}
+	
+		if ($debugMode == true)
+		{
+			print "<br>Finished deleting lines!";
+		}
+		}
+
+ 		fclose($f);
+	
+	
+	/*$file = new SplFileObject($fileName, 'r');
 	
 	if ($debugMode == true)
 	{
@@ -245,7 +329,7 @@ function removeBounty($fileName, $title)
 		print "<br>Finished deleting lines!";
 	}
 	$file = null;
-	}
+	}*/
 	
 	return;
 }
