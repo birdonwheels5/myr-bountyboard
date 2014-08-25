@@ -150,6 +150,7 @@ function removeBounty($fileName, $title)
  		$f = fopen($fileName, "r") or print ("Error loading bounties!");
  		
  		$content;
+ 		$counter = 0;
  		
  		if ($lineNumber != 0)
  		{
@@ -159,7 +160,7 @@ function removeBounty($fileName, $title)
  				
  				if ($debugMode == true)
  				{
- 					print // TODO
+ 					//print // TODO
  				}
  			}
  		}
@@ -172,10 +173,10 @@ function removeBounty($fileName, $title)
  			
  				$content .= str_ireplace($lines[$i], "", $lines[$i]);
  				
- 				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
+ 				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0) and $counter < 1)
  				{
  					$content .= str_ireplace($lines[$i], "", $lines[$i]);
- 					break;
+ 					$counter++;
  				}
  			}
  		}
@@ -184,10 +185,10 @@ function removeBounty($fileName, $title)
  			for($i = ($lineNumber); $i <= count($lines); $i++) 
  		
  			{ // ...run through the loop...
- 				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0))
+ 				if ((strcmp(stristr($lines[$i], $separator), $lines[$i]) == 0) and $counter < 1)
  				{
  					$content .= $lines[$i];
- 					break;
+ 					$counter++;
  				}
  				
  				$content .= str_ireplace($lines[$i], "", $lines[$i]);
