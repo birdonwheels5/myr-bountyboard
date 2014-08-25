@@ -147,8 +147,9 @@ function searchBounty($fileName, $title)
 	return $searchResult;
 }
 
-function removeBounty($fileName, $bountyNumber)
+function removeBounty($fileName, $par1BountyNumber)
 {
+	$bountyNumber = $par1BountyNumber;
 	$debugMode = true;
 	$separator = "qpwoeiruty";
 	
