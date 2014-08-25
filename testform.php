@@ -1,13 +1,18 @@
 <!DOCTYPE HTML> 
 <html>
 	<head>
+		<meta charset="ISO-8859-1">
+		<title>Portal Home</title>
+		<link rel="stylesheet" type="text/css" href="styles.css" title="Default Styles" media="screen"/>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
+		
 		<style>
 			.error {color: #FF0000;}
 		</style>
 	</head>
 	
 	<body> 
-
+		
 <?php
 
 include "bountyManipulator.php";
@@ -111,8 +116,13 @@ function cleanInput($data)
     return $data;
 }
 ?> 
-
+		<header>
+		
 			<h2>Submit a New Bounty</h2>
+				
+		</header>
+			<nav>
+
 		<p><span class="error">* required field.</span></p>
 		
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
@@ -139,6 +149,10 @@ function cleanInput($data)
 				
 				<input type="submit" name="submit" value="Submit"> 
 			</form>
+			</nav>
+			<article>
+				<p>Hi mom</p>
+			</article>
 
 <?php
 if ($bountySubmitted == $FAILURE)
