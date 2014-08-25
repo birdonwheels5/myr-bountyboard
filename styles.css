@@ -1,0 +1,67 @@
+body
+{
+	font-family: 'Open Sans', sans-serif;
+	padding:0;
+	margin:0;
+}
+
+div.container 
+{
+	width:100%;
+	background-image:url(img/stars3.jpg);
+}
+
+nav
+{
+	width: 150px;
+	float: left;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	margin-right: 10px;
+}
+
+header
+{
+	background-color:#002B6B;
+	height:50px;
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+div.logoContainer
+{
+	width:30px;
+	height:50px;
+	float:left;
+	padding:6px;
+}
+
+div.button
+{
+	height:45px;
+	float:right;
+	padding-right:15px;
+}
+
+article
+{
+	width:76%;height:40%;
+	text-align:left;
+	padding-left:2%;
+	padding-right:2%;
+}
+
+div.paddingBottom
+{
+	width:80%;
+	padding-bottom:1.5%
+}
+
+footer
+{
+	background-color:#626163;
+	width:100%;
+	clear:both;
+	text-align:center;
+}
