@@ -186,7 +186,7 @@ function removeBounty($fileName, $bountyNumber)
 	$file = file($fileName);
 	for ($i = 0; $i < count($file); $i++)
 	{
-		if ($file[$i] == $title)
+		if ($file[$i] === $title)
 		{
 			if ($debugMode == true)
 			{
