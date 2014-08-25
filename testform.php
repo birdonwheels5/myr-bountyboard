@@ -118,11 +118,13 @@ function cleanInput($data)
 ?> 
 		<header>
 		
-			<h2>Submit a New Bounty</h2>
-				
+			<center><h1>Submit New Bounty Form</h1></center>
+			
 		</header>
+		
 			<nav>
 
+		<h2>Submit a New Bounty</h2>
 		<p><span class="error">* required field.</span></p>
 		
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
