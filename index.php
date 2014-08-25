@@ -2,14 +2,12 @@
 <html>
 
 	<head>
-	<?php include "bountyManipulator.php";
-	?>
+	<?php include "bountyManipulator.php";?>
 	</head>
 
 	<body>
 	
 	<?php
-	
 	
 	$fileName = "bounties.dat";
 	
