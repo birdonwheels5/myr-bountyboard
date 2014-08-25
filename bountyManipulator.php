@@ -156,40 +156,18 @@ function removeBounty($fileName, $par1BountyNumber)
 	$bounties = array();
 	$bounties = readBounties($fileName);
 	
-	$lineNumber = -1; // Important so that our logic later on will work. Look for the "Hotdogs" section line ~234
+	$lineNumber = 0; // Important so that our logic later on will work. Look for the "Hotdogs" section line ~234
 	
 	$SUCCESS = 0;
 	$FAILURE = 1;
 	
-  /*$handle = fopen($fileName, "r") or print ("Error loading bounties!");
-    	while (($line = fgets($handle)) !== false) 
-    	{
-    		
-    		// Look for specified title, and grab the line count
-		if (strcmp(stristr($line, $title), $line) == 0)
-		{
-			if ($debugMode == true)
-			{
-				print "<br>Title found in line: " . $line . "! Breaking loop.";
-			}
-			 break;
-		}
-		$lineNumber++;
-	}
-	fclose($handle);
-	
-	if ($debugMode == true)
-	{
-		print "<br>File closed!";
-	}*/
-	
-	// Get the title of the bounty we're working with
 	if ($debugMode == true)
 	{
 		print "<br> Getting bounty title...";
 		print $bountyNumber;
 	}
 	
+	// Get the title of the bounty we're working with
 	$title = $bounties[$bountyNumber]->getTitle();
 	
 	if ($debugMode == true)
