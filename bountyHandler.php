@@ -196,11 +196,9 @@ function displayBounties($fileName)
 		{
 			print "<div class=\"inActiveBounty\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
 			print "</div><div class=\"descBox\"><p>" . $bounties[$i]->getDescription() . "</p>";
-			$addr = getAddressTotal($bounties[$i]->getMyrAddress());
-			print "</div><div class=\"box\"><center><p>" . $addressTotal . "</p></center>";
+			print "</div><div class=\"box\"><center><p>" . printAddressTotal($bounties[$i]->getMyrAddress()) . "</p></center>";
 			print "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
-			$donation = getDonationCount($bounties[$i]->getMyrAddress());
-			print "</div><div class=\"numberBox\"><center><p>" . $donationCount . "</p></center>";
+			print "</div><div class=\"numberBox\"><center><p>" . printDonationCount($bounties[$i]->getMyrAddress()) . "</p></center>";
 			print "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
 			print "</div></div>";
 		}
@@ -230,9 +228,8 @@ function displayBountyInfo($fileName)
 
 // -----------------------------------------------------------------------------------------
 
-// Returns a string with the total amount of MYR every received by the supplied address.
-// Not safe to cast to an int as it has "MYR" at the end of the string.
-function getAddressTotal($myrAddress)
+// Prints a string with the total amount of MYR every received by the supplied address.
+function printAddressTotal($myrAddress)
 {
 	// Get stream from block explorer
 	$url = fopen("http://cryptap.us/myr/explorer/address/" . $myrAddress, "r");  
@@ -252,13 +249,12 @@ function getAddressTotal($myrAddress)
 	$addressTotal = str_ireplace("Received: ", "", $explodedString[21]);
 	$addressTotal = str_ireplace("<br /", "", $addressTotal);
 	
-	return $addressTotal;
+	print $addressTotal;
 }
 
 // -----------------------------------------------------------------------------------------
 
-// Returns a string with the number of donations. 
-// Safe to cast to an int.
+// Prints a string with the number of donations. 
 function getDonationCount($myrAddress)
 {
 	// Get stream from block explorer
@@ -279,7 +275,7 @@ function getDonationCount($myrAddress)
 	$donationCount = str_ireplace("Transactions in: ", "", $explodedString[20]);
 	$donationCount = str_ireplace("<br /", "", $donationCount);
 	
-	return $donationCount;
+	print $donationCount;
 }
 
 // -----------------------------------------------------------------------------------------
