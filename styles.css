@@ -66,6 +66,7 @@ div.activeBounty
 	float:left;
 	background-color:hsla(100, 43%, 65%, 0.71);
 	-webkit-box-shadow: 10px 10px 5px #888888;
+	-moz-box-shadow: 10px 10px 5px #888888;
 }
 
 div.box
@@ -110,6 +111,8 @@ div.inActiveBounty
 	width:100%;
 	float:left;
 	background-color:hsla(0, 0%, 65%, 0.71);
+	-webkit-box-shadow: 10px 10px 5px #888888;
+	-moz-box-shadow: 10px 10px 5px #888888;
 }
 
 div.paddingBottom
