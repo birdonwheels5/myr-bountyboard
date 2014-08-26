@@ -49,6 +49,15 @@ nav
 
 article
 {
+	width:76%;
+	height:40%;
+	text-align:left;
+	padding-left:2%;
+	padding-right:2%;
+}
+
+div.status
+{
 	width:60%;
 	height:40%;
 	text-align:left;
