@@ -193,6 +193,7 @@ function displayBounties($fileName)
 
 function getAddressTotal($myrAddress)
 {
+	$debugMode = true;
 	$url = fopen("http://cryptap.us/myr/explorer/address/" . $myrAddress, "r");  
 	file_put_contents("tmpAddressTotal.dat", stream_get_contents($url));
 	
@@ -203,9 +204,18 @@ function getAddressTotal($myrAddress)
 	{
 		if ((strcmp(stristr($file[$i], "Transactions in: "), $file[$i]) == 0))
 		{
+			if ($debugMode == true)
+			{
+				print "<br/>Searching file for address total!<br/>";
+			}
+			
 			$addressTotal = trim(str_ireplace("Transactions in: ", "", $file[$i]));
 			$addressTotal = trim(str_ireplace("<br />", "", $file[$i]));
-			print $addressTotal;
+			
+			if ($debugMode == true)
+			{
+				print $addressTotal;
+			}
 		}
 	}
 }
