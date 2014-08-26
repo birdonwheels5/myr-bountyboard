@@ -66,8 +66,8 @@ div.activeBounty
 	float:left;
 	background-color:hsla(100, 43%, 65%, 0.71);
 	-webkit-box-shadow: 10px 10px 5px #888888;
-	-moz-box-shadow: 10px 10px 5px #888888;
-	margin-bottom:42px;
+	-moz-box-shadow: 3px 3px 5px #888888;
+	margin-bottom:30px;
 }
 
 div.box
@@ -113,8 +113,8 @@ div.inActiveBounty
 	float:left;
 	background-color:hsla(0, 0%, 65%, 0.71);
 	-webkit-box-shadow: 10px 10px 5px #888888;
-	-moz-box-shadow: 10px 10px 5px #888888;
-	margin-bottom:42px;
+	-moz-box-shadow: 3px 3px 5px #888888;
+	margin-bottom:30px;
 }
 
 div.paddingBottom
