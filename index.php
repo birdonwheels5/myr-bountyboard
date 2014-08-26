@@ -18,6 +18,7 @@
 	var_dump($bounties);
 	
 	getAddressTotal("MW5m689zwP5K7oATEvKeMw5rQFhEQrPnDW");
+	getDonationCount("MW5m689zwP5K7oATEvKeMw5rQFhEQrPnDW");
 	
 	//removeBounty($fileName, "title: " . $bounties[2]->getTitle());
 	
