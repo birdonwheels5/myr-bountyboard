@@ -60,7 +60,7 @@ if($_POST["submit"] and $_POST["submit"] == "Update")
     		{
     			if((strcmp(stristr($_POST["title"], $bounties[$bountyNumber]->getTitle()), $_POST["title"])) == 0)
     			{
-    				$title = cleanInput($_POST["title"]);
+    				$title = $bounties[$bountyNumber]->getTitle());
     			}
     			else
     			{
