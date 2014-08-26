@@ -199,15 +199,27 @@ function getAddressTotal($myrAddress)
 	
 	$addressTotal;
 	
+	if ($debugMode == true)
+	{
+		print "<br/>Loading temp address file!";
+	}
+	
 	$file = file("tmpAddressTotal.dat", "r");
+	
+	if ($debugMode == true)
+	{
+		print "<br/>Temp address file loaded! Beginning search...";
+	}
+	
 	for($i = 0; $i < count($file); $i++)
 	{
-		if ((strcmp(stristr($file[$i], "Transactions in: "), $file[$i]) == 0))
-		{
-			if ($debugMode == true)
+		if ($debugMode == true)
 			{
 				print "<br/>Searching file for address total!<br/>";
 			}
+		
+		if ((strcmp(stristr($file[$i], "Transactions in: "), $file[$i]) == 0))
+		{
 			
 			$addressTotal = trim(str_ireplace("Transactions in: ", "", $file[$i]));
 			$addressTotal = trim(str_ireplace("<br />", "", $file[$i]));
@@ -218,6 +230,7 @@ function getAddressTotal($myrAddress)
 			}
 		}
 	}
+	fclose($file);
 }
 
 // -----------------------------------------------------------------------------------------
