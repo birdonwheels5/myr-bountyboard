@@ -146,7 +146,7 @@ function cleanInput($data)
 			<hr/>
 			<center><h2>Update a Bounty</h2></center>
 			<hr/>
-		<p><span class="error">Enter the title of the bounty you wish to update.<br/>
+		<p><span class="error">Enter the information for the bounty you wish to update.<br/><br/>
 					Unfortunately, for now you will need to paste title/description/address/username<br/>
 					in from the side, then edit it.</span></p>
 		
