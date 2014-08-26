@@ -144,7 +144,6 @@ function cleanInput($data)
 				<p><h3>Available Bounties:</h3></p>
 				<hr/>
 				<p><?php displayTitles($fileName) ?></p>
-			</article>
 
 <?php
 
@@ -175,6 +174,8 @@ if ($bountyDeleted == $SUCCESS)
 }
 
 ?>
+
+			</article>
 
 	</body>
 </html>
