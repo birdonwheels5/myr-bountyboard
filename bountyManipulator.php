@@ -194,7 +194,7 @@ function displayBounties($fileName)
 function getAddressTotal($myrAddress)
 {
 	$url = fopen("http://cryptap.us/myr/explorer/address/" . $myrAddress, "r");  
-	var_dump($url);
+	echo stream_get_contents($url);
 }
 
 // -----------------------------------------------------------------------------------------
