@@ -187,7 +187,7 @@ if ($bountyUpdated == $SUCCESS)
 {
 	print "<h3>Status:</h3><br>";
 	print "Bounty updated!";
-	print "The updated bounty will appear the next time the page is refreshed. (Refreshed on the hour)";
+	print "The updated bounty will appear the next time the bounty page is refreshed. (Refreshed on the hour)";
 	print "<br>";
 	print "Redirecting to bounty page...";
 	header("Refresh: 0, URL = " . $redirectURL);
