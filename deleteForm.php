@@ -121,11 +121,11 @@ function cleanInput($data)
 				
 				<br><br>
 				Bounty Description:<br>
-				<textarea name="description" rows="5" cols="20"><?php echo $description;?></textarea>
+				<textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
 				<br><br>
 				
 				Myriadcoin Address: <br>
-				<textarea name="myrAddress" rows="1" cols="20"><?php echo $myrAddress;?></textarea>
+				<textarea name="myrAddress" rows="1" cols="40"><?php echo $myrAddress;?></textarea>
 				<br><br>
 				
 				Username:<br>
