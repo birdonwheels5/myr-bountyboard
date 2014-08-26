@@ -201,11 +201,11 @@ function displayBountyInfo($fileName)
 	
 	for($i = 1; $i <= $bountyCount; $i++)
 	{
-		print $i . ") " . $bounties[$i]->getTitle() . "<br>";
-		print $i . ") " . $bounties[$i]->getDescription() . "<br>";
-		print $i . ") " . $bounties[$i]->getMyrAddress() . "<br>";
-		print $i . ") " . $bounties[$i]->getUserName() . "<br>";
-		print $i . ") " . $bounties[$i]->getActive() . "<br>";
+		print $bounties[$i]->getTitle() . "<br>";
+		print $bounties[$i]->getDescription() . "<br>";
+		print $bounties[$i]->getMyrAddress() . "<br>";
+		print $bounties[$i]->getUserName() . "<br>";
+		print $bounties[$i]->getActive() . "<br>";
 		print "<hr/>";
 	}
 }
