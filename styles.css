@@ -76,7 +76,7 @@ div.box
 
 div.descBox
 {
-	width:12%;
+	width:16%;
 	float:left;
 	padding-right:2%;
 }
@@ -90,7 +90,7 @@ div.addressBox
 
 div.numberBox
 {
-	width:14%;
+	width:16%;
 	float:left;
 	padding-right:2%;
 }
