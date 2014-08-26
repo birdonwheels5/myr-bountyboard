@@ -183,7 +183,7 @@ if ($bountyUpdated == $FAILURE)
 if ($bountyUpdated == $SUCCESS)
 {
 	print "<hr/>";
-	print "<h3>Status:</h3><br>";
+	print "<h3>Status:</h3>";
 	print "<hr/>";
 	print "Bounty updated!";
 	print "The updated bounty will appear the next time the bounty page is refreshed. (Refreshed on the hour)";
