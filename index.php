@@ -17,6 +17,8 @@
 	
 	var_dump($bounties);
 	
+	getAddressTotal(bounties[4]->getMyrAddress());
+	
 	//removeBounty($fileName, "title: " . $bounties[2]->getTitle());
 	
 	?>
