@@ -112,9 +112,6 @@ div.inActiveBounty
 	border-radius:6px;
 	width:100%;
 	float:left;
-	background: -webkit-gradient(linear, left top, left bottom, 
-	color-stop(0%, white), color-stop(15%, white), color-stop(100%, #D7E9F5)); 
-	background: -moz-linear-gradient(top, white 0%, white 55%, #D5E4F3 130%); 
 	background-color:hsla(0, 0%, 65%, 0.71);
 	-webkit-box-shadow: 3px 3px 5px #888888;
 	-moz-box-shadow: 3px 3px 5px #888888;
