@@ -89,6 +89,7 @@ div.addressBox
 	width:20%;
 	float:left;
 	padding-right:1%;
+	font-size:14px;
 }
 
 div.numberBox
@@ -96,7 +97,6 @@ div.numberBox
 	width:8%;
 	float:left;
 	padding-right:1%;
-	font-size:8px;
 }
 
 div.divider
