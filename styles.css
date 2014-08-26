@@ -67,6 +67,7 @@ div.activeBounty
 	background-color:hsla(100, 43%, 65%, 0.71);
 	-webkit-box-shadow: 10px 10px 5px #888888;
 	-moz-box-shadow: 10px 10px 5px #888888;
+	margin-bottom:0;
 }
 
 div.box
