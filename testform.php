@@ -170,9 +170,10 @@ else if ($bountySubmitted == $SUCCESS)
 	print "<hr/>";
 	print "<h3>Status:</h3><br>";
 	print "Bounty submission successful!";
+	print "Your bounty will appear the next time the page is refreshed. (Refreshed on the hour)";
 	print "<br>";
 	print "Redirecting to bounty page...";
-	header("Refresh: 0, URL = " . $redirectURL);
+	header("Refresh: 5, URL = " . $redirectURL);
 	exit;
 }
 ?>
