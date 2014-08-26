@@ -38,8 +38,8 @@ $bounties = array();
 $bounties = readBounties($fileName);
 
 $separator = "qpwoeiruty";
+$empty = "";
 
-global $bountyNumber;
 $bountyNumber = -1;
 
 
@@ -104,7 +104,6 @@ if($_POST["submit"] and $_POST["submit"] == "Update")
     		$active = cleanInput($_POST["active"]);
     	}
 
-$empty = "";
 
 if ((strcmp($title, $empty) == 0) or (strcmp($description, $empty) == 0) or (strcmp($myrAddress, $empty) == 0) or (strcmp($userName, $empty) == 0))
 {
