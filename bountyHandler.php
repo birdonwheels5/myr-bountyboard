@@ -193,16 +193,20 @@ function displayBounties($fileName)
 
 function getAddressTotal($myrAddress)
 {
-	$debugMode = true;
+	$debugMode = false;
 	$url = fopen("http://cryptap.us/myr/explorer/address/" . $myrAddress, "r");  
 	// file_put_contents("tmpAddressTotal.dat", stream_get_contents($url));
 	
+	$explodedString = "";
 	$fullString = stream_get_contents($url);
 	
 	if ($debugMode == true)
 	{
 		print $fullString;
 	}
+	
+	$explodedString = explode("\n\r", $fullString);
+	var_dump($explodedString);
 	
 	$addressTotal;
 	
