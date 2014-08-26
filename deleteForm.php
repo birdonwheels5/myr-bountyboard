@@ -149,6 +149,8 @@ function cleanInput($data)
 
 if ($bountyDeleted == $CONFIRM)
 {
+	print "<hr/>";
+	print "<h3>Status:</h3><br>";
 	print "Please confirm that this is the bounty that you wish to delete!";
 	print "<form method=\"post\" action=\"";
 	echo $_SERVER["PHP_SELF"];
