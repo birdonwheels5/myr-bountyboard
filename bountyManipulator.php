@@ -156,6 +156,7 @@ function searchBounty($fileName, $title)
 
 // -----------------------------------------------------------------------------------------
 
+// Display a list of the titles of all the bounties, formatted in HTML.
 function displayTitles($fileName)
 {
 	$bounties = array();
@@ -171,7 +172,34 @@ function displayTitles($fileName)
 
 // -----------------------------------------------------------------------------------------
 
-function displayAllBounties($fileName)
+// Display all bounties formatted for the home page (includes Myriadcoin address from block explorer).
+function displayBounties($fileName)
+{
+	$bounties = array();
+	$bounties = readBounties($fileName);
+	
+	$bountyCount = countBounties($fileName);
+	
+	for($i = 1; $i <= $bountyCount; $i++)
+	{
+		print $i . ") " . $bounties[$i]->getTitle() . "<br>";
+		print $i . ") " . $bounties[$i]->getDescription() . "<br>";
+		print $i . ") " . $bounties[$i]->getMyrAddress() . "<br>";
+		print $i . ") " . $bounties[$i]->getUserName() . "<br>";
+	}
+}
+
+// -----------------------------------------------------------------------------------------
+
+function getAddressTotal($myrAddress)
+{
+	$url = fopen("http://cryptap.us/myr/explorer/address/" . $myrAddress, "r");  
+	echo stream_get_contents($url);
+}
+
+// -----------------------------------------------------------------------------------------
+
+function getDonationCount($myrAddress)
 {
 	
 }
@@ -333,6 +361,13 @@ function removeBounty($fileName, $par1BountyNumber)
  		fclose($fi);
 	
 	return;
+}
+
+// -----------------------------------------------------------------------------------------
+
+function updateBounty($fileName, $par1BountyNumber)
+{
+	
 }
 
 // -----------------------------------------------------------------------------------------
