@@ -154,10 +154,13 @@ function cleanInput($data)
 				<input type="submit" name="submit" value="Submit"> 
 			</form>
 			</nav>
-			<article>
-				<hr/>
-				<p>Hi mom</p>
-			</article>
+			
+			<div class="articleContainer">
+				<article>
+					<hr/>
+					<p>Hi mom</p>
+				</article>
+			</div>
 
 <?php
 if ($bountySubmitted == $FAILURE)
