@@ -280,7 +280,7 @@ function getDonationCount($myrAddress)
 	$donationCount = str_ireplace("Transactions in: ", "", $explodedString[20]);
 	$donationCount = str_ireplace("<br /", "", $donationCount);
 	
-	print $donationCount;
+	print $$explodedString[20];
 	
 	return $donationCount;
 }
