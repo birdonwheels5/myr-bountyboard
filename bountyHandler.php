@@ -182,7 +182,7 @@ function displayBounties($fileName)
 	
 	for($i = 1; $i <= $bountyCount; $i++)
 	{
-		if ((strcmp(stristr($bounties[$i]->getActive(), "active: true"), $bounties[$i]->getActive()) == 0))
+		if ((strcmp(stristr($bounties[$i]->getActive(), "true"), $bounties[$i]->getActive()) == 0))
 		{
 			print "<div class=\"activeBounty\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
 			print "</div><div class=\"descBox\"><p>" . $bounties[$i]->getDescription() . "</p>";
