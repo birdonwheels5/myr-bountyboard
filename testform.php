@@ -75,9 +75,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       		$description = cleanInput($_POST["description"]);
     	}
     
-	if (empty($_POST["myrAddress"])) 
+	if (empty($_POST["myrAddress"]) or trim(strlen($_POST["myrAddress"])) != 34 ) 
 	{
-		$myrAddressErr = "A Myriadcoin address is required";
+		$myrAddressErr = "A valid Myriadcoin address is required";
     	} 
 	else 
 	{
