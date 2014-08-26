@@ -27,13 +27,6 @@ div.logoContainer
 	padding:6px;
 }
 
-div.box
-{
-	width:75px;
-	float:left;
-	padding-right:30px;
-}
-
 nav
 {
 	width:20%;
@@ -72,6 +65,13 @@ div.activeBounty
 	width:100%;
 	float:left;
 	background-color:green;
+}
+
+div.box
+{
+	width:10%;
+	float:left;
+	padding-right:5%;
 }
 
 div.divider
