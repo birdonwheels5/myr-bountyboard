@@ -39,7 +39,6 @@ $bounties = readBounties($fileName);
 $separator = "qpwoeiruty";
 $empty = "";
 
-global $bountyNumber;
 $bountyNumber = -1;
 
 
