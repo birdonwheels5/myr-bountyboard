@@ -41,6 +41,7 @@ nav
 	display:inline;
 	margin:0;
 	padding:0;
+	padding-top:10px;
 	padding-left:10%;
 	padding-right:10%;
 	margin-right:10px;
@@ -51,7 +52,7 @@ article
 	width:80%;
 	height:40%;
 	text-align:left;
-	padding-top:50px;
+	padding-top:70px;
 	padding-left:2%;
 	padding-right:2%;
 }
