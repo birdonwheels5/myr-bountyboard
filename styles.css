@@ -30,7 +30,7 @@ div.logoContainer
 div.box
 {
 	height:45px;
-	float:right;
+	float:left;
 	padding-right:15px;
 }
 
@@ -49,7 +49,7 @@ nav
 
 article
 {
-	width:76%;
+	width:85%;
 	height:40%;
 	text-align:left;
 	padding-left:2%;
@@ -64,6 +64,20 @@ div.status
 	padding-top:30px;
 	padding-left:2%;
 	padding-right:2%;
+}
+
+div.activeBounty
+{
+	border-radius:3px;
+	width:100%;
+	float:left;
+}
+
+div.inActiveBounty
+{
+	border-radius:3px;
+	width:100%;
+	float:left;
 }
 
 div.paddingBottom
