@@ -209,7 +209,10 @@ function getAddressTotal($myrAddress)
 	}
 	
 	$addressTotal = str_ireplace("Received: ", "", $explodedString[21]);
+	$addressTotal = str_ireplace("<br /", "", $explodedString[21]);
 	print $addressTotal;
+	
+	
 }
 
 // -----------------------------------------------------------------------------------------
