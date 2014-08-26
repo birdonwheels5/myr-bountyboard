@@ -109,9 +109,8 @@ if ((strcmp($title, $empty) == 0) or (strcmp($description, $empty) == 0) or (str
 }
 else
 {
-	//updateBounty($fileName, $bountyNumber, $title, $description, $myrAddress, $userName, $active);
-	print "Yay";
-	
+	updateBounty($fileName, $bountyNumber, $title, $description, $myrAddress, $userName, $active);
+
 	$bountyUpdated = $SUCCESS;
 }
 }
