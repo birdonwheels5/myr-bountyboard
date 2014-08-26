@@ -104,7 +104,7 @@ div.divider
 	border-radius:6px;
 	width:100%;
 	float:left;
-	background-color:white;
+	background-color:hsla(0, 0%, 0%, 0.0);
 }
 
 div.inActiveBounty
