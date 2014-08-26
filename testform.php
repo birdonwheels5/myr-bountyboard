@@ -164,10 +164,12 @@ function cleanInput($data)
 <?php
 if ($bountySubmitted == $FAILURE)
 {
+	print "<hr/>";
 	print "Bounty submission failed!";
 }
 else if ($bountySubmitted == $SUCCESS)
 {
+	print "<hr/>";
 	print "Bounty submission successful!";
 	print "<br>";
 	print "Redirecting to bounty page...";
