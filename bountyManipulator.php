@@ -135,7 +135,10 @@ function searchBounty($fileName, $title)
 	// the array.
 	for($i = 1; $i <= $bountyCount; $i++)
 	{
-		print "Bounty: " . $bounties[$i]->getTitle() . "<br>";
+		if ($debugMode == true)
+		{
+			print "Bounty: " . $bounties[$i]->getTitle() . "<br>";
+		}
 		
 		if ((strcmp(stristr($bounties[$i]->getTitle(), $title), $bounties[$i]->getTitle()) == 0))
 		{
