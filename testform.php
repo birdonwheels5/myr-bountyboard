@@ -15,7 +15,7 @@
 		
 <?php
 
-include "bountyManipulator.php";
+include "bountyHandler.php";
 
 // define variables and set to empty values
 $titleErr = $descriptionErr = $myrAddressErr = $userNameErr = "";
