@@ -137,12 +137,8 @@ function cleanInput($data)
 				
 				<input type="submit" name="submit" value="Continue">
 			</form>
-			</nav>
 
-			<nav>
-				<p><h3>Current Bounties:</h3></p>
-				<hr/>
-				<p><?php displayTitles($fileName) ?></p>
+			
 
 <?php
 
@@ -178,6 +174,12 @@ if ($bountyDeleted == $SUCCESS)
 }
 
 ?>
+
+	</nav>	
+			<nav>
+				<p><h3>Current Bounties:</h3></p>
+				<hr/>
+				<p><?php displayTitles($fileName) ?></p>
 
 			</nav>
 
