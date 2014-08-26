@@ -197,14 +197,14 @@ function getAddressTotal($myrAddress)
 	$url = fopen("http://cryptap.us/myr/explorer/address/" . $myrAddress, "r");  
 	// file_put_contents("tmpAddressTotal.dat", stream_get_contents($url));
 	
-	$explodedString = "";
+	$explodedString = array();
 	$fullString = stream_get_contents($url);
 	
 	$explodedString = explode("\n\r", $fullString);
 	
 	if ($debugMode == true)
 	{
-		print $explodedString;
+		print $explodedString[15];
 	}
 	
 	
