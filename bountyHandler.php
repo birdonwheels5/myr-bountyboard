@@ -182,24 +182,24 @@ function displayBounties($fileName)
 	
 	for($i = 1; $i <= $bountyCount; $i++)
 	{
-		if ((strcmp(stristr($bounties[$bountyNumber]->getActive(), "active: true"), $bounties[$bountyNumber]->getActive()) == 0))
+		if ((strcmp(stristr($bounties[$i]->getActive(), "active: true"), $bounties[$i]->getActive()) == 0))
 		{
-			print "<div class=\"activeBounty\"><div class=\"box\"><p>" . $bounties[$bountyNumber]->getTitle() . "</p>";
-			print "</div><div class=\"descBox\"><p>" . $bounties[$bountyNumber]->getDescription() . "</p>";
-			print "</div><div class=\"box\"><center><p>" . getAddressTotal($bounties[$bountyNumber]->getMyrAddress()) . "</p></center>";
-			print "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$bountyNumber]->getMyrAddress() . "\">" . $bounties[$bountyNumber]->getMyrAddress() . "</a></p>";
-			print "</div><div class=\"numberBox\"><center><p>" . getDonationCount($bounties[$bountyNumber]->getMyrAddress()) . "</p></center>";
-			print "</div><div class=\"box\"><p>" . $bounties[$bountyNumber]->getUserName() . "</p>";
+			print "<div class=\"activeBounty\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
+			print "</div><div class=\"descBox\"><p>" . $bounties[$i]->getDescription() . "</p>";
+			print "</div><div class=\"box\"><center><p>" . getAddressTotal($bounties[$i]->getMyrAddress()) . "</p></center>";
+			print "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
+			print "</div><div class=\"numberBox\"><center><p>" . getDonationCount($bounties[$i]->getMyrAddress()) . "</p></center>";
+			print "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
 			print "</div></div>";
 		}
 		else
 		{
-			print "<div class=\"inActiveBounty\"><div class=\"box\"><p>" . $bounties[$bountyNumber]->getTitle() . "</p>";
-			print "</div><div class=\"descBox\"><p>" . $bounties[$bountyNumber]->getDescription() . "</p>";
-			print "</div><div class=\"box\"><center><p>" . getAddressTotal($bounties[$bountyNumber]->getMyrAddress()) . "</p></center>";
-			print "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$bountyNumber]->getMyrAddress() . "\">" . $bounties[$bountyNumber]->getMyrAddress() . "</a></p>";
-			print "</div><div class=\"numberBox\"><center><p>" . getDonationCount($bounties[$bountyNumber]->getMyrAddress()) . "</p></center>";
-			print "</div><div class=\"box\"><p>" . $bounties[$bountyNumber]->getUserName() . "</p>";
+			print "<div class=\"inActiveBounty\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
+			print "</div><div class=\"descBox\"><p>" . $bounties[$i]->getDescription() . "</p>";
+			print "</div><div class=\"box\"><center><p>" . getAddressTotal($bounties[$i]->getMyrAddress()) . "</p></center>";
+			print "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
+			print "</div><div class=\"numberBox\"><center><p>" . getDonationCount($bounties[$i]->getMyrAddress()) . "</p></center>";
+			print "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
 			print "</div></div>";
 		}
 	}
