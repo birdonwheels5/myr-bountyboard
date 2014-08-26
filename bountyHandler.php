@@ -259,8 +259,7 @@ function getAddressTotal($myrAddress)
 
 // -----------------------------------------------------------------------------------------
 
-// Returns a string with the number of donations. 
-// Safe to cast to an int.
+// Returns an int with the number of donations. 
 function getDonationCount($myrAddress)
 {
 	// Get stream from block explorer
@@ -272,7 +271,7 @@ function getDonationCount($myrAddress)
 	// Get the data from stream
 	$fullString = stream_get_contents($url);
 	
-	$donationCount = "";
+	$donationCount;
 	
 	// Break the data up into an array
 	$explodedString = explode(">", $fullString);
