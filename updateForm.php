@@ -161,7 +161,7 @@ function cleanInput($data)
 				<span class="error">* <?php echo $userNameErr;?></span>
 				<br><br>
 				
-				Is active?: (Set to <b>false</b> if someone is working on the bounty, otherwise leave blank)<br>
+				Is active?: (Set to <b>false</b> if someone is working on the bounty, otherwise leave it alone)<br>
 				<input type="text" name="active" value="<?php echo $active;?>">
 				<br><br>
 				
