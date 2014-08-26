@@ -191,6 +191,27 @@ function displayBounties($fileName)
 
 // -----------------------------------------------------------------------------------------
 
+// A plain text version of the above function, for use in the update bounties page.
+function displayBountyInfo($fileName)
+{
+	$bounties = array();
+	$bounties = readBounties($fileName);
+	
+	$bountyCount = countBounties($fileName);
+	
+	for($i = 1; $i <= $bountyCount; $i++)
+	{
+		print $i . ") " . $bounties[$i]->getTitle() . "<br>";
+		print $i . ") " . $bounties[$i]->getDescription() . "<br>";
+		print $i . ") " . $bounties[$i]->getMyrAddress() . "<br>";
+		print $i . ") " . $bounties[$i]->getUserName() . "<br>";
+		print $i . ") " . $bounties[$i]->getActive() . "<br>";
+		print "<hr/>";
+	}
+}
+
+// -----------------------------------------------------------------------------------------
+
 // Returns a string with the total amount of MYR every received by the supplied address.
 // Not safe to cast to an int as it has "MYR" at the end of the string.
 function getAddressTotal($myrAddress)
