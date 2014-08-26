@@ -69,28 +69,21 @@ div.activeBounty
 
 div.box
 {
-	width:10%;
+	width:12%;
 	float:left;
 	padding-right:2%;
 }
 
 div.descBox
 {
-	width:18%;
-	float:left;
-	padding-right:2%;
-}
-
-div.addressBox
-{
-	width:10%;
+	width:20%;
 	float:left;
 	padding-right:2%;
 }
 
 div.numberBox
 {
-	width:22%;
+	width:26%;
 	float:left;
 	padding-right:2%;
 }
