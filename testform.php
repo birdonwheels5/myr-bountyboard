@@ -114,7 +114,7 @@ function cleanInput($data)
     return $data;
 }
 ?> 
-		<header>
+		<header style="color:#fff;">
 		
 			<center><h1>Submit New Bounty Form</h1></center>
 			
