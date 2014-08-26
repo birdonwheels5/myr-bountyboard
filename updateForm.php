@@ -106,23 +106,17 @@ if($_POST["submit"] and $_POST["submit"] == "Update")
     	}
 
 
-if ($bountyNumber > 0)
+if ($bountyNumber < 1 or (strcmp($title, $empty) == 0) or (strcmp($description, $empty) == 0) or (strcmp($myrAddress, $empty) == 0) or (strcmp($userName, $empty) == 0))
+{
+	$bountyUpdated = $FAILURE;
+}
+else
 {
 	updateBounty($fileName, $bountyNumber, $title, $description, $myrAddress, $userName, $active);
 	
 	$bountyUpdated = $SUCCESS;
-	
 }
 }
-	if ($_POST["submit"] and $_POST["submit"] == "Confirm")
-	{
-		// Load the bounty number when the user clicks on the "confirm" button
-		$bountyNumber = (int)file_get_contents("tmpUpdateBounty.dat");
-		
-		$title = $bounties[$bountyNumber]->getTitle();
-		$bountyUpdated = $SUCCESS;
-		updateBounty($fileName, $bountyNumber);
-	}
 
 
 function cleanInput($data) 
