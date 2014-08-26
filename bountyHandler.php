@@ -279,8 +279,7 @@ function getDonationCount($myrAddress)
 	// Clean it up (it wil always be the 20th position in the array)
 	$donationCount = str_ireplace("<br /", "", $explodedString[20]);
 	$donationCount = str_ireplace("Transactions in: ", "", $donationCount);
-		print $donationCount;
-
+	
 	return $donationCount;
 }
 
