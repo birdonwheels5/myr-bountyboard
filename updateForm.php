@@ -174,7 +174,7 @@ function cleanInput($data)
 
 if ($bountyUpdated == $FAILURE)
 {
-	print "<hr/>";
+	print "<br/>";
 	print "<h3>Status:</h3>";
 	print "<hr/>";
 	print "Bounty update failed!";
@@ -182,7 +182,7 @@ if ($bountyUpdated == $FAILURE)
 
 if ($bountyUpdated == $SUCCESS)
 {
-	print "<hr/>";
+	print "<br/>";
 	print "<h3>Status:</h3>";
 	print "<hr/>";
 	print "Bounty updated!";
