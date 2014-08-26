@@ -155,12 +155,10 @@ function cleanInput($data)
 			</form>
 			</nav>
 			
-			<div class="articleContainer">
-				<article>
-					<hr/>
-					<p>Hi mom</p>
-				</article>
-			</div>
+			<article>
+				<hr/>
+				<p>Hi mom</p>
+			</article>
 
 <?php
 if ($bountySubmitted == $FAILURE)
