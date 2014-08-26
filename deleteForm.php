@@ -141,6 +141,7 @@ function cleanInput($data)
 			</nav>
 
 			<article>
+				<p>Available Bounties:</p>
 				<hr/>
 				<p><?php displayTitles($fileName) ?></p>
 			</article>
