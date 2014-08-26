@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Delete Bounty</title>
+		<title>Update Bounty</title>
 		<link rel="stylesheet" type="text/css" href="styles.css" title="Default Styles" media="screen"/>
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
 		<style>
@@ -17,20 +17,21 @@
 
 <?php
 
+// This doesn't work yet!
+
 include "bountyHandler.php";
 
 
 // define variables and set to empty values
-$titleErr = "";
+$titleErr = $descriptionErr = $myrAddressErr = $userNameErr = $activeErr = "";
 $title = $description = $myrAddress = $userName = $active = "";
 
 $WAITING = -1;
 $FAILURE = 1;
 $SUCCESS = 0;
-$CONFIRM = 100;
 
 $fileName = "bounties.dat";
-$bountyDeleted = $WAITING;
+$bountyUpdated = $WAITING;
 $redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
 
 $bounties = array();
@@ -45,49 +46,82 @@ $bountyNumber = -1;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-if($_POST["submit"] and $_POST["submit"] == "Continue")
+if($_POST["submit"] and $_POST["submit"] == "Update")
 {
+	$bountyNumber = searchBounty($fileName, $_POST["title"]);
+	
 	if (empty($_POST["title"])) 
 	{
 		$titleErr = "A title is required";
-	} 
+	}
+	else 
+    	{
+    		if ($bountyNumber > 0)
+    		{
+    			if((strcmp(stristr($_POST["title"], $bounties[$bountyNumber]->getTitle()), $_POST["title"])) == 0)
+    			{
+    				$title = cleanInput($_POST["title"]);
+    			}
+    			else
+    			{
+    				$titleErr = "That bounty could not be found";
+    			}
+    		}
+    	}
 
+    	if (empty($_POST["description"])) 
+	{
+      		$descriptionErr = "A description of your bounty is required";
+    	} 
+	else 
+	{
+      		$description = cleanInput($_POST["description"]);
+    	}
+    
+	if (empty($_POST["myrAddress"]) or trim(strlen($_POST["myrAddress"])) != 34 ) 
+	{
+		$myrAddressErr = "A valid Myriadcoin address is required";
+    	} 
+	else 
+	{
+      		$myrAddress = cleanInput($_POST["myrAddress"]);
+    	}
+   
+    	if (empty($_POST["userName"])) 
+	{
+      		$userNameErr = "Your username is required";
+    	} 
+	else 
+	{
+      		$userName = cleanInput($_POST["userName"]);
+    	}
+    	
+    	if (empty($_POST["active"]))
+    	{
+    		$active = true;
+    	}
+    	else
+    	{
+    		$active = cleanInput($_POST["active"]);
+    	}
 
-$bountyNumber = searchBounty($fileName, $_POST['title']);
-	
-if ($bountyNumber < 0)
-{
-	$titleErr = "Title not found.";
-	$bountyDeleted = $FAILURE;
-}
 
 if ($bountyNumber > 0)
 {
-	$title = $bounties[$bountyNumber]->getTitle();
-
-	$description = $bounties[$bountyNumber]->getDescription();
-	$myrAddress = $bounties[$bountyNumber]->getMyrAddress();
-	$userName = $bounties[$bountyNumber]->getUserName();
-	$active = $bounties[$bountyNumber]->getActive();
+	updateBounty($fileName, $bountyNumber, $title, $description, $myrAddress, $userName, $active);
 	
-	$bountyDeleted = $CONFIRM;
-	
-	/* This is a very bad way of persisting the $bountyNumber variable because if another user clicks
-	the "delete" button on a bounty *before* this user clicks "confirm", this user will have the wrong
-	$bountyNumber, and thus delete the wrong bounty.For now it is fine because we won't 
-	have a large volume of users doing this.*/
-	file_put_contents("tmpDeleteBounty.dat", $bountyNumber);
+	$bountyUpdated = $SUCCESS;
 	
 }
 }
 	if ($_POST["submit"] and $_POST["submit"] == "Confirm")
 	{
 		// Load the bounty number when the user clicks on the "confirm" button
-		$bountyNumber = (int)file_get_contents("tmpDeleteBounty.dat");
+		$bountyNumber = (int)file_get_contents("tmpUpdateBounty.dat");
 		
 		$title = $bounties[$bountyNumber]->getTitle();
-		$bountyDeleted = $SUCCESS;
-		removeBounty($fileName, $bountyNumber);
+		$bountyUpdated = $SUCCESS;
+		updateBounty($fileName, $bountyNumber);
 	}
 
 
@@ -103,16 +137,18 @@ function cleanInput($data)
 ?> 
 		<header>
 		
-			<center><h1>Delete Bounty Form</h1></center>
+			<center><h1>Update Bounty Form</h1></center>
 			
 		</header>
 		
 			<nav>
 
 			<hr/>
-			<center><h2>Delete a Bounty</h2></center>
+			<center><h2>Update a Bounty</h2></center>
 			<hr/>
-		<p><span class="error">Enter the title of the bounty you wish to delete.</span></p>
+		<p><span class="error">Enter the title of the bounty you wish to update.<br/>
+					Unfortunately, for now you will need to paste title/description/address/username<br/>
+					in from the side, then edit it.</span></p>
 		
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 				Bounty Title: (You only need to type the first few letters)<br>
@@ -122,55 +158,46 @@ function cleanInput($data)
 				<br><br>
 				Bounty Description:<br>
 				<textarea name="description" rows="5" cols="35"><?php echo $description;?></textarea>
+				<span class="error">* <?php echo $descriptionErr;?></span>
 				<br><br>
 				
 				Myriadcoin Address: <br>
 				<textarea name="myrAddress" rows="1" cols="35"><?php echo $myrAddress;?></textarea>
+				<span class="error">* <?php echo $myrAddressErr;?></span>
 				<br><br>
 				
 				Username:<br>
 				<input type="text" name="userName" value="<?php echo $userName;?>">
+				<span class="error">* <?php echo $userNameErr;?></span>
 				<br><br>
 				
-				Is active?:<br>
+				Is active?: (Set to <b>false</b> if someone is working on the bounty, otherwise leave blank)<br>
 				<input type="text" name="active" value="<?php echo $active;?>">
 				<br><br>
 				
-				<input type="submit" name="submit" value="Continue">
+				<input type="submit" name="submit" value="Update">
 			</form>
 			</nav>
 
 			<div class="status">
 				<p><h3>Current Bounties:</h3></p>
 				<hr/>
-				<p><?php displayTitles($fileName) ?></p>
+				<p><?php displayBountyInfo($fileName) ?></p>
 
 <?php
 
-if ($bountyDeleted == $CONFIRM)
+if ($bountyUpdated == $FAILURE)
 {
 	print "<hr/>";
 	print "<h3>Status:</h3><br>";
-	print "Please confirm that this is the bounty that you wish to delete!";
-	print "<form method=\"post\" action=\"";
-	echo $_SERVER["PHP_SELF"];
-	print "\">";
-	print "<input type=\"submit\" name=\"submit\" value=\"Confirm\">";
-	print "</form>";
+	print "Bounty update failed!";
 }
 
-if ($bountyDeleted == $FAILURE)
+if ($bountyUpdated == $SUCCESS)
 {
 	print "<hr/>";
 	print "<h3>Status:</h3><br>";
-	print "Bounty deletion failed!";
-}
-
-if ($bountyDeleted == $SUCCESS)
-{
-	print "<hr/>";
-	print "<h3>Status:</h3><br>";
-	print "Bounty deleted!";
+	print "Bounty updated!";
 	print "<br>";
 	print "Redirecting to bounty page...";
 	header("Refresh: 3, URL = " . $redirectURL);
