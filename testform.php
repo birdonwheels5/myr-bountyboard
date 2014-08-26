@@ -60,11 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     			}
     		}
     	}
-//TODO Implement title search and throw error if title already exists
-	if (strcmp($title))
-	{
-		
-	}
 
     	if (empty($_POST["description"])) 
 	{
