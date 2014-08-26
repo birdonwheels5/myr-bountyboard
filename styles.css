@@ -74,6 +74,13 @@ div.box
 	padding-right:2%;
 }
 
+div.descBox
+{
+	width:18%;
+	float:left;
+	padding-right:2%;
+}
+
 div.numberBox
 {
 	width:16%;
