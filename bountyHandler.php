@@ -208,49 +208,8 @@ function getAddressTotal($myrAddress)
 		print $explodedString[21];
 	}
 	
-	$addressTotal = trim(str_ireplace("Received: ", "", $explodedString[21]));
-	print $addessTotal;
-	
+	$addressTotal = str_ireplace("Received: ", "", $explodedString[21]);
 	print $addressTotal;
-	
-	/*if ($debugMode == true)
-	{
-		print "<br/>Loading temp address file!";
-	}
-	
-	$file = file("tmpAddressTotal.dat", "r");
-	
-	if ($debugMode == true)
-	{
-		print "<br/>Temp address file loaded! Beginning search...";
-	}
-	
-	print "<br>" . $file;
-	
-	for($i = 0; $i < count($file); $i++)
-	{
-		if ($debugMode == true)
-			{
-				print "<br/>Searching file for address total!";
-			}
-		
-		if ((strcmp(stristr($file[$i], "Transactions in: "), $file[$i]) == 0))
-		{
-			if ($debugMode == true)
-			{
-				print "<br/>Match found!<br/>";
-			}
-			
-			$addressTotal = trim(str_ireplace("Transactions in: ", "", $file[$i]));
-			$addressTotal = trim(str_ireplace("<br />", "", $file[$i]));
-			
-			if ($debugMode == true)
-			{
-				print $addressTotal;
-			}
-		}
-	}
-	fclose($file);*/
 }
 
 // -----------------------------------------------------------------------------------------
