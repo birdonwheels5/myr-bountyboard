@@ -160,11 +160,13 @@ if ($bountyDeleted == $CONFIRM)
 
 if ($bountyDeleted == $FAILURE)
 {
+	print "<hr/>";
 	print "Bounty deletion failed!";
 }
 
 if ($bountyDeleted == $SUCCESS)
 {
+	print "<hr/>";
 	print "Bounty deleted!";
 	print "<br>";
 	print "Redirecting to bounty page...";
