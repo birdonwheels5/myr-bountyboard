@@ -74,6 +74,13 @@ div.box
 	padding-right:2%;
 }
 
+div.numberBox
+{
+	width:12%;
+	float:right;
+	padding-right:2%;
+}
+
 div.divider
 {
 	border-radius:3px;
