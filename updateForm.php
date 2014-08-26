@@ -124,8 +124,6 @@ function cleanInput($data)
     return $data;
 }
 
-
-}
 ?> 
 		<header>
 		
