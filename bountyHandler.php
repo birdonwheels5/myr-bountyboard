@@ -203,13 +203,8 @@ function getAddressTotal($myrAddress)
 	
 	$explodedString = explode(">", $fullString);
 	
-	if ($debugMode == true)
-	{
-		print $explodedString[21];
-	}
-	
 	$addressTotal = str_ireplace("Received: ", "", $explodedString[21]);
-	$addressTotal = str_ireplace("<br /", "", $explodedString[21]);
+	$addressTotal = str_ireplace("<br /", "", $addressTotal);
 	print $addressTotal;
 	
 	
