@@ -137,9 +137,9 @@ function cleanInput($data)
 			<center><h2>Update a Bounty</h2></center>
 			<hr/>
 		<p><span class="error">Enter the information for the bounty you wish to update.<br/><br/>
-					(Title autocompletes if you hit enter)<br/><br/>
-					Unfortunately, for now you will need to paste title/description/address/username<br/>
-					in from the side, then edit it.</span></p>
+					Unfortunately, for now you will need to paste description/address/username<br/>
+					in from the side, then edit it.<br/><br/>
+					(Title autocompletes if you hit enter)</span></p>
 		
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 				Bounty Title: (You only need to type the first few letters)<br>
