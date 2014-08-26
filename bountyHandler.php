@@ -195,8 +195,19 @@ function getAddressTotal($myrAddress)
 {
 	$url = fopen("http://cryptap.us/myr/explorer/address/" . $myrAddress, "r");  
 	file_put_contents("tmpAddressTotal.dat", stream_get_contents($url));
+	
+	$addressTotal;
+	
 	$file = file("tmpAddressTotal.dat", "r");
-	var_dump($file);
+	for($i = 0; $i < count($file); $i++)
+	{
+		if ((strcmp(stristr($file[$i], "Transactions in: "), $file[$i]) == 0))
+		{
+			$addressTotal = trim(str_ireplace("Transactions in: ", "", $file[$i]));
+			$addressTotal = trim(str_ireplace("<br />", "", $file[$i]));
+			print $addressTotal;
+		}
+	}
 }
 
 // -----------------------------------------------------------------------------------------
