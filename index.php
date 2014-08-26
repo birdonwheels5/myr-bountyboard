@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-	<?php include "bountyManipulator.php";?>
+	<?php include "bountyHandler.php";?>
 	</head>
 
 	<body>
