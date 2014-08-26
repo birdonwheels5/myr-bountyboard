@@ -139,13 +139,11 @@ function cleanInput($data)
 				<input type="submit" name="submit" value="Delete">
 			</form>
 			</nav>
-			
-			<div class="articleContainer">
-				<article>
-					<hr/>
-					<p>Hi mom</p>
-				</article>
-			</div>
+
+			<article>
+				<hr/>
+				<p>Hi mom</p>
+			</article>
 
 <?php
 
