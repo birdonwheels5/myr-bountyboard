@@ -211,6 +211,8 @@ function getAddressTotal($myrAddress)
 		print "<br/>Temp address file loaded! Beginning search...";
 	}
 	
+	print "<br>" . $file[15];
+	
 	for($i = 0; $i < count($file); $i++)
 	{
 		if ($debugMode == true)
