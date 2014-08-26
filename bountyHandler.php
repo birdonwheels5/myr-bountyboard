@@ -190,7 +190,7 @@ function displayBounties($fileName)
 			print "</div><div class=\"box\"><center><p>" . $addressTotal . "</p></center>";
 			print "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
 			$donationCount = getDonationCount($bounties[$i]->getMyrAddress());
-			print "</div><div class=\"numberBox\"><center><p>" . $dontationCount . "</p></center>";
+			print "</div><div class=\"numberBox\"><center><p>" . $donationCount . "</p></center>";
 			print "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
 			print "</div></div>";
 		}
@@ -278,9 +278,9 @@ function getDonationCount($myrAddress)
 	
 	// Clean it up (it wil always be the 20th position in the array)
 	$donationCount = str_ireplace("<br /", "", $explodedString[20]);
-	print $donationCount;
 	$donationCount = str_ireplace("Transactions in: ", "", $donationCount);
-	
+		print $donationCount;
+
 	return $donationCount;
 }
 
