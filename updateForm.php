@@ -170,7 +170,7 @@ function cleanInput($data)
 			</form>
 			</nav>
 
-			<div class="status">
+			<nav>
 				<p><h3>Current Bounties:</h3></p>
 				<hr/>
 				<p><?php displayBountyInfo($fileName) ?></p>
@@ -196,7 +196,7 @@ if ($bountyUpdated == $SUCCESS)
 
 ?>
 
-			</div>
+			</nav>
 
 	</body>
 </html>
