@@ -151,24 +151,21 @@ function cleanInput($data)
 				
 				<input type="submit" name="submit" value="Submit"> 
 			</form>
-			</nav>
-			
-			<nav>
-				<p><h3>Current Bounties:</h3></p>
-				<hr/>
-				<p><?php displayTitles($fileName) ?></p>
+
 
 <?php
 if ($bountySubmitted == $FAILURE)
 {
+	print "<br/>";
+	print "<h3>Status:</h3>";
 	print "<hr/>";
-	print "<h3>Status:</h3><br>";
 	print "Bounty submission failed!";
 }
 else if ($bountySubmitted == $SUCCESS)
 {
+	print "<br/>";
+	print "<h3>Status:</h3>";
 	print "<hr/>";
-	print "<h3>Status:</h3><br>";
 	print "Bounty submission successful!";
 	print "Your bounty will appear the next time the bounty page is refreshed. (Refreshed on the hour)";
 	print "<br>";
@@ -177,6 +174,12 @@ else if ($bountySubmitted == $SUCCESS)
 	exit;
 }
 ?>
+			</nav>
+
+			<nav>
+				<p><h3>Current Bounties:</h3></p>
+				<hr/>
+				<p><?php displayTitles($fileName) ?></p>
 			</nav>
 
 	</body>
