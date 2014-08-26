@@ -47,14 +47,21 @@ nav
 	margin-right:10px;
 }
 
-article
+.articleContainer
 {
-	width:30%;
+	width:100%;
 	height:40%;
 	text-align:left;
 	padding-top:80px;
 	padding-left:2%;
 	padding-right:2%;
+}
+
+article
+{
+	width:25%;
+	height:40%;
+	text-align:left;
 }
 
 div.paddingBottom
