@@ -199,6 +199,7 @@ function getAddressTotal($myrAddress)
 	
 	$explodedString = array();
 	$fullString = stream_get_contents($url);
+	$addressTotal = "";
 	
 	$explodedString = explode(">", $fullString);
 	
@@ -207,8 +208,10 @@ function getAddressTotal($myrAddress)
 		print $explodedString[21];
 	}
 	
+	$addressTotal = trim(str_ireplace("Received: ", "", $explodedString[21]));
+	print $addessTotal;
 	
-	$addressTotal;
+	print $addressTotal;
 	
 	/*if ($debugMode == true)
 	{
@@ -254,6 +257,10 @@ function getAddressTotal($myrAddress)
 
 function getDonationCount($myrAddress)
 {
+	
+	
+	
+	$addressTotal = trim(str_ireplace("Transactions in: ", "", $explodedString[20]));
 	print "hi mom";
 }
 
