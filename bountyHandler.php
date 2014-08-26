@@ -196,9 +196,11 @@ function displayBounties($fileName)
 		{
 			print "<div class=\"inActiveBounty\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
 			print "</div><div class=\"descBox\"><p>" . $bounties[$i]->getDescription() . "</p>";
-			print "</div><div class=\"box\"><center><p>" . getAddressTotal($bounties[$i]->getMyrAddress()) . "</p></center>";
+			$addressTotal = getAddressTotal($bounties[$i]->getMyrAddress());
+			print "</div><div class=\"box\"><center><p>" . $addressTotal . "</p></center>";
 			print "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
-			print "</div><div class=\"numberBox\"><center><p>" . getDonationCount($bounties[$i]->getMyrAddress()) . "</p></center>";
+			$donationCount = getDonationCount($bounties[$i]->getMyrAddress())
+			print "</div><div class=\"numberBox\"><center><p>" . $donationCount . "</p></center>";
 			print "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
 			print "</div></div>";
 		}
