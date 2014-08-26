@@ -136,13 +136,13 @@ function cleanInput($data)
 				
 				<br><br>
 				Bounty Description:<br>
-				<textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
+				<textarea name="description" rows="5" cols="35"><?php echo $description;?></textarea>
 				<span class="error">* <?php echo $descriptionErr;?></span>
 
 				<br><br>
 				
 				Myriadcoin Address: <br>
-				<textarea name="myrAddress" rows="1" cols="40"><?php echo $myrAddress;?></textarea>
+				<textarea name="myrAddress" rows="1" cols="35"><?php echo $myrAddress;?></textarea>
 				<span class="error">* <?php echo $myrAddressErr;?></span>
 				<br><br>
 				
