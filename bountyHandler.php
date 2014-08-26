@@ -195,11 +195,18 @@ function getAddressTotal($myrAddress)
 {
 	$debugMode = true;
 	$url = fopen("http://cryptap.us/myr/explorer/address/" . $myrAddress, "r");  
-	file_put_contents("tmpAddressTotal.dat", stream_get_contents($url));
+	// file_put_contents("tmpAddressTotal.dat", stream_get_contents($url));
+	
+	$fullString = stream_get_contents($url);
+	
+	if ($debugMode == true)
+	{
+		print $fullString;
+	}
 	
 	$addressTotal;
 	
-	if ($debugMode == true)
+	/*if ($debugMode == true)
 	{
 		print "<br/>Loading temp address file!";
 	}
@@ -236,7 +243,7 @@ function getAddressTotal($myrAddress)
 			}
 		}
 	}
-	fclose($file);
+	fclose($file);*/
 }
 
 // -----------------------------------------------------------------------------------------
