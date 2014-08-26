@@ -71,21 +71,21 @@ div.box
 {
 	width:10%;
 	float:left;
-	padding-right:2%;
+	padding-right:1%;
 }
 
 div.descBox
 {
 	width:22%;
 	float:left;
-	padding-right:2%;
+	padding-right:1%;
 }
 
 div.numberBox
 {
 	width:24%;
 	float:left;
-	padding-right:2%;
+	padding-right:1%;
 }
 
 div.divider
