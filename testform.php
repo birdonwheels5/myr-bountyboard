@@ -120,7 +120,7 @@ function cleanInput($data)
 			
 		</header>
 		
-			<div class="status">
+			<nav>
 
 		<hr/>
 		<center><h2>Submit a New Bounty</h2></center>
@@ -151,7 +151,7 @@ function cleanInput($data)
 				
 				<input type="submit" name="submit" value="Submit"> 
 			</form>
-			</div>
+			</nav>
 			
 			<nav>
 				<p><h3>Current Bounties:</h3></p>
