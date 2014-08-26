@@ -201,7 +201,7 @@ function getAddressTotal($myrAddress)
 
 function getDonationCount($myrAddress)
 {
-	
+	print "hi mom";
 }
 
 // -----------------------------------------------------------------------------------------
@@ -367,7 +367,7 @@ function removeBounty($fileName, $par1BountyNumber)
 
 function updateBounty($fileName, $par1BountyNumber)
 {
-	
+	print "hi mom";
 }
 
 // -----------------------------------------------------------------------------------------
