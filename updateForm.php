@@ -106,7 +106,7 @@ if($_POST["submit"] and $_POST["submit"] == "Update")
     	}
 
 
-if ($bountyNumber < 1 or (strcmp($title, $empty) == 0) or (strcmp($description, $empty) == 0) or (strcmp($myrAddress, $empty) == 0) or (strcmp($userName, $empty) == 0))
+if ((strcmp($title, $empty) == 0) or (strcmp($description, $empty) == 0) or (strcmp($myrAddress, $empty) == 0) or (strcmp($userName, $empty) == 0))
 {
 	$bountyUpdated = $FAILURE;
 }
