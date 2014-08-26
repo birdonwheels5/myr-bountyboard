@@ -191,34 +191,58 @@ function displayBounties($fileName)
 
 // -----------------------------------------------------------------------------------------
 
+// Returns a string with the total amount of MYR every received by the supplied address.
+// Not safe to cast to an int as it has "MYR" at the end of the string.
 function getAddressTotal($myrAddress)
 {
-	$debugMode = true;
+	// Get stream from block explorer
 	$url = fopen("http://cryptap.us/myr/explorer/address/" . $myrAddress, "r");  
-	// file_put_contents("tmpAddressTotal.dat", stream_get_contents($url));
-	
+
+	// Create the array for storing the sata
 	$explodedString = array();
+	
+	// Get the data from stream
 	$fullString = stream_get_contents($url);
+	
 	$addressTotal = "";
 	
+	// Break the data up into an array
 	$explodedString = explode(">", $fullString);
 	
+	// Clean it up (it wil always be the 21st position in the array)
 	$addressTotal = str_ireplace("Received: ", "", $explodedString[21]);
 	$addressTotal = str_ireplace("<br /", "", $addressTotal);
-	print $addressTotal;
 	
-	
+	return $addressTotal;
 }
 
 // -----------------------------------------------------------------------------------------
 
+// Returns a string with the number of donations. 
+// Safe to cast to an int.
 function getDonationCount($myrAddress)
 {
+	// Get stream from block explorer
+	$url = fopen("http://cryptap.us/myr/explorer/address/" . $myrAddress, "r");  
+
+	// Create the array for storing the sata
+	$explodedString = array();
 	
+	// Get the data from stream
+	$fullString = stream_get_contents($url);
 	
+	$donationCount = "";
 	
-	$addressTotal = trim(str_ireplace("Transactions in: ", "", $explodedString[20]));
-	print "hi mom";
+	// Break the data up into an array
+	$explodedString = explode(">", $fullString);
+	
+	// Clean it up (it wil always be the 20th position in the array)
+	$donationCount = str_ireplace("Transactions in: ", "", $explodedString[20]);
+	$donationCount = str_ireplace("<br /", "", $addressTotal);
+	
+	print $donationCount;
+	
+	return $donationCount;
 }
 
 // -----------------------------------------------------------------------------------------
