@@ -174,13 +174,17 @@ function cleanInput($data)
 
 if ($bountyUpdated == $FAILURE)
 {
+	print "<hr/>";
 	print "<h3>Status:</h3><br>";
+	print "<hr/>";
 	print "Bounty update failed!";
 }
 
 if ($bountyUpdated == $SUCCESS)
 {
+	print "<hr/>";
 	print "<h3>Status:</h3><br>";
+	print "<hr/>";
 	print "Bounty updated!";
 	print "The updated bounty will appear the next time the bounty page is refreshed. (Refreshed on the hour)";
 	print "<br>";
