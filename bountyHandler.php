@@ -186,9 +186,11 @@ function displayBounties($fileName)
 		{
 			print "<div class=\"activeBounty\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
 			print "</div><div class=\"descBox\"><p>" . $bounties[$i]->getDescription() . "</p>";
-			print "</div><div class=\"box\"><center><p>" . printAddressTotal($bounties[$i]->getMyrAddress()) . "</p></center>";
+			$addressTotal = getAddressTotal($bounties[$i]->getMyrAddress());
+			print "</div><div class=\"box\"><center><p>" . $addressTotal . "</p></center>";
 			print "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
-			print "</div><div class=\"numberBox\"><center><p>" . printDonationCount($bounties[$i]->getMyrAddress()) . "</p></center>";
+			getDonationCount($bounties[$i]->getMyrAddress());
+			print "</div><div class=\"numberBox\"><center><p>" . $dontationCount . "</p></center>";
 			print "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
 			print "</div></div>";
 		}
@@ -196,9 +198,11 @@ function displayBounties($fileName)
 		{
 			print "<div class=\"inActiveBounty\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
 			print "</div><div class=\"descBox\"><p>" . $bounties[$i]->getDescription() . "</p>";
-			print "</div><div class=\"box\"><center><p>" . printAddressTotal($bounties[$i]->getMyrAddress()) . "</p></center>";
+			$addressTotal = getAddressTotal($bounties[$i]->getMyrAddress());
+			print "</div><div class=\"box\"><center><p>" . $addressTotal . "</p></center>";
 			print "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
-			print "</div><div class=\"numberBox\"><center><p>" . printDonationCount($bounties[$i]->getMyrAddress()) . "</p></center>";
+			$donationCount = getDonationCount($bounties[$i]->getMyrAddress());
+			print "</div><div class=\"numberBox\"><center><p>" . $donationCount . "</p></center>";
 			print "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
 			print "</div></div>";
 		}
@@ -228,8 +232,9 @@ function displayBountyInfo($fileName)
 
 // -----------------------------------------------------------------------------------------
 
-// Prints a string with the total amount of MYR every received by the supplied address.
-function printAddressTotal($myrAddress)
+// Returns a string with the total amount of MYR every received by the supplied address.
+// Not safe to cast to an int because of the "MYR" at the end of the string.
+function getAddressTotal($myrAddress)
 {
 	// Get stream from block explorer
 	$url = fopen("http://cryptap.us/myr/explorer/address/" . $myrAddress, "r");  
@@ -249,12 +254,13 @@ function printAddressTotal($myrAddress)
 	$addressTotal = str_ireplace("Received: ", "", $explodedString[21]);
 	$addressTotal = str_ireplace("<br /", "", $addressTotal);
 	
-	print $addressTotal;
+	return $addressTotal;
 }
 
 // -----------------------------------------------------------------------------------------
 
-// Prints a string with the number of donations. 
+// Returns a string with the number of donations. 
+// Safe to cast to an int.
 function getDonationCount($myrAddress)
 {
 	// Get stream from block explorer
@@ -275,7 +281,7 @@ function getDonationCount($myrAddress)
 	$donationCount = str_ireplace("Transactions in: ", "", $explodedString[20]);
 	$donationCount = str_ireplace("<br /", "", $donationCount);
 	
-	print $donationCount;
+	return $donationCount;
 }
 
 // -----------------------------------------------------------------------------------------
