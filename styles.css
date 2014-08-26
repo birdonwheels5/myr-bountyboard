@@ -71,6 +71,7 @@ div.activeBounty
 	border-radius:3px;
 	width:100%;
 	float:left;
+	background-color:green;
 }
 
 div.inActiveBounty
@@ -78,6 +79,7 @@ div.inActiveBounty
 	border-radius:3px;
 	width:100%;
 	float:left;
+	background-color:grey;
 }
 
 div.paddingBottom
