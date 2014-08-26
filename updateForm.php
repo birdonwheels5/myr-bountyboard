@@ -168,12 +168,7 @@ function cleanInput($data)
 				
 				<input type="submit" name="submit" value="Update">
 			</form>
-			</nav>
-
-			<nav>
-				<p><h3>Current Bounties:</h3></p>
-				<hr/>
-				<p><?php displayBountyInfo($fileName) ?></p>
+			
 
 <?php
 
@@ -195,7 +190,12 @@ if ($bountyUpdated == $SUCCESS)
 }
 
 ?>
-
+			</nav>
+			
+			<nav>
+				<p><h3>Current Bounties:</h3></p>
+				<hr/>
+				<p><?php displayBountyInfo($fileName) ?></p>
 			</nav>
 
 	</body>
