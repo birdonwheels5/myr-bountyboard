@@ -142,7 +142,7 @@ function cleanInput($data)
 
 			<article>
 				<hr/>
-				<p>Hi mom</p>
+				<p><?php displayTitles($fileName) ?></p>
 			</article>
 
 <?php
