@@ -125,7 +125,7 @@ function cleanInput($data)
 				<br><br>
 				
 				Myriadcoin Address: <br>
-				<input type="text" name="myrAddress" rows="5" value="<?php echo $myrAddress;?>">
+				<input type="text" name="myrAddress" cols="20" value="<?php echo $myrAddress;?>">
 				<br><br>
 				
 				Username:<br>
