@@ -201,7 +201,7 @@ function displayBountyInfo($fileName)
 	
 	for($i = 1; $i <= $bountyCount; $i++)
 	{
-		print $bounties[$i]->getTitle() . "<br>";
+		print "<b>" . $bounties[$i]->getTitle() . "</b>" . "<br>";
 		print $bounties[$i]->getDescription() . "<br>";
 		print $bounties[$i]->getMyrAddress() . "<br>";
 		print $bounties[$i]->getUserName() . "<br>";
