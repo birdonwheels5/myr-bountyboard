@@ -45,7 +45,7 @@ $bountyNumber = -1;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-if($_POST["submit"] and $_POST["submit"] == "Delete")
+if($_POST["submit"] and $_POST["submit"] == "Continue")
 {
 	if (empty($_POST["title"])) 
 	{
@@ -136,7 +136,7 @@ function cleanInput($data)
 				<input type="text" name="active" value="<?php echo $active;?>">
 				<br><br>
 				
-				<input type="submit" name="submit" value="Delete">
+				<input type="submit" name="submit" value="Continue">
 			</form>
 			</nav>
 
@@ -149,7 +149,7 @@ function cleanInput($data)
 
 if ($bountyDeleted == $CONFIRM)
 {
-	print "Please confirm that this is the bounty that you wish to delete! Click \"delete\" again once you are sure.";
+	print "Please confirm that this is the bounty that you wish to delete!";
 	print "<form method=\"post\" action=\"";
 	echo $_SERVER["PHP_SELF"];
 	print "\">";
