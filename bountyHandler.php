@@ -204,6 +204,7 @@ function getAddressTotal($myrAddress)
 	
 	if ($debugMode == true)
 	{
+		var_dump($explodedString)
 		print $explodedString[18];
 	}
 	
