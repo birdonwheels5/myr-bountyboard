@@ -15,7 +15,7 @@
 		<center><div class="container">
 	
 		
-			<header style="color:white;">
+			<header style="background-color:white;">
 		
 				<h1>Myriadcoin Community Bounty Board</h1>
 				
