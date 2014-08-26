@@ -142,7 +142,7 @@ function cleanInput($data)
 				<br><br>
 				
 				Myriadcoin Address: <br>
-				<textarea name="myrAddress" rows="1" cols="20"><?php echo $myrAddress;?></textarea>
+				<textarea name="myrAddress" rows="1" cols="40"><?php echo $myrAddress;?></textarea>
 				<span class="error">* <?php echo $myrAddressErr;?></span>
 				<br><br>
 				
