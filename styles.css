@@ -91,6 +91,7 @@ div.box
 div.numberBox
 {
 	width:14%;
+	float:left;
 	padding-right:2%;
 }
 
