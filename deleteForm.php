@@ -170,6 +170,7 @@ if ($bountyDeleted == $SUCCESS)
 	print "<hr/>";
 	print "<h3>Status:</h3><br>";
 	print "Bounty deleted!";
+	print "The change will appear the next time the bounty page is refreshed. (Refreshed on the hour)";
 	print "<br>";
 	print "Redirecting to bounty page...";
 	header("Refresh: 0, URL = " . $redirectURL);
