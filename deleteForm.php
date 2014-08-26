@@ -156,26 +156,29 @@ if ($bountyDeleted == $CONFIRM)
 
 if ($bountyDeleted == $FAILURE)
 {
+	print "<br/>";
+	print "<h3>Status:</h3>";
 	print "<hr/>";
-	print "<h3>Status:</h3><br>";
 	print "Bounty deletion failed!";
 }
 
 if ($bountyDeleted == $SUCCESS)
 {
+	print "<br/>";
+	print "<h3>Status:</h3>";
 	print "<hr/>";
-	print "<h3>Status:</h3><br>";
 	print "Bounty deleted!";
 	print "The change will appear the next time the bounty page is refreshed. (Refreshed on the hour)";
 	print "<br>";
 	print "Redirecting to bounty page...";
-	header("Refresh: 0, URL = " . $redirectURL);
+	header("Refresh: 3, URL = " . $redirectURL);
 	exit;
 }
 
 ?>
 
-	</nav>	
+			</nav>	
+			
 			<nav>
 				<p><h3>Current Bounties:</h3></p>
 				<hr/>
