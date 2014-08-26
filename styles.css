@@ -65,9 +65,9 @@ div.activeBounty
 	width:100%;
 	float:left;
 	background-color:hsla(100, 43%, 65%, 0.71);
-	-webkit-box-shadow: 10px 10px 5px #888888;
+	-webkit-box-shadow: 3px 3px 5px #888888;
 	-moz-box-shadow: 3px 3px 5px #888888;
-	margin-bottom:30px;
+	margin-bottom:25px;
 }
 
 div.box
@@ -112,9 +112,9 @@ div.inActiveBounty
 	width:100%;
 	float:left;
 	background-color:hsla(0, 0%, 65%, 0.71);
-	-webkit-box-shadow: 10px 10px 5px #888888;
+	-webkit-box-shadow: 3px 3px 5px #888888;
 	-moz-box-shadow: 3px 3px 5px #888888;
-	margin-bottom:30px;
+	margin-bottom:25px;
 }
 
 div.paddingBottom
