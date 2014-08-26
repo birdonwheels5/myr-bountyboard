@@ -215,11 +215,15 @@ function getAddressTotal($myrAddress)
 	{
 		if ($debugMode == true)
 			{
-				print "<br/>Searching file for address total!<br/>";
+				print "<br/>Searching file for address total!";
 			}
 		
 		if ((strcmp(stristr($file[$i], "Transactions in: "), $file[$i]) == 0))
 		{
+			if ($debugMode == true)
+			{
+				print "<br/>Match found!<br/>";
+			}
 			
 			$addressTotal = trim(str_ireplace("Transactions in: ", "", $file[$i]));
 			$addressTotal = trim(str_ireplace("<br />", "", $file[$i]));
