@@ -62,10 +62,10 @@ if($_POST["submit"] and $_POST["submit"] == "Update")
     			{
     				$title = $bounties[$bountyNumber]->getTitle();
     			}
-    			else
-    			{
-    				$titleErr = "That bounty could not be found";
-    			}
+    		}
+    		else
+    		{
+    			$titleErr = "That bounty could not be found";
     		}
     	}
 
