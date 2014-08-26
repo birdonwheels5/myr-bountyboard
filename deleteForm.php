@@ -100,7 +100,7 @@ function cleanInput($data)
 
 }
 ?> 
-		<header>
+		<header style="color:#fff;">
 		
 			<center><h1>Delete Bounty Form</h1></center>
 			
