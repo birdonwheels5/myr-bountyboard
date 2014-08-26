@@ -160,7 +160,7 @@ function displayTitles($fileName)
 	
 	$bountyCount = countBounties($fileName);
 	
-	for($i = 0; $i <= $bountyCount; i++)
+	for($i = 0; $i <= $bountyCount; $i++)
 	{
 		print $i . ") " . $bounties[$i]->getTitle() . "<br>";
 	}
