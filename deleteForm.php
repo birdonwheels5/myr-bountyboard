@@ -172,7 +172,7 @@ if ($bountyDeleted == $SUCCESS)
 	print "Bounty deleted!";
 	print "<br>";
 	print "Redirecting to bounty page...";
-	header("Refresh: 3, URL = " . $redirectURL);
+	header("Refresh: 0, URL = " . $redirectURL);
 	exit;
 }
 
