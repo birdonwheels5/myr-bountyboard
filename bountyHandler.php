@@ -200,11 +200,11 @@ function getAddressTotal($myrAddress)
 	$explodedString = array();
 	$fullString = stream_get_contents($url);
 	
-	$explodedString = explode("\n\r", $fullString);
+	$explodedString = explode(">", $fullString);
 	
 	if ($debugMode == true)
 	{
-		print $explodedString[15];
+		var_dump($explodedString);
 	}
 	
 	
