@@ -141,6 +141,7 @@ function cleanInput($data)
 			</nav>
 			
 			<article>
+				<hr/>
 				<p>Hi mom</p>
 			</article>
 
