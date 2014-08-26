@@ -182,10 +182,26 @@ function displayBounties($fileName)
 	
 	for($i = 1; $i <= $bountyCount; $i++)
 	{
-		print $i . ") " . $bounties[$i]->getTitle() . "<br>";
-		print $i . ") " . $bounties[$i]->getDescription() . "<br>";
-		print $i . ") " . $bounties[$i]->getMyrAddress() . "<br>";
-		print $i . ") " . $bounties[$i]->getUserName() . "<br>";
+		if ((strcmp(stristr($bounties[$bountyNumber]->getActive(), "active: true"), $bounties[$bountyNumber]->getActive()) == 0))
+		{
+			print "<div class=\"activeBounty\"><div class=\"box\"><p>" . $bounties[$bountyNumber]->getTitle() . "</p>";
+			print "</div><div class=\"descBox\"><p>" . $bounties[$bountyNumber]->getDescription() . "</p>";
+			print "</div><div class=\"box\"><center><p>" . getAddressTotal($bounties[$bountyNumber]->getMyrAddress()) . "</p></center>";
+			print "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$bountyNumber]->getMyrAddress() . "\">" . $bounties[$bountyNumber]->getMyrAddress() . "</a></p>";
+			print "</div><div class=\"numberBox\"><center><p>" . getDonationCount($bounties[$bountyNumber]->getMyrAddress()) . "</p></center>";
+			print "</div><div class=\"box\"><p>" . $bounties[$bountyNumber]->getUserName() . "</p>";
+			print "</div></div>";
+		}
+		else
+		{
+			print "<div class=\"inActiveBounty\"><div class=\"box\"><p>" . $bounties[$bountyNumber]->getTitle() . "</p>";
+			print "</div><div class=\"descBox\"><p>" . $bounties[$bountyNumber]->getDescription() . "</p>";
+			print "</div><div class=\"box\"><center><p>" . getAddressTotal($bounties[$bountyNumber]->getMyrAddress()) . "</p></center>";
+			print "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$bountyNumber]->getMyrAddress() . "\">" . $bounties[$bountyNumber]->getMyrAddress() . "</a></p>";
+			print "</div><div class=\"numberBox\"><center><p>" . getDonationCount($bounties[$bountyNumber]->getMyrAddress()) . "</p></center>";
+			print "</div><div class=\"box\"><p>" . $bounties[$bountyNumber]->getUserName() . "</p>";
+			print "</div></div>";
+		}
 	}
 }
 
