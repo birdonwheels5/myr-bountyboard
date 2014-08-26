@@ -98,7 +98,7 @@ if($_POST["submit"] and $_POST["submit"] == "Update")
     	
     	if (empty($_POST["active"]))
     	{
-    		$active = true;
+    		$active = "true";
     	}
     	else
     	{
