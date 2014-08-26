@@ -425,7 +425,7 @@ function removeBounty($fileName, $par1BountyNumber)
 
 // -----------------------------------------------------------------------------------------
 
-function updateBounty($fileName, $par1BountyNumber)
+function updateBounty($fileName, $bountyNumber, $title, $description, $myrAddress, $userName, $active)
 {
 	print "hi mom";
 }
