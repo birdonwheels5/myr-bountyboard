@@ -120,7 +120,7 @@ function cleanInput($data)
 			
 		</header>
 		
-			<nav>
+			<div class="status">
 
 		<hr/>
 		<center><h2>Submit a New Bounty</h2></center>
@@ -151,9 +151,9 @@ function cleanInput($data)
 				
 				<input type="submit" name="submit" value="Submit"> 
 			</form>
-			</nav>
+			</div>
 			
-			<div class="status">
+			<nav>
 				<p><h3>Current Bounties:</h3></p>
 				<hr/>
 				<p><?php displayTitles($fileName) ?></p>
@@ -177,7 +177,7 @@ else if ($bountySubmitted == $SUCCESS)
 	exit;
 }
 ?>
-			</div>
+			</nav>
 
 	</body>
 </html>
