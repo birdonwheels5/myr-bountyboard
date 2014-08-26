@@ -204,7 +204,7 @@ function getAddressTotal($myrAddress)
 	
 	if ($debugMode == true)
 	{
-		print $explodedString[15];
+		print $explodedString;
 	}
 	
 	
