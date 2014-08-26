@@ -140,10 +140,12 @@ function cleanInput($data)
 			</form>
 			</nav>
 			
-			<article>
-				<hr/>
-				<p>Hi mom</p>
-			</article>
+			<div class="articleContainer">
+				<article>
+					<hr/>
+					<p>Hi mom</p>
+				</article>
+			</div>
 
 <?php
 
