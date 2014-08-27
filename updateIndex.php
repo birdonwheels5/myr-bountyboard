@@ -22,7 +22,7 @@
 		<link rel=\"stylesheet\" type=\"text/css\" href=\"http://fonts.googleapis.com/css?family=Open+Sans\" title=\"Font Styles\"/>
 	</head>
 	
-	<body>
+	<body link=\"#E2E2E2\" vlink=\"#ADABAB\">
 		<center><div class=\"container\">
 	
 		
@@ -41,16 +41,16 @@
 			
 				<div class=\"welcome\">
 					<center><p>Welcome to the <b>Myriadcoin Community Bounty Board</b>!</center><br/>
-					<center><b>Total Bounties: " . $bountyCount . "</b></center><br/>
-					A few things you should know before you get started...<br/>
+					<center><b>Total Bounties</b>: " . $bountyCount . "</center><br/>
+					A few things to note before getting started...<br/>
 					<ul>
-						<li>The green bounties indicate that no one is currently working on them, while gray means that someone is working on it.
-						<li>Please contact a moderator on our <a href=\"http://www.reddit.com/r/myriadcoin\">subreddit</a> if you are interested in taking up a bounty, and then again once you have completed it. You may wish to keep them in the loop with your progress.
+						<li>The green bounties indicate bounties that are up for grabs, while the gray bounties are already claimed.
+						<li>Please contact a moderator on our <a href=\"http://www.reddit.com/r/myriadcoin\">subreddit</a> if you are interested in taking up a bounty, and then again once you have completed it to claim your reward. They can also be found on <a href=\"http://webchat.freenode.net/?nick=myriad%7C...&channels=%23%23myriadcoin&uio=OT10cnVlJjExPTEyMyYxMj10cnVl38\"> our IRC channel</a>. You may wish to keep them in the loop with your progress.
 						<li>Because of long loading times when there are numerous bounties, the list is compiled hourly. So any new (or edited) bounties will appear then.
-						<li>Whenever a new bounty is added or an old one is updated, the bounty will drop to the bottom of the page.
-						<li>The block explorer may report a different amount than the amount raised for the bounty, but be assured that the amount displayed on this page will be paid out upon completion of the bounty.
+						<li>Whenever a new bounty is added or an old one is updated, that bounty will drop to the bottom of the page. Be sure to check the bottom!
+						<li>The block explorer may report a different amount than the amount raised for the bounty, but be assured that the amount displayed on this page will be paid out upon the bounty's completion.
 					</ul>
-					<center>Good luck, Bounty Hunters!</center></p>
+					<center>Good luck, brave Bounty Hunters!</center></p>
 				</div>
 				
 				<center><div class=\"divider\">
