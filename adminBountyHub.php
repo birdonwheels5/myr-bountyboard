@@ -33,7 +33,7 @@
 				<hr/>
 			
 				<div class="welcome">
-					<center><p>Welcome to the Admin Control Panel! (For trusted community members only)</center><br/>
+					<center><p>Welcome to the Admin Control Panel! (For devs & trusted community members only)</center><br/>
 					<center><b>Total Bounties</b>: <?php print $bountyCount; ?></center><br/>
 					Links:<br/>
 					<ul>
