@@ -46,7 +46,7 @@
 					<center>Have fun!</center></p>
 				</div>
 				
-				<center><?php displayBountyInfo("bounties.dat"); ?></center>
+				<div class="welcome"><?php displayBountyInfo("bounties.dat"); ?></div>
 				
 				
 					</article></div></body></html>
