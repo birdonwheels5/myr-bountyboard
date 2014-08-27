@@ -27,10 +27,11 @@
 	
 		
 			<header style=\"background-color:transparent;\">
-				<h1>Myriadcoin Community Bounty Board</h1>
+				<h1>Myriadcoin Community Bounty Board<br/></h1>
 			</header>
 			
 			<article>
+			<p> </p>
 				
 				<hr/>
 			
