@@ -1,5 +1,6 @@
 <?php
 	// Create the index.php file that will be served to your visitors.
+	include "bountyHandler.php";
 
 	$fileName = "bounties.dat";
 	
