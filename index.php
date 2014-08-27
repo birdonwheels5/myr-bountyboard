@@ -34,7 +34,7 @@
 						<li>The block explorer may report a different amount than the amount raised for the bounty, but be assured that the amount displayed on this page will be paid out upon completion of the bounty.
 					</ul>
 					Good luck, Bounty Hunters!</p>
-				</div></center>
+				</div>
 				
 				<div class="divider">
 					<div class="box">
