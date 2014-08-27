@@ -10,7 +10,7 @@
 		</style>
 	</head>
 	
-	<body> 
+	<body style="color:black;background-image:initial;">
 	
 	
 
