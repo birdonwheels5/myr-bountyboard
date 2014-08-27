@@ -39,6 +39,7 @@ div.logoContainer
 div.welcome
 {
 	width:40%;
+	margin:0 auto;
 	float:left;
 	border-radius:6px;
 	float:left;
