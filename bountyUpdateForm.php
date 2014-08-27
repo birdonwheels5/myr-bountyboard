@@ -10,7 +10,7 @@
 		</style>
 	</head>
 	
-	<body style="color:black;background-image:initial;">
+	<body link="#E2E2E2" vlink="#000000">
 	
 	
 
@@ -125,7 +125,7 @@ function cleanInput($data)
 }
 
 ?> 
-		<header style="color:#fff;">
+			<header style="background-color:transparent;">
 		
 			<center><h1>Update Bounty Form</h1></center>
 			
