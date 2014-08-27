@@ -33,7 +33,7 @@
 						<li>Whenever a new bounty is added or updated, it will drop to the bottom of the page.
 						<li>The block explorer may report a different amount than the amount raised for the bounty, but be assured that the amount displayed on this page will be paid out upon completion of the bounty.
 					</ul>
-					Good luck, Bounty Hunters!</p>
+					<center>Good luck, Bounty Hunters!</center></p>
 				</div>
 				
 				<center><div class="divider">
@@ -65,10 +65,6 @@
 	<?php
 	
 	$fileName = "bounties.dat";
-	
-	// With this, you can pull any aspect of a bounty's data and display it.
-	$bounties = array();
-	$bounties = readBounties($fileName);
 	
 	displayBounties($fileName);
 	?>
