@@ -21,7 +21,7 @@
 			
 			<article>
 			
-					<p> </p>
+					<img src="https://ip.bitcointalk.org/?u=http%3A%2F%2Fi.imgur.com%2Fq1gfxsh.png&t=543&c=1eH-kdXXWkmLaQ">
 				
 				<div class="divider">
 					<div class="box">
