@@ -98,14 +98,14 @@
 				$donationCount = getDonationCount($bounties[$i]->getMyrAddress());
 			$content .= "</div><div class=\"numberBox\"><center><p>" . $donationCount . "</p></center>";
 			$content .= "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
-			$content .= "</div></div>";
+			$content .= "</div></article></div>";
 		}
 	}
 	
-	//$content .= "</article>";
-	
 	$content .= "<div class=\"paddingBottom\"></div>
 		     <footer>Want to show some love? Donate some MYR: MNYERWCHqrH1EkGNpF4T8o8dGB391A5jmm</footer>";
+
+	$content .= "</body></html>";
 
 	$fi = fopen("index.php", "w");
  	fwrite($fi, $content);
