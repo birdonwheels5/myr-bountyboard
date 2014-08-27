@@ -32,7 +32,7 @@ $bounties = readBounties($fileName);
 $bountyNumber = -1;
 
 $bountySubmitted = $WAITING;
-$redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
+$redirectURL = "updateIndex.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
@@ -167,10 +167,9 @@ else if ($bountySubmitted == $SUCCESS)
 	print "<h3>Status:</h3>";
 	print "<hr/>";
 	print "Bounty submission successful!";
-	print "Your bounty will appear the next time the bounty page is refreshed. (Refreshed on the hour)";
 	print "<br>";
-	print "Redirecting to bounty page...";
-	header("Refresh: 5, URL = " . $redirectURL);
+	print "Refreshing bounty page and redirecting...";
+	header("Refresh: 0, URL = " . $redirectURL);
 	exit;
 }
 ?>
