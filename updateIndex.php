@@ -29,11 +29,8 @@
 			<center><header style=\"background-color:transparent;\">
 				<table>
 					<tr>
-						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:50%;\"></img></td>
-						<td><img src=\"http://www.cryptostartupshow.com/wp-content/uploads/2014/04/logo41.png\" style=\"width:100%;\"></img></td>
-						<td><h1>Community Bounty Board</h1></td>
-
-						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:50%;\"></img></td>
+						<td><img src=\"http://i.imgur.com/7JOcOBP.png\" style=\"width:120%;\"></img></td>
+						<td><h1> Community Bounty Board</h1></td>
 					</tr>
 				</table>
 			</header></center>
