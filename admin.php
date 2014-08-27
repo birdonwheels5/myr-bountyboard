@@ -38,9 +38,9 @@
 					Please note: You cannot change a bounty's title through the update page. You must first delete the bounty, then recreate it with the new title.<br/>
 					Links:<br/>
 					<ul>
-						<li><a href="bountySubmitForm.php">Submit a New Bounty</a><br/>
-						<li><a href="bountyUpdateForm.php">Update an Existing Bounty</a><br/>
-						<li><a href="bountyDeleteForm.php">Delete a Bounty</a><br/>
+						<li><a href="formSubmit.php">Submit a New Bounty</a><br/>
+						<li><a href="formUpdate.php">Update an Existing Bounty</a><br/>
+						<li><a href="formDelete.php">Delete a Bounty</a><br/>
 						<li><a href="index.php">Home</a><br/>
 					</ul>
 					<center>Have fun!</center></p>
