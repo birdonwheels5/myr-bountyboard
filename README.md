@@ -30,4 +30,4 @@ VTC: VdTVVEQfUyMQAMgCgpHRqZVyyEm4SoJVAW
 
 ----------------------------------------------------------------------------------------------------
 
-PS. After looking at the Monero address length, it will not work with the bounty board. You would need to change the address length requirement in the update and submit forms.
+PS. After looking at the Monero address length, it will not work with the bounty board. You would need to change the address length requirement in the update and submit forms to make a working bountyboard for cryptonote coins.
