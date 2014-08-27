@@ -48,6 +48,7 @@
 				
 				<div class="welcome">
 					Current Bounties: <br/>
+					<hr/>
 					<?php displayTitles("bounties.dat"); ?>
 				</div>
 				
