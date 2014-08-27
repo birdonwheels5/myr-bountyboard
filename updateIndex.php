@@ -80,26 +80,26 @@
 	{
 		if ((strcmp(stristr($bounties[$i]->getActive(), "true"), $bounties[$i]->getActive()) == 0))
 		{
-			$content .= "<div class=\"activeBounty\" style=\"color:black;\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
-			$content .= "</div><div class=\"descBox\" style=\"color:black;\"><p>" . $bounties[$i]->getDescription() . "</p>";
+			$content .= "<div class=\"activeBounty\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
+			$content .= "</div><div class=\"descBox\"><p>" . $bounties[$i]->getDescription() . "</p>";
 				$addressTotal = getAddressTotal($bounties[$i]->getMyrAddress());
-			$content .= "</div><div class=\"box\" style=\"color:black;\"><center><p>" . $addressTotal . "</p></center>";
-			$content .= "</div><div class=\"addressBox\" style=\"color:black;\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
+			$content .= "</div><div class=\"box\"><center><p>" . $addressTotal . "</p></center>";
+			$content .= "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
 				$donationCount = getDonationCount($bounties[$i]->getMyrAddress());
-			$content .= "</div><div class=\"numberBox\" style=\"color:black;\"><center><p>" . $donationCount . "</p></center>";
-			$content .= "</div><div class=\"box\" style=\"color:black;\"><p>" . $bounties[$i]->getUserName() . "</p>";
+			$content .= "</div><div class=\"numberBox\"><center><p>" . $donationCount . "</p></center>";
+			$content .= "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
 			$content .= "</div></div>";
 		}
 		else
 		{
-			$content .= "<div class=\"inActiveBounty\" style=\"color:black;\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
-			$content .= "</div><div class=\"descBox\" style=\"color:black;\"><p>" . $bounties[$i]->getDescription() . "</p>";
+			$content .= "<div class=\"inActiveBounty\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
+			$content .= "</div><div class=\"descBox\"><p>" . $bounties[$i]->getDescription() . "</p>";
 				$addressTotal = getAddressTotal($bounties[$i]->getMyrAddress());
-			$content .= "</div><div class=\"box\" style=\"color:black;\"><center><p>" . $addressTotal . "</p></center>";
-			$content .= "</div><div class=\"addressBox\" style=\"color:black;\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
+			$content .= "</div><div class=\"box\"><center><p>" . $addressTotal . "</p></center>";
+			$content .= "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
 				$donationCount = getDonationCount($bounties[$i]->getMyrAddress());
-			$content .= "</div><div class=\"numberBox\" style=\"color:black;\"><center><p>" . $donationCount . "</p></center>";
-			$content .= "</div><div class=\"box\" style=\"color:black;\"><p>" . $bounties[$i]->getUserName() . "</p>";
+			$content .= "</div><div class=\"numberBox\"><center><p>" . $donationCount . "</p></center>";
+			$content .= "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
 			$content .= "</div></div>";
 		}
 	}
