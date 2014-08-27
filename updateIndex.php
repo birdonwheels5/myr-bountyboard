@@ -1,5 +1,7 @@
 <?php
 // Display all bounties formatted for the home page (includes Myriadcoin address from block explorer).
+
+	include "bountyHandler.php";
 	
 	$fileName = "bounties.dat";
 	
