@@ -101,13 +101,9 @@
 		}
 	}
 	
-	$content .= "<div class=\"paddingBottom\">
-			</div>
-			
-			<footer>
-				Want to show some love? Donate some MYR: MNYERWCHqrH1EkGNpF4T8o8dGB391A5jmm
-			</footer>";
-			
+	$content .= "<div class=\"paddingBottom\"></div>
+		     <footer>Want to show some love? Donate some MYR: MNYERWCHqrH1EkGNpF4T8o8dGB391A5jmm</footer>";
+
 	$fi = fopen("index.php", "w");
  	fwrite($fi, $content);
  	fclose($fi);
