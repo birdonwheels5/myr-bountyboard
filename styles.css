@@ -4,7 +4,8 @@ body
 	padding:0;
 	margin:0;
 	color:white;
-	background-image:url(https://birdonwheels5.no-ip.org/img/stars3.jpg);
+	#background-image:url(https://birdonwheels5.no-ip.org/img/stars3.jpg);
+	background-image:url(http://ak8.picdn.net/shutterstock/videos/980179/preview/stock-footage-grunge-ice-pattern-background-seamless-loop.jpg);
 }
 
 div.container 
