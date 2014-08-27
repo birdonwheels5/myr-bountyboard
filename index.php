@@ -1,3 +1,4 @@
+<?php // This file gets overwritten every time you run 'php updateIndex.php' ?>
 <!DOCTYPE html>
 <html>
 
