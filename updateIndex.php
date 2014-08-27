@@ -120,6 +120,6 @@
 
 Page updated! Redirecting...
 
-<?php 	//header("Refresh: 0, URL = index.php");
-	//exit;
+<?php 	header("Refresh: 1, URL = index.php");
+	exit;
 ?>
