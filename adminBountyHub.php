@@ -46,7 +46,10 @@
 					<center>Have fun!</center></p>
 				</div>
 				
-				<div class="welcome">Current Bounties: <?php displayTitles("bounties.dat"); ?></div>
+				<div class="welcome">
+					Current Bounties: <br/>
+					<?php displayTitles("bounties.dat"); ?>
+				</div>
 				
 				
 					</article></div></body></html>
