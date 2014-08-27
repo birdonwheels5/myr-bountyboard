@@ -35,6 +35,7 @@
 			
 				<div class=\"welcome\">
 					<center><p>Welcome to the <b>Myriadcoin Community Bounty Board</b>!</center><br/>
+					<center><b>Total Bounties: " . $bountyCount . "</b></center><br/>
 					A few things you should know before you get started...<br/>
 					<ul>
 						<li>The green bounties indicate that no one is currently working on them, while gray means that someone is working on it.
@@ -99,4 +100,14 @@
 			$content .= "</div></div>";
 		}
 	}
-}
+	
+	$content .= "<div class=\"paddingBottom\">
+			</div>
+			
+			<footer>
+				Want to show some love? Donate some MYR: MNYERWCHqrH1EkGNpF4T8o8dGB391A5jmm
+			</footer>";
+			
+	$fi = fopen("index.php", "w");
+ 	fwrite($fi, $content);
+ 	fclose($fi);
