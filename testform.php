@@ -11,7 +11,7 @@
 		</style>
 	</head>
 	
-	<body> 
+	<body <body style="background-image:initial;">> 
 		
 <?php
 
