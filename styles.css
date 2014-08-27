@@ -6,12 +6,12 @@ body
 	color:white;
 	#background-image:url(img/background.png);
 	background-image:url(http://i.imgur.com/giAGAZR.gif);
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-position: top center !important;
-	background-repeat: no-repeat !important;
-	background-attachment: fixed;
+	#-moz-background-size: cover;
+	#-webkit-background-size: cover;
+	#background-size: cover;
+	#background-position: top center !important;
+	#background-repeat: no-repeat !important;
+	#background-attachment: fixed;
 }
 
 div.container 
