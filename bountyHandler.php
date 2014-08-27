@@ -214,6 +214,10 @@ function getAddressTotal($myrAddress)
 	// Clean it up (it wil always be the 21st position in the array)
 	$addressTotal = str_ireplace("Received: ", "", $explodedString[21]);
 	$addressTotal = str_ireplace("<br /", "", $addressTotal);
+	$addressTotal = str_ireplace("MYR", "", $addressTotal);
+	
+	$addressTotal = (double)$addressTotal;
+	$addressTotal = number_format($addressTotal, 2, '.', ',') . " MYR";
 	
 	return $addressTotal;
 }
