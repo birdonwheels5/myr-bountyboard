@@ -32,7 +32,7 @@ $SUCCESS = 0;
 
 $fileName = "bounties.dat";
 $bountyUpdated = $WAITING;
-$redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
+$redirectURL = "updateIndex.php";
 
 $bounties = array();
 $bounties = readBounties($fileName);
@@ -186,10 +186,9 @@ if ($bountyUpdated == $SUCCESS)
 	print "<h3>Status:</h3>";
 	print "<hr/>";
 	print "Bounty updated!";
-	print "The updated bounty will appear the next time the bounty page is refreshed. (Refreshed on the hour)";
 	print "<br>";
-	print "Redirecting to bounty page...";
-	header("Refresh: 3, URL = " . $redirectURL);
+	print "Refreshing bounty page and redirecting...";
+	header("Refresh: 0, URL = " . $redirectURL);
 	exit;
 }
 
