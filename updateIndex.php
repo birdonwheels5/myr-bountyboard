@@ -42,7 +42,7 @@
 					A few things you should know before you get started...<br/>
 					<ul>
 						<li>The green bounties indicate that no one is currently working on them, while gray means that someone is working on it.
-						<li>Please contact a moderator on our <a href=\"www.reddit.com/r/myriadcoin\">subreddit</a> if you are interested in taking up a bounty, and then again once you have completed it. You may wish to keep them in the loop with your progress.
+						<li>Please contact a moderator on our <a href=\"http://www.reddit.com/r/myriadcoin\">subreddit</a> if you are interested in taking up a bounty, and then again once you have completed it. You may wish to keep them in the loop with your progress.
 						<li>Because of long loading times when there are numerous bounties, the list is compiled hourly. So any new (or edited) bounties will appear then.
 						<li>Whenever a new bounty is added or updated, it will drop to the bottom of the page.
 						<li>The block explorer may report a different amount than the amount raised for the bounty, but be assured that the amount displayed on this page will be paid out upon completion of the bounty.
