@@ -30,7 +30,7 @@
 				<table>
 					<tr>
 						<td><img src=\"http://i.imgur.com/7JOcOBP.png\" style=\"width:120%;\"></img></td>
-						<td><h1>&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	Community Bounty Board</h1></td>
+						<td><h1>&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	Community Bounty Board</h1></td>
 					</tr>
 				</table>
 			</header></center>
@@ -78,13 +78,13 @@
 						<p>Curator</p>
 					</div>
 				</div>";
-	
+				
 	for($i = 1; $i <= $bountyCount; $i++)
 	{
 		if ((strcmp(stristr($bounties[$i]->getActive(), "true"), $bounties[$i]->getActive()) == 0))
 		{
-			$content .= "<div class=\"activeBounty\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
-			$content .= "</div><div class=\"descBox\"><p>" . $bounties[$i]->getDescription() . "</p>";
+			$content .= "<div class=\"activeBounty\"><div class=\"box\" style=\"text-align:left;\"><p>" . $bounties[$i]->getTitle() . "</p>";
+			$content .= "</div><div class=\"descBox\" style=\"text-align:left;\"><p>" . $bounties[$i]->getDescription() . "</p>";
 				$addressTotal = getAddressTotal($bounties[$i]->getMyrAddress());
 			$content .= "</div><div class=\"box\"><center><p>" . $addressTotal . "</p></center>";
 			$content .= "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
@@ -95,8 +95,8 @@
 		}
 		else
 		{
-			$content .= "<div class=\"inActiveBounty\"><div class=\"box\"><p>" . $bounties[$i]->getTitle() . "</p>";
-			$content .= "</div><div class=\"descBox\"><p>" . $bounties[$i]->getDescription() . "</p>";
+			$content .= "<div class=\"inActiveBounty\"><div class=\"box\" style=\"text-align:left;\"><p>" . $bounties[$i]->getTitle() . "</p>";
+			$content .= "</div><div class=\"descBox\" style=\"text-align:left;\"><p>" . $bounties[$i]->getDescription() . "</p>";
 				$addressTotal = getAddressTotal($bounties[$i]->getMyrAddress());
 			$content .= "</div><div class=\"box\"><center><p>" . $addressTotal . "</p></center>";
 			$content .= "</div><div class=\"addressBox\"><p><a href=\"http://birdonwheels5.no-ip.org:3000/address/" . $bounties[$i]->getMyrAddress() . "\">" . $bounties[$i]->getMyrAddress() . "</a></p>";
