@@ -15,6 +15,8 @@ The third one creates the index.php file, which you need to chown in order to ha
 
 In order to get the address information to display for other coins, you'll either need to set up an ABE block explorer for the coin, or find an existing explorer and modify the "bountyHandler.php" file accordingly to reflect the new URLs.
 
+Cryptonote coins will not work with the bounty board as it currently is (due to their long public addresses). You would need to change the address length requirement in the update and submit forms to make a working bountyboard for them.
+
 If you like/use this software, please consider dropping a donation!
 
 ----------------------------------------------------------------------------------------------------
@@ -31,5 +33,3 @@ VTC: VdTVVEQfUyMQAMgCgpHRqZVyyEm4SoJVAW
 
 
 ----------------------------------------------------------------------------------------------------
-
-PS. After looking at the Monero address length, it will not work with the bounty board. You would need to change the address length requirement in the update and submit forms to make a working bountyboard for cryptonote coins.
