@@ -23,6 +23,8 @@ header
 {
 	background-color:#002B6B;
 	float:left;
+	margin-left:auto;
+	margin-right:auto;
 	height:80px;
 	#overflow:hidden;
 	white-space:nowrap;
