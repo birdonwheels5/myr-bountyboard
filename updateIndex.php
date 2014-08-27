@@ -117,3 +117,9 @@
  	fclose($fi);
 
 ?>
+
+Page updated! Redirecting...
+
+<?php 	header("Refresh: 0, URL = index.php");
+	exit;
+?>
