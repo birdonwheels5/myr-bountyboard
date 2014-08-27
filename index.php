@@ -16,11 +16,12 @@
 			<header style="background-color:transparent;">
 		
 				<h1>Myriadcoin Community Bounty Board</h1>
-				<hr/>
-				
+
 			</header>
 			
 			<article>
+				
+				<hr/>
 			
 				<div class="welcome">
 					<center><p>Welcome to the Myriadcoin Community Bounty Board!</center<br/>
