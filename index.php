@@ -19,11 +19,11 @@
 
 			</header>
 			
-			<center><article>
+			<article>
 				
 				<hr/>
 			
-				<center><div class="welcome">
+				<div class="welcome">
 					<center><p>Welcome to the <b>Myriadcoin Community Bounty Board</b>!</center><br/>
 					A few things you should know before you get started...<br/>
 					<ul>
@@ -36,7 +36,7 @@
 					Good luck, Bounty Hunters!</p>
 				</div>
 				
-				<div class="divider">
+				<center><div class="divider">
 					<div class="box">
 						<p>Title</p>
 					</div>
