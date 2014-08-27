@@ -1,5 +1,6 @@
 This is just some dev stuff from when I was in the middle of working on the bounty board. 
 Feel free to read it and go through the code. Any suggestions/comments are appreciated.
+This was my first PHP project, enjoy!
 
 Algorithms
 
