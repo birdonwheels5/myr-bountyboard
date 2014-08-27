@@ -23,7 +23,7 @@
 				
 				<hr/>
 			
-				<div class="welcome">
+				<center><div class="welcome">
 					<center><p>Welcome to the <b>Myriadcoin Community Bounty Board</b>!</center><br/>
 					A few things you should know before you get started...<br/>
 					<ul>
@@ -34,7 +34,7 @@
 						<li>The block explorer may report a different amount than the amount raised for the bounty, but be assured that the amount displayed on this page will be paid out upon completion of the bounty.
 					</ul>
 					Good luck, Bounty Hunters!</p>
-				</div>
+				</div></center>
 				
 				<div class="divider">
 					<div class="box">
