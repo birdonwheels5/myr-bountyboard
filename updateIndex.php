@@ -1,3 +1,4 @@
+<?php
 // Display all bounties formatted for the home page (includes Myriadcoin address from block explorer).
 	
 	$fileName = "bounties.dat";
@@ -107,3 +108,5 @@
 	$fi = fopen("index.php", "w");
  	fwrite($fi, $content);
  	fclose($fi);
+
+?>
