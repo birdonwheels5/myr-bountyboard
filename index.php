@@ -16,13 +16,14 @@
 			<header style="background-color:transparent;">
 		
 				<h1>Myriadcoin Community Bounty Board</h1>
+				<hr/>
 				
 			</header>
 			
 			<article>
 			
 				<div class="welcome">
-					<center><p>Welcome to the Myriadcoin Community Bounty Board!<br/>
+					<center><p>Welcome to the Myriadcoin Community Bounty Board!</center<br/>
 					A few things you should know before you get started...<br/>
 					<ul>
 						<li>The green bounties indicate that no one is currently working on them, while gray means that someone is working on it.
@@ -34,9 +35,6 @@
 					Good luck, Bounty Hunters!</p>
 				</div>
 				
-				<hr/>
-				<br/>
-			
 				<div class="divider">
 					<div class="box">
 						<p>Title</p>
