@@ -28,7 +28,7 @@
 		
 			<header style=\"background-color:transparent;\">
 		
-				<p><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" alt=\"Myriadcoin Logo\" style=\"width:3%;\"></img><h1>Myriadcoin Community Bounty Board</h1><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" alt=\"Myriadcoin Logo\" style=\"width:3%;\"></img></p>
+				<p><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" alt=\"Myriadcoin Logo\" style=\"width:2%;\"></img><h1>Myriadcoin Community Bounty Board</h1><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" alt=\"Myriadcoin Logo\" style=\"width:2%;\"></img></p>
 
 			</header>
 			
