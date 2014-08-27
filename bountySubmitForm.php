@@ -169,7 +169,7 @@ else if ($bountySubmitted == $SUCCESS)
 	print "Bounty submission successful!";
 	print "<br>";
 	print "Refreshing bounty page and redirecting...";
-	header("Refresh: 0.1, URL = " . $redirectURL);
+	header("Refresh: 0, URL = " . $redirectURL);
 	exit;
 }
 ?>
