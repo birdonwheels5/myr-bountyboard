@@ -35,6 +35,7 @@
 				<div class="welcome">
 					<center><p>Welcome to the Admin Control Panel! (For devs & trusted community members only)</center><br/>
 					<center><b>Total Bounties</b>: <?php print $bountyCount; ?></center><br/>
+					Please note: You cannot change a bounty's title through the update page. You must first delete the bounty, then recreate it with the new title.<br/>
 					Links:<br/>
 					<ul>
 						<li><a href="bountySubmitForm.php">Submit a New Bounty</a><br/>
