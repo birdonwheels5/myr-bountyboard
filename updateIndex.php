@@ -29,9 +29,9 @@
 			<center><header style=\"background-color:transparent;\">
 				<table>
 					<tr>
-						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:3%;\"></img></td>
+						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:50%;\"></img></td>
 						<td><h1>Myriadcoin Community Bounty Board</h1></td>
-						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:3%;\"></img></td>
+						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:50%;\"></img></td>
 					</tr>
 				</table>
 			</header></center>
