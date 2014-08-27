@@ -196,8 +196,6 @@ function displayBountyInfo($fileName)
 // Create the index.php file that will be served to your visitors.
 function displayBounties()
 {
-	include "bountyHandler.php";
-	
 	$fileName = "bounties.dat";
 	
 	$content = "";
