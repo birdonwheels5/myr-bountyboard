@@ -20,9 +20,13 @@ If you use this software and it helps you, please consider dropping me a donatio
 Donations:
 
 BTC: 15Jqeqcd9j6ftvpid5wQt9jgwCFPwuraSX
+
 MYR: MNYERWCHqrH1EkGNpF4T8o8dGB391A5jmm
+
 XMR: 46ssJmeX4Lc3NbXxzhutFn3RKJkRQx73PQW2Md8PadgqHz7WXGTK1V8hboV6XcceFYJuGppyQCZtw2U4TXvyjk8446XEyRM
+
 VTC: VdTVVEQfUyMQAMgCgpHRqZVyyEm4SoJVAW
+
 
 ----------------------------------------------------------------------------------------------------
 
