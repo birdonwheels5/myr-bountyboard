@@ -10,7 +10,7 @@
 		</style>
 	</head>
 	
-	<body style="color:black;background-image:initial;">
+	<body link="#E2E2E2" vlink="#000000">
 	
 	
 
@@ -100,11 +100,11 @@ function cleanInput($data)
 
 }
 ?> 
-		<header style="color:#fff;">
+			<center><header style="background-color:transparent;">
 		
 			<center><h1>Delete Bounty Form</h1></center>
 			
-		</header>
+		</header></center>
 		
 			<nav>
 
