@@ -102,10 +102,10 @@
 		}
 	}
 	
-	$content .= "</article>";
-	
 	$content .= "<div class=\"paddingBottom\"></div>
 		     <footer>Want to show some love? Donate some MYR: MNYERWCHqrH1EkGNpF4T8o8dGB391A5jmm</footer>";
+		     
+	$content .= "</article></body></html>";
 
 	$fi = fopen("index.php", "w");
  	fwrite($fi, $content);
