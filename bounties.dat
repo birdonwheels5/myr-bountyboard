@@ -1,18 +1,56 @@
-title: New Electrum Wallet
-desc: First dev to create Electrum wallet gets 2,000,000 MYR
-addr: MTEST
-user: NeuroMode
+title: Algorithm Monitoring Dashboard
+desc: Algorithm Monitoring Dashboard that datamines all current algorithms used by coins but not used by Myriad
+addr: MW5m689zwP5K7oATEvKeMw5rQFhEQrPnDW
+user: neuroMode
 active: true
 qpwoeiruty
-title: Make Bird Rich
-desc: Pump MYR to 500 satoshi. Only requires one decent-size whale!
-addr: MSJ8nCKxxWicU8DMyqusdFF8v5L6DDvcrx
-user: birdonwheels5
+title: Youtube Tipping Bot
+desc: Create a Youtube Tipper Bot for Myriadcoin. You may need to utilize Google+ Accounts. (For reference, Coinye was able to create one here: https://plus.google.com/u/0/110820315203668613125/about)
+addr: MKgAspTqp9C5i44hWReqBksTcmAkwJK5y7
+user: neuroMode
+active: true
+qpwoeiruty
+title: Twitter Tipping Bot
+desc: See title
+addr: MTk3oCFV3CXixtdjufWjNFzw8D2jMkQ9H8
+user: neuroMode
+active: true
+qpwoeiruty
+title: Myriadcoin Videos
+desc: Videos that Explain Myriad to People
+addr: MUygvsZao4RJKg7vRsB6iZczeN4bZvBjCg
+user: neuroMode
+active: true
+qpwoeiruty
+title: Simplicity
+desc: Wallet+Miner GUI that allows noobs (=non-techies) to start mining in &quot;2-Clicks&quot;. Involves MyriadSwitcher, creating p2pools, and auto-configuring the miner based on the user's detected video card.
+addr: MBqDZcwyoNAFenjjsPAZesKio8TXKUbYoD
+user: neuroMode
 active: false
 qpwoeiruty
-title: Testing Title
-desc: How much do you think MYR will be worth in a year? Answer and recieve 1,000,000 MYR!
-addr: MSomethingSomething
+title: Written Technical Analysis of Enhanced Myriad Blockchain Security
+desc: Written Technical Analysis of Enhanced Myriad Blockchain Security including how difficult a 51% attack would be to perform on 5 concurrent algorithms
+addr: M9NqqewwNVMnipqC8KRkBa7yB3dNsMEafa
+user: neuroMode
+active: true
+qpwoeiruty
+title: DNS Sidechain
+desc: Create a sidechain that acts as a public directory. This public directory will link a chosen Myriadcoin address to a specific username of the user's choosing. Users must be able to perform this linking via a webpage or the wallet. Both are preferred. 
+
+An example would look something like: 
+
+MSJ8nCKxxWicU8DMyqusdFF8v5L6DDvcrx to birdonwheels5. I would now be able to send Myriadcoins directly to birdonwheels5 with the syntax:
+
+500MYR@birdonwheels5. 
+
+Linking a Myriad address to an email account would NOT work, because the addresses are stored directly on the blockchain, meaning anyone would be able to view your email address. This could potentially lead to spammers datamining the blockchain, and emailing en mass to all the addresses on the sidechain.
+addr: ..................................
 user: birdonwheels5
-active: false
+active: true
+qpwoeiruty
+title: Publish a positive Myriadcoin Article on Coindesk
+desc: See title.  Please include in the article all the good juicy stuff. Topic - Myriadcoin and all the good stuff, 5 algos, really built for commerce/currency due to short block times (average 30secs, wide distribution and large amount of coins in circulation, accepted by major exchanges and some of the payment processors such as Coinpayment), one of the MOST FAIREST in coin distribution as able to mine with ASIC's, GPU's, CPU's, all with equal chance/amount and no instamine but very long block halvings; very very, VERY active development as evidenced by the github (updated to latest bitcoin core .0.9.2.1, not even #2 litecoin is updated to that level) and also as shown by myriadcoinplatform.org projects. Hmmm, I'm sure I missed some other stuff
+addr: MLXoT8YxmqYQgqmTMTihVY1z5PU9ePKuZL
+user: archLinuxUser
+active: true
 qpwoeiruty
