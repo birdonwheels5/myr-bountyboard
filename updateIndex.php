@@ -117,6 +117,6 @@
 
 Page updated! Redirecting...
 
-<?php 	header("Refresh: 0, URL = adminBountyHub.php");
+<?php 	header("Refresh: 0, URL = admin.php");
 	exit;
 ?>
