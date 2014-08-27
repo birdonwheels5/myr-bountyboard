@@ -1,5 +1,10 @@
 <?php
 
+// Before you yell at me, I know the fields are not encapsulated. I was having issues getting the object to work, and 
+// the only way I got it working was without encapsulation. After all, the validation is done in the forms
+// so it shouldn't be too big of a deal.
+
+// This class is used for neatly storing the bounty data in memory so we can manipulate it after reading from file.
 class Bounty
 {
   private $title = "";
@@ -17,42 +22,7 @@ class Bounty
     $this->myrAddress = $par1MyrAddress;
     $this->userName = $par1UserName;
     $this->active = $par1Active;
-    
-
-    /*setTitle($par1Title);
-    setDescription($par1Description);
-    setMyrAddress($par1MyrAddress);
-    setUserName($par1UserName);
-    setActive($par1Active);*/
   }
-  
-  
-  
-  /*function setTitle($newTitle)
-  {
-    $this->$title = $newTitle;
-  }
-  
-  function setDescription($newDescription)
-  {
-    $this->$description = $newDescription;
-  }
-  
-  function setMyrAddress($newMyrAddress)
-  {
-    $this->$myrAddress = $newMyrAddress;
-  }
-  
-  function setUserName($newUserName)
-  {
-    $this->$userName = $newUserName;
-  }
-  
-  function setActive($newActive)
-  {
-    $this->$active = $newActive;
-  }*/
-  
   
   
   function getTitle()
