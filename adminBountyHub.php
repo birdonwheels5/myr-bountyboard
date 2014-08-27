@@ -23,7 +23,7 @@
 				<table>
 					<tr>
 						<td><img src="http://i.imgur.com/7JOcOBP.png" style="width:120%;"></img></td>
-						<td><h1>&nbsp;	&nbsp;	Bounty Admin Panel</h1></td>
+						<td><h1>&nbsp;	&nbsp; Admin Control Panel</h1></td>
 					</tr>
 				</table>
 			</header></center>
@@ -45,6 +45,8 @@
 					</ul>
 					<center>Have fun!</center></p>
 				</div>
+				
+				<center><?php displayBountyInfo($fileName); ?></center>
 				
 				
 					</article></div></body></html>
