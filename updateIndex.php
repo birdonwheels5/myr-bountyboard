@@ -83,7 +83,7 @@
 	{
 		if ((strcmp(stristr($bounties[$i]->getActive(), "true"), $bounties[$i]->getActive()) == 0))
 		{
-			$content .= "<div class=\"activeBounty\"><div class=\"box\" style=\"text-align:left;padding-left:16px;\"><p>" . $bounties[$i]->getTitle() . "</p>";
+			$content .= "<div class=\"activeBounty\"><div class=\"box\" style=\"text-align:left;padding-left:10px;\"><p>" . $bounties[$i]->getTitle() . "</p>";
 			$content .= "</div><div class=\"descBox\" style=\"text-align:left;\"><p>" . $bounties[$i]->getDescription() . "</p>";
 				$addressTotal = getAddressTotal($bounties[$i]->getMyrAddress());
 			$content .= "</div><div class=\"box\"><center><p>" . $addressTotal . "</p></center>";
@@ -95,7 +95,7 @@
 		}
 		else
 		{
-			$content .= "<div class=\"inActiveBounty\"><div class=\"box\" style=\"text-align:left;padding-left:16px;\"><p>" . $bounties[$i]->getTitle() . "</p>";
+			$content .= "<div class=\"inActiveBounty\"><div class=\"box\" style=\"text-align:left;padding-left:10px;\"><p>" . $bounties[$i]->getTitle() . "</p>";
 			$content .= "</div><div class=\"descBox\" style=\"text-align:left;\"><p>" . $bounties[$i]->getDescription() . "</p>";
 				$addressTotal = getAddressTotal($bounties[$i]->getMyrAddress());
 			$content .= "</div><div class=\"box\"><center><p>" . $addressTotal . "</p></center>";
