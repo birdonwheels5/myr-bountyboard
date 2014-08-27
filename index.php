@@ -24,7 +24,7 @@
 				<hr/>
 			
 				<div class="welcome">
-					<center><p>Welcome to the Myriadcoin Community Bounty Board!</center<br/>
+					<center><p>Welcome to the <b>Myriadcoin Community Bounty Board</b>!</center><br/>
 					A few things you should know before you get started...<br/>
 					<ul>
 						<li>The green bounties indicate that no one is currently working on them, while gray means that someone is working on it.
