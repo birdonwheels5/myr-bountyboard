@@ -15,7 +15,7 @@ The third one creates the index.php file, which you need to chown in order to ha
 
 In order to get the address information to display for other coins, you'll either need to set up an ABE block explorer for the coin, or find an existing explorer and modify the "bountyHandler.php" file accordingly to reflect the new URLs.
 
-If you use this software and it helps you, please consider dropping me a donation!
+If you like/use this software, please consider dropping me a donation!
 
 ----------------------------------------------------------------------------------------------------
 
