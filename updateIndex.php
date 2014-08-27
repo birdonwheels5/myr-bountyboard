@@ -28,7 +28,7 @@
 		
 			<header style=\"background-color:transparent;\">
 		
-				<div class=\"logoContainer\"><img src=\"https://birdonwheels5.no-ip.org/img/logo.png\" alt=\"Myriadcoin Logo\" style=\"width:130%;\"></div><h1>Myriadcoin Community Bounty Board</h1><div class=\"logoContainer\"><img src=\"https://birdonwheels5.no-ip.org/img/logo.png\" alt=\"Myriadcoin Logo\" style=\"width:130%;\"></div>
+				<div class=\"logoContainer\"><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" alt=\"Myriadcoin Logo\" style=\"width:130%;\"></div><h1>Myriadcoin Community Bounty Board</h1><div class=\"logoContainer\"><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" alt=\"Myriadcoin Logo\" style=\"width:130%;\"></div>
 
 			</header>
 			
@@ -100,9 +100,11 @@
 				$donationCount = getDonationCount($bounties[$i]->getMyrAddress());
 			$content .= "</div><div class=\"numberBox\"><center><p>" . $donationCount . "</p></center>";
 			$content .= "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
-			$content .= "</div></div></article>";
+			$content .= "</div></div>";
 		}
 	}
+	
+	$content .= "</article>";
 	
 	$content .= "<div class=\"paddingBottom\"></div>
 		     <footer>Want to show some love? Donate some MYR: MNYERWCHqrH1EkGNpF4T8o8dGB391A5jmm</footer>";
