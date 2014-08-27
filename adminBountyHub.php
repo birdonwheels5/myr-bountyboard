@@ -35,7 +35,7 @@
 				<div class="welcome">
 					<center><p>Welcome to the Admin Control Panel! (For trusted community members only)</center><br/>
 					<center><b>Total Bounties</b>: <?php print $bountyCount; ?></center><br/>
-					Here are links to the admin bounty pages:<br/>
+					Links to administrative pages:<br/>
 					<ul>
 						<li><a href="bountySubmitForm.php">Submit a New Bounty</a><br/>
 						<li><a href="bountyUpdateForm.php">Update an Existing Bounty</a><br/>
