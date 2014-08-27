@@ -19,7 +19,7 @@
 
 			</header>
 			
-			<article>
+			<center><article>
 				
 				<hr/>
 			
