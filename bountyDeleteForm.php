@@ -31,7 +31,7 @@ $CONFIRM = 100;
 
 $fileName = "bounties.dat";
 $bountyDeleted = $WAITING;
-$redirectURL = "https://birdonwheels5.no-ip.org/myr-bountyboard/";
+$redirectURL = "updateIndex.php";
 
 $bounties = array();
 $bounties = readBounties($fileName);
@@ -168,10 +168,9 @@ if ($bountyDeleted == $SUCCESS)
 	print "<h3>Status:</h3>";
 	print "<hr/>";
 	print "Bounty deleted!";
-	print "The change will appear the next time the bounty page is refreshed. (Refreshed on the hour)";
 	print "<br>";
-	print "Redirecting to bounty page...";
-	header("Refresh: 3, URL = " . $redirectURL);
+	print "Refreshing bounty page and redirecting...";
+	header("Refresh: 0, URL = " . $redirectURL);
 	exit;
 }
 
