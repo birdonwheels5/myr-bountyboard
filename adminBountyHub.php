@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
 		<?php include "bountyHandler.php";
 		
-		$fileName = "bounties.dat"
+		$fileName = "bounties.dat";
 		$bountyCount = countBounties($fileName);
 		
 		?>
