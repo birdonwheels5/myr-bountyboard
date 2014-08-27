@@ -27,12 +27,19 @@ header
 	white-space:nowrap;
 }
 
+# Unused
 div.logoContainer
 {
 	width:30px;
 	height:50px;
 	float:left;
 	padding:6px;
+}
+
+div.welcome
+{
+	width:25%;
+	float:left;
 }
 
 nav
