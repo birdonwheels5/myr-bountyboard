@@ -22,7 +22,7 @@
 		<link rel=\"stylesheet\" type=\"text/css\" href=\"http://fonts.googleapis.com/css?family=Open+Sans\" title=\"Font Styles\"/>
 	</head>
 	
-	<body link=\"#E2E2E2\" vlink=\"#ADABAB\">
+	<body link=\"#E2E2E2\" vlink=\"#000000\">
 		<center><div class=\"container\">
 	
 		
