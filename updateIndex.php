@@ -100,7 +100,7 @@
 				$donationCount = getDonationCount($bounties[$i]->getMyrAddress());
 			$content .= "</div><div class=\"numberBox\"><center><p>" . $donationCount . "</p></center>";
 			$content .= "</div><div class=\"box\"><p>" . $bounties[$i]->getUserName() . "</p>";
-			$content .= "</div></div>";
+			$content .= "</div></div></article>";
 		}
 	}
 	
