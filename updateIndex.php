@@ -26,14 +26,14 @@
 		<center><div class=\"container\">
 	
 		
-			<center><header style=\"background-color:transparent;\">
+			<header style=\"background-color:transparent;\">
 				<table>
 					<tr>
 						<td><img src=\"http://i.imgur.com/7JOcOBP.png\" style=\"width:120%;\"></img></td>
 						<td><h1>&nbsp;	&nbsp;	Community Bounty Board</h1></td>
 					</tr>
 				</table>
-			</header></center>
+			</header>
 			
 			<article>
 
