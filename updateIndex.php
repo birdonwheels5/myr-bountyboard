@@ -29,9 +29,42 @@
 			<center><header style=\"background-color:transparent;\">
 				<table>
 					<tr>
-						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:25%;\"></img></td>
-						<td><h1>Myriadcoin Community Bounty Board</h1></td>
-						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:25%;\"></img></td>
+						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:50%;\"></img></td>
+						<td><h1>M</h1></td>
+						<td><h1>y</h1></td>
+						<td><h1>r</h1></td>
+						<td><h1>i</h1></td>
+						<td><h1>a</h1></td>
+						<td><h1>d</h1></td>
+						<td><h1>c</h1></td>
+						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:20%;\"></img></td>
+						<td><h1>i</h1></td>
+						<td><h1>n</h1></td>
+						<td><h1> </h1></td>
+						<td><h1>C</h1></td>
+						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:20%;\"></img></td>
+						<td><h1>m</h1></td>
+						<td><h1>m</h1></td>
+						<td><h1>u</h1></td>
+						<td><h1>n</h1></td>
+						<td><h1>i</h1></td>
+						<td><h1>t</h1></td>
+						<td><h1>y</h1></td>
+						<td><h1> </h1></td>
+						<td><h1>B</h1></td>
+						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:20%;\"></img></td>
+						<td><h1>u</h1></td>
+						<td><h1>n</h1></td>
+						<td><h1>t</h1></td>
+						<td><h1>y</h1></td>
+						<td><h1> </h1></td>
+						<td><h1>B</h1></td>
+						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:20%;\"></img></td>
+						<td><h1>a</h1></td>
+						<td><h1>r</h1></td>
+						<td><h1>d</h1></td>
+
+						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\" style=\"width:50%;\"></img></td>
 					</tr>
 				</table>
 			</header></center>
