@@ -62,6 +62,10 @@ nav
 	min-height: 100%;
 	height: auto !important;
     	height: 100%px;
+    	border-radius:6px;
+	background-color:hsla(0, 0%, 30%, 0.9);
+	-webkit-box-shadow: 3px 3px 5px #888888;
+	-moz-box-shadow: 3px 3px 5px #888888;
 }
 
 article
