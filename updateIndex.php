@@ -28,7 +28,7 @@
 		
 			<header style=\"background-color:transparent;\">
 		
-				<h1>Myriadcoin Community Bounty Board</h1>
+				<div class=\"logoContainer\"><img src=\"https://birdonwheels5.no-ip.org/img/logo.png\" alt=\"Myriadcoin Logo\" style=\"width:130%;\"></div><h1>Myriadcoin Community Bounty Board</h1><div class=\"logoContainer\"><img src=\"https://birdonwheels5.no-ip.org/img/logo.png\" alt=\"Myriadcoin Logo\" style=\"width:130%;\"></div>
 
 			</header>
 			
