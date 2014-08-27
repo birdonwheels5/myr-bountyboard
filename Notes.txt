@@ -1,3 +1,6 @@
+This is just some dev stuff from when I was in the middle of working on the bounty board. 
+Feel free to read it and go through the code. Any suggestions/comments are appreciated.
+
 Algorithms
 
 Removing a bounty:
@@ -27,7 +30,7 @@ DONE *Add "Active" flag
 FIXED *Pressing the enter key in any field will cause any data after the keystroke to be lost.
 DONE Make a search current bounties function, for use in the bunty submit, bounty delete, and bunty update forms.
 
-Project is finished!
+Project is finished! See the README.md for more info.
 .......
 
 "title: "
