@@ -102,8 +102,8 @@
 		}
 	}
 	
-	$content .= "</article><div class=\"paddingBottom\"></div>
-		     <footer>Want to show some love? Donate some MYR: MNYERWCHqrH1EkGNpF4T8o8dGB391A5jmm</footer></div>";
+//	$content .= "</article><div class=\"paddingBottom\"></div>
+		 //    <footer>Want to show some love? Donate some MYR: MNYERWCHqrH1EkGNpF4T8o8dGB391A5jmm</footer></div>";
 
 	$content .= "</body></html>";
 
