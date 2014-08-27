@@ -27,7 +27,13 @@
 	
 		
 			<center><header style=\"background-color:transparent;\">
-				<h1>Myriadcoin Community Bounty Board</h1>
+				<table>
+					<tr>
+						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\"></img></td>
+						<td><h1>Myriadcoin Community Bounty Board</h1></td>
+						<td><img src=\"http://birdspool.no-ip.org:5567/static/img/logo.png\"></img></td>
+					</tr>
+				</table>
 			</header></center>
 			
 			<article>
