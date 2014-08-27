@@ -147,12 +147,14 @@ div.inActiveBounty
 
 div.paddingBottom
 {
-	width:80%;
-	padding-bottom:1.5%
+	#width:80%;
+	#padding-bottom:1.5%
 }
 
 footer
 {
 	background-color:#626163;
 	width:100%;
+	clear:both;
+	text-align:center;
 }
