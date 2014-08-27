@@ -41,8 +41,8 @@ div.welcome
 {
 	width:40%;
 	float:left;
-	#margin-left:auto;
-	#margin-right:auto;
+	margin-left:auto;
+	margin-right:auto;
 	border-radius:6px;
 	background-color:hsla(0, 0%, 30%, 0.9);
 	-webkit-box-shadow: 3px 3px 5px #888888;
@@ -155,6 +155,4 @@ footer
 {
 	background-color:#626163;
 	width:100%;
-	clear:both;
-	text-align:center;
 }
