@@ -26,15 +26,8 @@ header
 	margin-left:auto;
 	margin-right:auto;
 	height:80px;
-	#overflow:hidden;
+	overflow:hidden;
 	white-space:nowrap;
-}
-
-div.button
-{
-	height:80px;
-	float:right;
-	padding-right:15px;
 }
 
 # Unused
