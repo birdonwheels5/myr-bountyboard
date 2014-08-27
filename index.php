@@ -33,6 +33,9 @@
 					</ul>
 					Good luck, Bounty Hunters!</p>
 				</div>
+				
+				<hr/>
+				<br/>
 			
 				<div class="divider">
 					<div class="box">
