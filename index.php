@@ -9,7 +9,7 @@
 		<?php include "bountyHandler.php";?>
 	</head>
 	
-	<body style="background-image:url(https://birdonwheels5.no-ip.org/img/stars3.jpg);">
+	<body>
 		<center><div class="container">
 	
 		
