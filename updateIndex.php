@@ -30,7 +30,7 @@
 				<table>
 					<tr>
 						<td><img src=\"http://i.imgur.com/7JOcOBP.png\" style=\"width:120%;\"></img></td>
-						<td><h1>&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	Community Bounty Board</h1></td>
+						<td><h1>&nbsp;	&nbsp;	&nbsp;	Community Bounty Board</h1></td>
 					</tr>
 				</table>
 			</header></center>
