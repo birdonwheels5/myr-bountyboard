@@ -65,7 +65,7 @@ function readBounties($fileName)
 			$active = trim(str_ireplace("active: ", "", $line));
 		}
 
-		// Check the current line for "-" which separates bounties, and create bounties
+		// Check the current line for "qpwoeiruty" which separates bounties, and create bounties
 		if (strcmp(stristr($line, $separator), $line) == 0)
 		{
 			// Debug info
